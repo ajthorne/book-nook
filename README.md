@@ -2,6 +2,7 @@
 ###Elevator Pitch
 ___
   - Book Nook is an app to support building a literacy community among adolescents. Find new friends, new books to read, and explore an awesome new social media!
+___
 
 ###Basic Features
 ___
@@ -17,6 +18,7 @@ ___
 3. Building a Community -
   - Connect with other teens who love the same book you do. Add them to your friends list, comment on their profile, or send them a personal message.
   - Find teens nearby in your 'nook' who love reading like you do.
+___
 
 ###APIs
 ___
@@ -68,6 +70,7 @@ ___
      timestamp: '',
      recipient: 'coop' }
     ```
+___
 
 ###Routes
 ___
@@ -76,11 +79,14 @@ ___
 3. /user/:id : User profile lives here which includes the digital library, posts, favorites, and friends list components.
 4. /user/:id/messages: Messaging area which houses messages received by user
 5. /thenook: Connect with teens nearby
+___
 
 ###Libraries
 ___
 1. Backbone
 2. JQuery
+
+___
 
 ###Special Features
 ___
