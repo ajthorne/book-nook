@@ -20,8 +20,8 @@ ___
 
 
 ###APIs
-1. Goodreads
-  - https://www.goodreads.com/api
+1. Google Books
+  - https://developers.google.com/books/
 2. Kinvey
 3. Random User
   - https://randomuser.me/
@@ -29,38 +29,48 @@ ___
   - https://developers.google.com/maps/
 
 ###Data Modeling
-  - Session
+  - Session - Kinvey API
   ```
   { id: 1234,
     username: "testuser",
     authtoken: "1234" }
     ```
 
-  - User
+  - User - Kinvey API / Possibly Google Books
   ```
-  { username: 'pikachu54',
+  {  username: 'pikachu54',
      name: 'sally',
      favorites: ['The Hunger Games', 'Divergent'],
-     friends: ['coop', 'shannon'],
+     friends: ['coop', 'shannon']
     }
     ```
     //Should I include a BooksRead array or object on user?
+    //Need to store user location also
 
-  - User Post (Also a collection)
+  - User Post (Also a collection) - Kinvey API
     ```
     { body: '',
       timestamp: '',
       creator: ''  }
       ```
 
-  - Book (Also a collection)
+  - Book (Also a collection) - Google Books API
+    - Keys and values rendered from a GET request of 'https://www.googleapis.com/books/v1/volumes?q=hunger+inauthor:collins' on Google Books
   ```
-  {  title: 'The Hunger Games',
-     author: 'Suzanne Collins',
-     genre: 'Dystopian'  }
+  {  id: 'hlb_sM1AN0gC',
+     title: 'The Hunger Games',
+     authors: ['Suzanne Collins'],
+     published: 2008,
+     description: 'In a future North America, where the rulers of Panem maintain control through an annual televised survival competition pitting young people from each of the twelve districts against one another, sixteen-year-old Katniss's skills are put to the test when she voluntarily takes her younger sister's place.'
+     categories: 'Juvenile Fiction',
+     pageCount: 374
+     imageLinks: {
+       smallThumbnail: 'https://books.google.com/books/content?id=hlb_sM1AN0gC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api'
+       }
+     }
     ```
 
-  - Message (Also a collection)
+  - Message (Also a collection) - Kinvey API
   ```
   { creator: 'sally',
      body: 'hiiiii!',
