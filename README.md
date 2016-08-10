@@ -46,19 +46,24 @@
 
   - User Post (Also a collection)
     ```
-    {
-      body: '',
+    { body: '',
       timestamp: '',
-      creator: ''
-      }
+      creator: ''  }
       ```
 
   - Book (Also a collection)
   ```
-  { title: 'The Hunger Games',
+  {  title: 'The Hunger Games',
      author: 'Suzanne Collins',
-     genre: 'Dystopian'
-    }
+     genre: 'Dystopian'  }
+    ```
+
+  - Message (Also a collection)
+  ```
+  { creator: 'sally',
+     body: 'hiiiii!',
+     timestamp: '',
+     recipient: 'coop' }
     ```
 
 ###Routes:
