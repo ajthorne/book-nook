@@ -1,7 +1,6 @@
 #Book Nook
-###Elevator Pitch
 ___
-  - Book Nook is an app to support building a literacy community among adolescents. Find new friends, new books to read, and explore an awesome new social media!
+##Book Nook is an app to support building a literacy community among adolescents. Find new friends, new books to read, and explore an awesome new social media!
 
 
 ###Basic Features
@@ -12,82 +11,94 @@ ___
 
 2. Book Searches -
   - Explore the extensive library of books to find new exciting things to read
-    - IDEAL: Add comments, reviews, or rants to books you feel passionate about.
+  - Add books to your digital library to show other users what you've read
 
 3. Building a Community -
-  - Connect with other teens who love the same book you do. Add them to your friends list, comment on their profile, or send them a personal message.
+  - Connect with other teens who love the same book you do. Follow them, view or comment on their profile.
   - Find teens nearby in your 'nook' who love reading like you do.
+
+
+###MVP
+1. Users can sign up, log in, and log out on their accounts.
+2. Users can view a complete list of users on the site and explore individual profiles.
+3. Users can search for a specific book which renders results for the user to view.
+4. Users can add a specific book their library collection, which is displayed on their profile page.
 
 
 ###APIs
 1. Google Books
   - https://developers.google.com/books/
 2. Kinvey
-3. Random User
-  - https://randomuser.me/
-4. Google Maps
+3. Google Maps
   - https://developers.google.com/maps/
 
-###Data Modeling
-  - Session - Kinvey API
-  ```
-  { id: 1234,
-    username: "testuser",
-    authtoken: "1234" }
-    ```
 
-  - User - Kinvey API / Possibly Google Books
+###Data Modeling
+  - User - Kinvey API
   ```
-  {  username: 'pikachu54',
-     name: 'sally',
-     favorites: ['The Hunger Games', 'Divergent'],
-     friends: ['coop', 'shannon']
+    { id: 1234,
+    username: "testuser",
+    authtoken: "1234",
+    name: 'sally',
+    friends: ['coop', 'shannon']
     }
     ```
-    //Should I include a BooksRead array or object on user?
-    //Need to store user location also
 
-  - User Post (Also a collection) - Kinvey API
+  - userLibrary - Kinvey API (Also a collection)
+    (Join table / Related to user)
     ```
-    { body: '',
-      timestamp: '',
-      creator: ''  }
+    { id: '32432423'
+      bookId: 'hlb_sM1AN0gC',
+      userId: '3431w4124',
+      title: 'The Hunger Games',
+      authors: ['Suzanne Collins'],
+      imageLinks: {
+        smallThumbnail: 'https://books.google.com/books/content?id=hlb_sM1AN0gC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api'
+          }
+     }
       ```
 
-  - Book (Also a collection) - Google Books API
-    - Keys and values rendered from a GET request of 'https://www.googleapis.com/books/v1/volumes?q=hunger+inauthor:collins' on Google Books
+  - wallPost (Also a collection) - Kinvey API
+    ```
+    { id: '',
+      body: '',
+      timestamp: '',
+      creator: '' }
+      ```
+
+  - comment (Also a collection) - Kinvey API
+  (Join table / Related to wallPost)
   ```
-  {  id: 'hlb_sM1AN0gC',
-     title: 'The Hunger Games',
-     authors: ['Suzanne Collins'],
-     published: 2008,
-     description: 'In a future North America, where the rulers of Panem maintain control through an annual televised survival competition pitting young people from each of the twelve districts against one another, sixteen-year-old Katniss's skills are put to the test when she voluntarily takes her younger sister's place.'
-     categories: 'Juvenile Fiction',
-     pageCount: 374
-     imageLinks: {
-       smallThumbnail: 'https://books.google.com/books/content?id=hlb_sM1AN0gC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api'
-       }
-     }
+    { id: '',
+      body: '',
+      timestamp: '',
+      creator: '' }
     ```
 
-  - Message (Also a collection) - Kinvey API
+  - favorite (Also a collection) - Kinvey API
+  (Join table / Related to user)
   ```
-  { creator: 'sally',
-     body: 'hiiiii!',
-     timestamp: '',
-     recipient: 'coop' }
+    { id: '32432423'
+      bookId: '43244234',
+      userId: '3431w4124' }
     ```
+
 
 ###Routes
 1. '/': Basic introduction to the site with navigation links to login, sign up, search books
 2. /books: Displays results for specific books/categories searched by user
-3. /user/:id : User profile lives here which includes the digital library, posts, favorites, and friends list components.
-4. /user/:id/messages: Messaging area which houses messages received by user
-5. /thenook: Connect with teens nearby
+3. /users: Displays list of users currently using the app
+4. /user/:id : User profile lives here which includes the digital library, posts, favorites, and friends list components.
+5. /user/:id/favorites: Displays user favorites
+6. /user/:id/posts: Displays user posts
+7. /user/:id/followers: Displays user followers
+8. /thenook: Connect with teens nearby
+
 
 ###Libraries
 1. Backbone
 2. JQuery
+
 
 ###Special Features
 1. Geolocation
