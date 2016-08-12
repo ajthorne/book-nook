@@ -1,0 +1,24 @@
+nav {
+  padding: 1%;
+}
+
+.home-link {
+  text-decoration: none;
+  color: black;
+}
+
+.book-search {
+  display: inline-block;
+  margin-left: 35%;
+}
+
+.login-link {
+  float: right;
+  margin-left: 1rem;
+  text-decoration: none;
+  color: black;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
