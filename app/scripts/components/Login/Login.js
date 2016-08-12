@@ -1,5 +1,6 @@
 import React from 'react';
 import store from '../../store';
+import { hashHistory } from 'react-router';
 
 const Login = React.createClass({
   loginHandler: function (e) {
