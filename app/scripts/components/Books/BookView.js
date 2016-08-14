@@ -30,7 +30,7 @@ const BookView = React.createClass({
       let bookImg = book.volumeInfo.imageLinks.smallThumbnail;
       let id = book.id;
 
-      <SingleBook key={i} title={title} description={description} authors={authors} bookImg={bookImg} id={id}/>
+      return <SingleBook key={i} title={title} description={description} authors={authors} bookImg={bookImg} id={id}/>
     })
 
     return (

@@ -6,7 +6,7 @@ const SingleBook = React.createClass({
   render: function () {
     return (
       <li>
-      <img src={`${bookImg}`}/>
+      <img src={`${this.props.bookImg}`}/>
       <p>{this.props.title}</p>
       <p>{this.props.authors}</p>
       <p>{this.props.description}</p>
