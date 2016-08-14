@@ -7,8 +7,11 @@ import Login from './components/Login/Login';
 import $ from 'jquery';
 import store from './store';
 import settings from './settings';
+import UserView from './components/Users/UsersView';
+import BookView from './components/Books/BookView';
 
 $(document).ajaxSend(function(evt, xhrAjax, jqueryAjax) {
+  if (jqueryAjax.url.indexOf('google') === -1) {
   if (localStorage.authtoken) {
     //if authtoken exists
     xhrAjax.setRequestHeader('Authorization', 'Kinvey ' + localStorage.authtoken);
@@ -17,6 +20,7 @@ $(document).ajaxSend(function(evt, xhrAjax, jqueryAjax) {
     xhrAjax.setRequestHeader('Authorization', 'Basic ' + settings.baseAuth);
     //authorization needs user to login or sign up to get authtoken
   }
+}
 });
 
 if (localStorage.authtoken) {
@@ -28,6 +32,8 @@ const router = (
     <Route path="/" component={App}>
       <IndexRoute component={Features}/>
       <Route path="/login" component={Login}/>
+      <Route path="/users" component={UserView}/>
+      <Route path="/books" component={BookView}/>
     </Route>
   </Router>
 )

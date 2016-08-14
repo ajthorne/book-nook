@@ -1,9 +1,11 @@
 import React from 'react';
+import {hashHistory} from 'react-router';
 //shown on home page
 
 const Features = React.createClass({
   clickHandler: function () {
     console.log('Users will eventually be added...');
+    hashHistory.push('/users')
   },
 
   render: function () {
