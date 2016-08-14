@@ -25,7 +25,7 @@ login: function (data) {
   });
   hashHistory.push('/')
 
-  // localStorage.setItem("authtoken", response._kmd.authtoken);
+  localStorage.setItem("authtoken", response._kmd.authtoken);
   })
   .fail((error) => {
     console.error('You had an error logging in')
@@ -49,6 +49,18 @@ signup: function (data) {
     console.log('You had an error signing up!');
   })
 },
+retrieve: function () {
+  this.fetch({
+  url: `https://baas.kinvey.com/user/${settings.appId}/_me`,
+  success: () => {
+    console.log('you got your authtoken:', localStorage.getItem('authtoken'));
+    localStorage.getItem("authtoken")
+    },
+  error: function(e) {
+    console.log(e);
+  }
+});
+},
 
 logout: function () {
   $.ajax(null, {
@@ -57,7 +69,7 @@ logout: function () {
     .then((response) => {
       this.clear();
       hashHistory.push('/')
-      // localStorage.clear();
+      localStorage.clear();
       console.log('You are logged out. Goodbye!');
     })
     .fail((error) => {
