@@ -63,6 +63,7 @@ nav {
 footer {
   background: #F56F6C;
   box-sizing: border-box;
+  padding: 0.5%;
   margin-left: -1%;
   opacity: 0.9;
   width: 103%;
@@ -72,6 +73,7 @@ footer {
   margin-top: 1rem; }
 
 body {
-  font-family: helvetica; }
+  font-family: helvetica;
+  margin-top: 8.5vh; }
 
 /*# sourceMappingURL=main.css.map */

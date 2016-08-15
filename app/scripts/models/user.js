@@ -6,7 +6,6 @@ import { hashHistory } from 'react-router';
 const User = Backbone.Model.extend({
   idAttribute: '_id',
   defaults: {
-  // id: '',
   name: '',
   username: '',
   imgUrl: '',
@@ -20,11 +19,9 @@ login: function (data) {
   contentType: 'application/json'
 })
   .then((response) => {
-  // console.log(response._id);
   this.set({
     username: response.username, authtoken: response._kmd.authtoken, _id: response._id
   });
-  // console.log(this);
   hashHistory.push('/')
 
   localStorage.setItem("authtoken", response._kmd.authtoken);
@@ -43,7 +40,7 @@ signup: function (data) {
   })
   .then((response) => {
     this.set({
-      username: response.username, authtoken: response._kmd.authtoken, id: response._id, name: response.name, imgUrl: response.imgUrl
+      username: response.username, authtoken: response._kmd.authtoken, _id: response._id, name: response.name, imgUrl: response.imgUrl
     });
     hashHistory.push('/')
   })

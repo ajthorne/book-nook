@@ -5,14 +5,10 @@ import SingleBook from './BookSingle';
 const BookView = React.createClass({
   getInitialState: function () {
   return {
-    books: store.books.toJSON(),
-    libraryBooks: store.libraryBooks.toJSON()
-  }
+    books: store.books.toJSON()}
   },
   updateState: function() {
-      this.setState({books: store.books.toJSON(),
-        libraryBooks: store.libraryBooks.toJSON()
-      });
+      this.setState({books: store.books.toJSON()});
   },
   componentWillMount: function () {
     store.books.on('update change', this.updateState)
@@ -29,9 +25,21 @@ const BookView = React.createClass({
       // console.log(book.volumeInfo);
       let title = book.volumeInfo.title;
       let description = book.volumeInfo.description;
-      let authors = book.volumeInfo.authors.toString();
-      let bookImg = book.volumeInfo.imageLinks.smallThumbnail;
       let id = book.id;
+      let authors;
+      let bookImg;
+
+      if (book.volumeInfo.authors) {
+        authors = book.volumeInfo.authors.toString();
+      } else {
+        authors = ''
+      }
+
+      if (book.volumeInfo.imageLinks) {
+        bookImg = book.volumeInfo.imageLinks.smallThumbnail;
+      } else  {
+        bookImg = 'http://images.clipartpanda.com/book-20clip-20art-book_blue.png';
+      }
 
       return <SingleBook key={i} title={title} description={description} authors={authors} bookImg={bookImg} id={id}/>
     })

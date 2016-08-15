@@ -1,12 +1,12 @@
 import React from 'react';
 import {hashHistory} from 'react-router';
+import store from '../../store';
 //shown on home page
 
 const Features = React.createClass({
   clickHandler: function () {
-    console.log('Users will eventually be added...');
-    hashHistory.push('/users')
-  },
+    hashHistory.push('/users');
+    },
 
   render: function () {
     return (
