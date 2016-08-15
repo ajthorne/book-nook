@@ -24,15 +24,14 @@ const UserView = React.createClass({
     store.users.off('update change', this.updateState)
   },
   render: function () {
-    console.log('state:', this.state);
     let userCollection = store.users.models
     console.log('userCollection:', userCollection);
-    console.log('this is the user page');
     let users = userCollection.map(function (user, i, arr) {
       let userImg = user.attributes.imgUrl;
       let name = user.attributes.name;
+      let id = user.attributes._id;
 
-      return <SingleUser key={i} userImg={userImg} name={name}/>
+      return <SingleUser key={i} userImg={userImg} name={name} id={id}/>
     })
     return (
       <div>
