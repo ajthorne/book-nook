@@ -11,6 +11,7 @@ import UserView from './components/Users/UsersView';
 import BookView from './components/Books/BookView';
 
 $(document).ajaxSend(function(evt, xhrAjax, jqueryAjax) {
+  // console.log('intercepted');
   if (jqueryAjax.url.indexOf('google') === -1) {
   if (localStorage.authtoken) {
     //if authtoken exists

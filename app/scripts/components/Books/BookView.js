@@ -5,11 +5,14 @@ import SingleBook from './BookSingle';
 const BookView = React.createClass({
   getInitialState: function () {
   return {
-    books: store.books.toJSON()
+    books: store.books.toJSON(),
+    libraryBooks: store.libraryBooks.toJSON()
   }
   },
   updateState: function() {
-      this.setState({books: store.books.toJSON()});
+      this.setState({books: store.books.toJSON(),
+        libraryBooks: store.libraryBooks.toJSON()
+      });
   },
   componentWillMount: function () {
     store.books.on('update change', this.updateState)

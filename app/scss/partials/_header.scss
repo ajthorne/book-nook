@@ -1,0 +1,26 @@
+.header {
+  background: linear-gradient( rgba(245, 111, 108, 0.30), rgba(245, 111, 108, 0.75)), url('../../assets/bookheader1.jpeg');
+  height: 55vh;
+  width: 103%;
+  margin-left: -1%;
+  margin-top: -1%;
+  background-size: contain;
+  text-align: center;
+  border-bottom: 2px solid #252932;
+
+  h1 {
+    padding-top: 11%;
+    color: white;
+    font-size: 2.5rem;
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+
+  h2 {
+    color: white;
+  }
+
+  .users-btn {
+
+  }
+}

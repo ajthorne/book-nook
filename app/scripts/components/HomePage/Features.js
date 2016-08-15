@@ -14,9 +14,9 @@ const Features = React.createClass({
         <div className="header">
           <h1>Book Nook</h1>
           <h2>Find your next best read or friend!</h2>
-          <input type="button" value="Find Users" onClick={this.clickHandler}/>
+          <input className="users-btn" type="button" value="Find Users" onClick={this.clickHandler}/>
         </div>
-        <div className="features">
+        <div className="features-flex">
           <div className="solo-feature">
             <i className="fa fa-user"></i>
             <p className="solo-feature-copy">
