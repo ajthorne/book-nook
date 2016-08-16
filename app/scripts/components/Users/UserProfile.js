@@ -1,5 +1,6 @@
 import React from 'react';
 import store from '../../store';
+import UserLibrary from './UserLibrary';
 
 const UserProfile = React.createClass({
   getInitialState: function () {
@@ -12,7 +13,6 @@ const UserProfile = React.createClass({
 
   componentDidMount: function () {
     let userId = this.props.params.id;
-    // let userId = store.session.get('_id');
     store.libraryBooks.fetch({
     data: {query: JSON.stringify({
       userId: userId,
@@ -30,12 +30,24 @@ const UserProfile = React.createClass({
     console.log(userProfile);
     let name = userProfile.attributes.name;
     let userImg = userProfile.attributes.imgUrl;
-    console.log(this.state);
+    let libraryCollection = this.state.libraryBooks;
+
+    let library = libraryCollection.map(function(book, i, arr) {
+      let title = book.bookTitle;
+      let bookImg = book.bookImg;
+      let authors = book.bookAuthors;
+
+      return <UserLibrary key={i} title={title} bookImg={bookImg} authors={authors}/>
+    })
+
 
     return (
       <div>
       <h2>{name}'s Profile</h2>
-      <img src={`${userImg}`}/>
+      <img className="user-profile-img" src={`${userImg}`}/>
+      <ul>
+      {library}
+      </ul>
       </div>
     )
   }

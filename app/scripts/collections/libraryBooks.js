@@ -7,6 +7,9 @@ const LibraryBooks = Backbone.Collection.extend({
   url: `https://baas.kinvey.com/appdata/${settings.appId}/librarybooks`,
 
   addBook: function (props, id) {
+    let bookTitle = props.title
+    let bookImg = props.bookImg
+    let bookAuthors = props.authors
     let bookId = props.id;
     let userId = id;
     console.log(props, id);
@@ -14,14 +17,17 @@ const LibraryBooks = Backbone.Collection.extend({
     this.fetch({
         data: {query: JSON.stringify({
           userId: userId,
-          bookId: bookId
+          bookId: bookId,
      })},
      success: (coll, response) => {
        console.log('success, here it is: ', response);
        if (response.length === 0) {
          this.create({
             userId: userId,
-            bookId: bookId
+            bookId: bookId,
+            bookTitle: bookTitle,
+            bookAuthors: bookAuthors,
+            bookImg: bookImg
        },
        {
        success: (response) => {

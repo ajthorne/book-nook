@@ -8,6 +8,9 @@ const LibraryBook = Backbone.Model.extend({
   defaults: {
     userId: '',
     bookId: '',
+    bookTitle: '',
+    bookAuthors: '',
+    bookImg: ''
   }
 })
 

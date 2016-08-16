@@ -3,7 +3,6 @@ import Nav from './Nav';
 import Footer from './Footer';
 
 const App = React.createClass({
-  
   render: function () {
     return (
       <div className="main-content">
