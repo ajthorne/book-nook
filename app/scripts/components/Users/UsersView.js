@@ -14,7 +14,7 @@ const UserView = React.createClass({
   componentDidMount: function () {
     store.users.fetch({
       success: function (response) {
-        console.log('success with fetching:', response);
+        // console.log('success with fetching:', response);
       }
     });
     store.users.on('update change', this.updateState)
@@ -25,7 +25,7 @@ const UserView = React.createClass({
   },
   render: function () {
     let userCollection = store.users.models
-    console.log('userCollection:', userCollection);
+    // console.log('userCollection:', userCollection);
     let users = userCollection.map(function (user, i, arr) {
       let userImg = user.attributes.imgUrl;
       let name = user.attributes.name;

@@ -1,11 +1,12 @@
 import React from 'react';
+import {Link} from 'react-router';
 
 const SingleUser = React.createClass({
   render: function () {
     return (
       <li>
         <img src={`${this.props.userImg}`}/>
-        <span>{this.props.name}</span>
+        <Link to={`/users/${this.props.id}`}><span>{this.props.name}</span></Link>
       </li>
     )
   }

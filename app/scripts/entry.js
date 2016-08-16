@@ -9,6 +9,7 @@ import store from './store';
 import settings from './settings';
 import UserView from './components/Users/UsersView';
 import BookView from './components/Books/BookView';
+import UserProfile from './components/Users/UserProfile';
 
 $(document).ajaxSend(function(evt, xhrAjax, jqueryAjax) {
   // console.log('intercepted');
@@ -35,6 +36,7 @@ const router = (
       <Route path="/login" component={Login}/>
       <Route path="/users" component={UserView}/>
       <Route path="/books" component={BookView}/>
+      <Route path="/users/:id" component={UserProfile}/>
     </Route>
   </Router>
 )
