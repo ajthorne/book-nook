@@ -8,6 +8,7 @@ const BookView = React.createClass({
     books: store.books.toJSON()}
   },
   updateState: function() {
+    // console.log('updating state...');
       this.setState({books: store.books.toJSON()});
   },
   componentDidMount: function () {
@@ -19,44 +20,60 @@ const BookView = React.createClass({
           q: book
         },
         success: function (response) {
-          console.log(response);
+          console.log('Here are your results for', `${book}`);
         }
       })
     store.books.on('update change', this.updateState)
   },
 
+  shouldComponentUpdate: function (nextProps, nextState) {
+    // console.log('old',this.props);
+    // console.log('new',nextProps);
+    let searchValue = nextProps.location.search;
+    let book = searchValue.substring(6);
+    if (this.props.location.search !== nextProps.location.search) {
+      console.log('fetching new collection', store.books);
+      store.books.fetch(
+        {
+          data: {
+            q: book
+          },
+          success: function (response) {
+            // console.log(arguments);
+          }
+      })
+    }
+    return true;
+},
+
   componentWillUnmount: function () {
     store.books.off('update change', this.updateState)
   },
   render: function () {
-    // console.log(store.books.get('items'));
-    let books;
-    if (store.books.get('items')) {
-      let bookCollection = store.books.get('items')
-      books = (bookCollection.map(function(book, i, arr) {
-          // console.log(book);
-          let title = book.volumeInfo.title;
-          let description = book.volumeInfo.description;
-          let id = book.id;
+    // console.log(store.books);
+      let bookCollection = store.books
+      let books = bookCollection.map(function(book, i, arr) {
+          // console.log('Book:', book);
+          let id = book.get('id');
+          let title = book.get('volumeInfo').title;
+          let description = book.get('volumeInfo').description;
           let authors;
           let bookImg;
 
-          if (book.volumeInfo.authors) {
-            authors = book.volumeInfo.authors.toString();
+          if (book.get('volumeInfo').authors) {
+            authors = book.get('volumeInfo').authors.toString();
           } else {
             authors = ''
           }
 
-          if (book.volumeInfo.imageLinks) {
-            bookImg = book.volumeInfo.imageLinks.smallThumbnail;
+          if (book.get('volumeInfo').imageLinks) {
+            bookImg = book.get('volumeInfo').imageLinks.smallThumbnail;
           } else  {
             bookImg = 'http://images.clipartpanda.com/book-20clip-20art-book_blue.png';
           }
       return <SingleBook key={i} title={title} description={description} authors={authors} bookImg={bookImg} id={id}/>
-    }))
-  } else {
-    books = ''
-  }
+    })
+
     return (
       <div>
         <h2>Search Results</h2>

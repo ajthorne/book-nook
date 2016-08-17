@@ -8,13 +8,13 @@ const Search = React.createClass({
     e.preventDefault();
     let book = this.refs.book.value;
     console.log('Your search:', this.refs.book.value);
-    hashHistory.push(`/books?book=${book}`);
+    hashHistory.push(`/books?book=${encodeURI(book)}`);
   },
   render: function () {
     return (
       <form className="book-search" onSubmit={this.submitHandler}>
         <input type="text" placeholder="Search for a book" ref="book"/>
-        <input type="submit" value="Search"/>
+        <button><i className="fa fa-search"></i></button>
       </form>
     )
   }
