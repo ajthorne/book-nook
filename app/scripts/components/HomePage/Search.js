@@ -8,17 +8,7 @@ const Search = React.createClass({
     e.preventDefault();
     let book = this.refs.book.value;
     console.log('Your search:', this.refs.book.value);
-    store.books.fetch(
-      {
-        data: {
-          q: book
-        },
-        success: function (response) {
-          // console.log(response.attributes.items);
-          hashHistory.push('/books');
-        }
-      }
-    )
+    hashHistory.push(`/books?book=${book}`);
   },
   render: function () {
     return (

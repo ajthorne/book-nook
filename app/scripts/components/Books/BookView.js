@@ -10,7 +10,18 @@ const BookView = React.createClass({
   updateState: function() {
       this.setState({books: store.books.toJSON()});
   },
-  componentWillMount: function () {
+  componentDidMount: function () {
+    let searchValue = this.props.location.search;
+    let book = searchValue.substring(6);
+    store.books.fetch(
+      {
+        data: {
+          q: book
+        },
+        success: function (response) {
+          console.log(response);
+        }
+      })
     store.books.on('update change', this.updateState)
   },
 
@@ -18,32 +29,34 @@ const BookView = React.createClass({
     store.books.off('update change', this.updateState)
   },
   render: function () {
-    let bookCollection = store.books.attributes.items
-    // console.log(store.books.attributes.items);
-    console.log(bookCollection);
-    let books  = bookCollection.map(function(book, i, arr) {
-      // console.log(book.volumeInfo);
-      let title = book.volumeInfo.title;
-      let description = book.volumeInfo.description;
-      let id = book.id;
-      let authors;
-      let bookImg;
+    // console.log(store.books.get('items'));
+    let books;
+    if (store.books.get('items')) {
+      let bookCollection = store.books.get('items')
+      books = (bookCollection.map(function(book, i, arr) {
+          // console.log(book);
+          let title = book.volumeInfo.title;
+          let description = book.volumeInfo.description;
+          let id = book.id;
+          let authors;
+          let bookImg;
 
-      if (book.volumeInfo.authors) {
-        authors = book.volumeInfo.authors.toString();
-      } else {
-        authors = ''
-      }
+          if (book.volumeInfo.authors) {
+            authors = book.volumeInfo.authors.toString();
+          } else {
+            authors = ''
+          }
 
-      if (book.volumeInfo.imageLinks) {
-        bookImg = book.volumeInfo.imageLinks.smallThumbnail;
-      } else  {
-        bookImg = 'http://images.clipartpanda.com/book-20clip-20art-book_blue.png';
-      }
-
+          if (book.volumeInfo.imageLinks) {
+            bookImg = book.volumeInfo.imageLinks.smallThumbnail;
+          } else  {
+            bookImg = 'http://images.clipartpanda.com/book-20clip-20art-book_blue.png';
+          }
       return <SingleBook key={i} title={title} description={description} authors={authors} bookImg={bookImg} id={id}/>
-    })
-
+    }))
+  } else {
+    books = ''
+  }
     return (
       <div>
         <h2>Search Results</h2>
