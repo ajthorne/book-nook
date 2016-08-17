@@ -1,0 +1,35 @@
+.users-holder {
+    margin-top: 13vh;
+    h2 {
+        text-align: center;
+    }
+
+    ul {
+      display: flex;
+      flex-flow: row;
+      flex-wrap: nowrap;
+      list-style-type: none;
+
+      li {
+        flex-basis: 20%;
+        padding: 2%;
+
+        a {
+          color: black;
+        }
+
+        p {
+          text-align: center;
+          margin-top: 0;
+        }
+
+        img {
+          width: 100%;
+          border-radius: 20%;
+          border: 2px solid black;
+        }
+
+      }
+
+    }
+}

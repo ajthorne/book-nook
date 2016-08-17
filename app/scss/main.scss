@@ -1,6 +1,17 @@
 @import 'partials/variables';
 
+html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 body {
+  height: 100%;
   font-family: helvetica;
-  margin-top: 8.5vh;
+
+  .container {
+    min-height: 100%;
+    position: relative;
+  }
 }

@@ -5,10 +5,10 @@ import React from 'react';
 const UserLibrary = React.createClass({
   render: function () {
     return (
-      <li>
-      <img src={`${this.props.bookImg}`}/>
-      <p>{this.props.title}</p>
-      <p>{this.props.authors}</p>
+      <li className="library-book-holder">
+      <img className="library-book-img" src={`${this.props.bookImg}`}/>
+      <p className="library-book-title">{this.props.title}</p>
+      <p className="library-book-author">{this.props.authors}</p>
       </li>
     )
   }

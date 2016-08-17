@@ -42,11 +42,11 @@ const UserProfile = React.createClass({
 
 
     return (
-      <div>
+      <div className="user-profile-container">
       <h2>{name}'s Profile</h2>
       <img className="user-profile-img" src={`${userImg}`}/>
       <ul>
-      {library}
+        {library}
       </ul>
       </div>
     )

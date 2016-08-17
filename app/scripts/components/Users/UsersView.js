@@ -34,9 +34,11 @@ const UserView = React.createClass({
       return <SingleUser key={i} userImg={userImg} name={name} id={id}/>
     })
     return (
-      <div>
+      <div className="users-holder">
       <h2>User List</h2>
-      {users}
+      <ul>
+        {users}
+      </ul>
       </div>
     )
   }

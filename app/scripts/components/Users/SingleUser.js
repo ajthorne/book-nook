@@ -6,7 +6,7 @@ const SingleUser = React.createClass({
     return (
       <li>
         <img src={`${this.props.userImg}`}/>
-        <Link to={`/users/${this.props.id}`}><span>{this.props.name}</span></Link>
+        <Link to={`/users/${this.props.id}`}><p>{this.props.name}</p></Link>
       </li>
     )
   }
