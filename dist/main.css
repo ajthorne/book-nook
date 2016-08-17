@@ -1,9 +1,9 @@
 nav {
   background: #F56F6C;
   box-sizing: border-box;
-  padding: 2%;
   position: fixed;
   opacity: 0.9;
+  padding: 12px;
   top: 0;
   left: 0;
   right: 0;
@@ -21,7 +21,7 @@ nav {
   display: inline-block;
   position: fixed;
   width: 14rem;
-  left: 43%;
+  left: 40%;
   top: 1.5%;
   border-radius: 5px;
   border: 1px solid white; }
@@ -45,9 +45,24 @@ nav {
   float: right;
   margin-left: 1rem;
   text-decoration: none;
-  color: black; }
+  color: white;
+  padding: 0 8px;
+  line-height: 33px;
+  font-size: 1.1rem; }
   .login-link:hover {
-    text-decoration: underline; }
+    color: #0C4C58; }
+
+.login-link:after {
+  content: '';
+  display: block;
+  height: 0.3rem;
+  width: 0;
+  background: transparent;
+  transition: width 0.5s ease, background-color 0.5s ease; }
+
+.login-link:hover:after {
+  width: 100%;
+  background: #0C4C58; }
 
 .header {
   background: linear-gradient(rgba(245, 111, 108, 0.3), rgba(245, 111, 108, 0.75)), url("../../assets/bookheader1.jpeg");
@@ -59,15 +74,16 @@ nav {
   border-bottom: 2px solid #252932; }
   .header h1 {
     font-family: 'Fredericka the Great', cursive;
-    padding-top: 11%;
+    padding-top: 15vh;
     color: white;
     font-size: 4.5rem;
     margin-bottom: 0;
     margin-top: 0; }
   .header h2 {
     color: white;
-    font-size: 2rem;
-    margin-top: 0.5rem; }
+    font-size: 2.3rem;
+    margin-top: 0.5rem;
+    font-family: 'Quicksand', sans-serif; }
   .header .users-btn {
     padding: 1.3%;
     font-size: 1.2rem;
@@ -95,13 +111,12 @@ nav {
 footer {
   background: #F56F6C;
   position: absolute;
-  bottom: 0;
+  bottom: -75px;
   opacity: 0.9;
   width: 100%;
   height: 10vh;
   border-top: 1px solid #252932;
-  text-align: center;
-  margin-top: 1rem; }
+  text-align: center; }
 
 .users-holder {
   margin-top: 12vh; }
@@ -127,6 +142,65 @@ footer {
         width: 100%;
         border-radius: 20%;
         border: 2px solid black; }
+
+.books-container {
+  margin-top: 13vh; }
+  .books-container h2 {
+    padding-bottom: 2%;
+    margin-left: 10%;
+    margin-right: 7%;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+    font-size: 2rem;
+    border-bottom: 2px solid #A7A9AC; }
+    .books-container h2 span {
+      color: #0C4C58; }
+  .books-container .book-results {
+    list-style-type: none;
+    padding-left: 10%;
+    padding-top: 2%; }
+    .books-container .book-results .single-book-holder {
+      display: inline-block;
+      width: 50%;
+      max-height: 50vh;
+      margin-bottom: 2rem; }
+    .books-container .book-results .single-book-img {
+      display: inline-block; }
+      .books-container .book-results .single-book-img img {
+        height: 200px;
+        width: 130px;
+        object-fit: cover;
+        margin-top: 1rem; }
+    .books-container .book-results .single-book-copy {
+      display: inline-block;
+      padding: 2%;
+      margin-left: 1%;
+      width: 60%;
+      vertical-align: top; }
+      .books-container .book-results .single-book-copy .single-book-title {
+        font-weight: bold;
+        margin: 0;
+        color: #0C4C58; }
+      .books-container .book-results .single-book-copy .single-book-author {
+        margin-top: 0;
+        font-style: italic; }
+      .books-container .book-results .single-book-copy .single-book-description {
+        height: 16vh;
+        overflow: scroll;
+        border: 2px solid #0C4C58;
+        padding: 2%;
+        line-height: 21px; }
+        .books-container .book-results .single-book-copy .single-book-description span {
+          font-weight: bold;
+          color: #252932; }
+      .books-container .book-results .single-book-copy .single-book-add {
+        width: 50%;
+        padding: 3%;
+        font-size: 1rem;
+        background: #0C4C58;
+        border: 0;
+        color: white;
+        float: right; }
 
 html {
   height: 100%;

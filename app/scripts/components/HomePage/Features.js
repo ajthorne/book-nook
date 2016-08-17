@@ -4,17 +4,26 @@ import store from '../../store';
 //shown on home page
 
 const Features = React.createClass({
+  signUpHandler: function () {
+    hashHistory.push('/login');
+  },
   clickHandler: function () {
     hashHistory.push('/users');
     },
 
   render: function () {
+    let headerBtn;
+    if (store.session.get('username')) {
+      headerBtn = <button className="users-btn" onClick={this.clickHandler}>Find Users</button>
+    } else {
+      headerBtn = <button className="users-btn" onClick={this.signUpHandler}>Sign in to start finding users</button>
+    }
     return (
       <div className="features-container">
         <div className="header">
           <h1>Book Nook</h1>
           <h2>Find your next best read or friend!</h2>
-          <button className="users-btn"onClick={this.clickHandler}>Find Users</button>
+          {headerBtn}
         </div>
         <div className="features-flex">
           <div className="solo-feature">

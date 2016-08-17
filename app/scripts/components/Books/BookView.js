@@ -13,7 +13,7 @@ const BookView = React.createClass({
   },
   componentDidMount: function () {
     let searchValue = this.props.location.search;
-    let book = searchValue.substring(6);
+    let book = decodeURI(searchValue.substring(6))
     store.books.fetch(
       {
         data: {
@@ -27,10 +27,8 @@ const BookView = React.createClass({
   },
 
   shouldComponentUpdate: function (nextProps, nextState) {
-    // console.log('old',this.props);
-    // console.log('new',nextProps);
     let searchValue = nextProps.location.search;
-    let book = searchValue.substring(6);
+    let book = decodeURI(searchValue.substring(6));
     if (this.props.location.search !== nextProps.location.search) {
       console.log('fetching new collection', store.books);
       store.books.fetch(
@@ -74,10 +72,13 @@ const BookView = React.createClass({
       return <SingleBook key={i} title={title} description={description} authors={authors} bookImg={bookImg} id={id}/>
     })
 
+    let searchValue = this.props.location.search;
+    let book = decodeURI(searchValue.substring(6));
+
     return (
-      <div>
-        <h2>Search Results</h2>
-        <ul>
+      <div className="books-container">
+        <h2>Search Results for <span>{book}</span></h2>
+        <ul className="book-results">
           {books}
         </ul>
       </div>

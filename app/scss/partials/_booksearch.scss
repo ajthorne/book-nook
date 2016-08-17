@@ -1,0 +1,84 @@
+.books-container {
+  margin-top: 13vh;
+
+  h2 {
+    padding-bottom: 2%;
+    margin-left: 10%;
+    margin-right: 7%;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+    font-size: 2rem;
+    border-bottom: 2px solid #A7A9AC;
+
+    span {
+      color: #0C4C58
+    }
+  }
+
+  .book-results {
+    list-style-type: none;
+    padding-left: 10%;
+    padding-top: 2%;
+
+    .single-book-holder {
+      display: inline-block;
+      width: 50%;
+      max-height: 50vh;
+      margin-bottom: 2rem;
+    }
+
+    .single-book-img {
+      display: inline-block;
+
+      img {
+        height: 200px;
+        width: 130px;
+        object-fit: cover;
+        margin-top: 1rem
+      }
+    }
+
+    .single-book-copy {
+      display: inline-block;
+      padding: 2%;
+      margin-left: 1%;
+      width: 60%;
+      vertical-align: top;
+
+      .single-book-title {
+        font-weight: bold;
+        margin: 0;
+        color: #0C4C58;
+      }
+
+      .single-book-author {
+        margin-top: 0;
+        font-style: italic;
+      }
+
+      .single-book-description {
+        span {
+          font-weight: bold;
+          color: #252932;
+        }
+
+        height: 16vh;
+        overflow: scroll;
+        border: 2px solid #0C4C58;
+        padding: 2%;
+        line-height: 21px;
+        // margin-bottom: 0;
+      }
+
+      .single-book-add {
+        width: 50%;
+        padding: 3%;
+        font-size: 1rem;
+        background: #0C4C58;
+        border: 0;
+        color: white;
+        float: right;
+      }
+    }
+  }
+}
