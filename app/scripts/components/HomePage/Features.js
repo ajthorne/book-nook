@@ -4,6 +4,21 @@ import store from '../../store';
 //shown on home page
 
 const Features = React.createClass({
+  getInitialState: function () {
+  return {session: store.session.toJSON()}
+  },
+
+  updateState: function() {
+  this.setState({session: store.session.toJSON()});
+  },
+
+  componentDidMount: function() {
+  store.session.on('update change', this.updateState);
+  },
+
+  componentWillUnmount: function () {
+  store.session.off('update change', this.updateState);
+  },
   signUpHandler: function () {
     hashHistory.push('/login');
   },
@@ -12,6 +27,7 @@ const Features = React.createClass({
     },
 
   render: function () {
+    // console.log(store.session.get('username'));
     let headerBtn;
     if (store.session.get('username')) {
       headerBtn = <button className="users-btn" onClick={this.clickHandler}>Find Users</button>
