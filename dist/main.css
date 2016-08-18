@@ -129,7 +129,7 @@ footer {
   .users-holder ul {
     display: flex;
     flex-flow: row;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     list-style-type: none; }
     .users-holder ul li {
       flex-basis: 10rem;
@@ -225,10 +225,20 @@ footer {
     .user-profile-container aside img {
       height: 8rem;
       width: 8rem;
-      margin-left: 10%;
+      margin-left: 17%;
       object-fit: contain;
       border-radius: 50%;
       border: 2px solid #252932; }
+    .user-profile-container aside button {
+      display: block;
+      padding: 4%;
+      font-size: 1rem;
+      color: white;
+      width: 50%;
+      margin: 0 auto;
+      margin-top: 1rem;
+      border: 0;
+      background-color: #0C4C58; }
   .user-profile-container h2 {
     text-align: center;
     font-family: 'Quicksand', sans-serif;

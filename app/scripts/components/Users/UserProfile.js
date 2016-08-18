@@ -36,10 +36,12 @@ const UserProfile = React.createClass({
     store.users.off('update change', this.updateState)
   },
   render: function () {
+    console.log(this.state);
     let userProfile = store.users.map(function(user, i, arr) {
       let name = user.get('name');
       let userImg = user.get('imgUrl');
-      return <UserAside key={i} name={name} userImg={userImg}/>
+      let username = user.get('username');
+      return <UserAside key={i} name={name} username={username} userImg={userImg}/>
     });
 
     let library = store.libraryBooks.map(function(book, i, arr) {
