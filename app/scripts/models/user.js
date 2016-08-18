@@ -13,22 +13,59 @@ const User = Backbone.Model.extend({
   followers: []
 },
 followUser: function (data, username) {
-  // console.log(data.username);
-  console.log('Thanks for following me!');
-  $.ajax({
-    type: 'POST',
-    url: `https://baas.kinvey.com/appdata/${settings.appId}/followers`,
-    data: JSON.stringify({username: data.username}),
-    contentType: 'application/json'
-  })
-  .then((response) => {
-    console.log(response);
-    this.set({
-      followers: this.get('followers').concat(username)
-    });
-    console.log(this.get('followers'));
+  // console.log(data);
+  let id = data.id
+  // console.log(id);
+  this.fetch({success: (model) => {
+    let followers = model.get('followers');
+    if (followers.length === 0) {
+      console.log('Thanks for following me!');
+      // console.log(this.get('id'));
+      $.ajax({
+        type: 'POST',
+        url: `https://baas.kinvey.com/appdata/${settings.appId}/followers`,
+        data: JSON.stringify({username: data.username}),
+        contentType: 'application/json',
+        success: (response) => {
+          console.log('followers', this.get('followers').concat(username));
+          // console.log(this);
+          model.save({
+            followers: followers.concat(username)
+          }, {
+            success: function (response) {
+              console.log(response);
+            }
+          });
+          // console.log(this.get('followers'));
+        }
+    })
+  }
+  }})
+  // let model = this.fetch(id);
+  // console.log(model);
+  // console.log(model.get('followers'));
 
-  })
+  // else if (this.get('followers').indexOf(this.get('name')) === -1) {
+  //   console.log('You haven\'t followed this person yet...');
+  //   $.ajax({
+  //     type: 'PUT',
+  //     url: `https://baas.kinvey.com/appdata/${settings.appId}/followers`,
+  //     data: JSON.stringify({username: data.username}),
+  //     contentType: 'application/json',
+  //     success: (response) => {
+  //       console.log(response);
+  //       // console.log(this);
+  //       this.save({
+  //         followers: this.get('followers').concat(username)
+  //       });
+  //       console.log(this.get('followers'));
+  //     }
+  // })
+  // } else {
+  //   console.log('You\'ve already followed this person...');
+  // }
+  // console.log(this.get('name'));
+
 },
 
 login: function (data, url) {
@@ -51,7 +88,7 @@ signup: function (data) {
 
 },
 parse: function(response) {
-  console.log('parsed data:', response)
+  // console.log('parsed data:', response)
     if (response) {
       return {
         username: response.username, _id: response._id, name: response.name, authtoken: response._kmd.authtoken
