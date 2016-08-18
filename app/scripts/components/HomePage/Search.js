@@ -9,6 +9,7 @@ const Search = React.createClass({
     let book = this.refs.book.value;
     console.log('Your search:', this.refs.book.value);
     hashHistory.push(`/books?book=${encodeURI(book)}`);
+    //need to clear the input field
 
   },
   render: function () {
@@ -22,4 +23,3 @@ const Search = React.createClass({
 });
 
 export default Search;
-// hashHistory.push(`/books?book=${encodeURI(book)}`);

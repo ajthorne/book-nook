@@ -14,11 +14,13 @@
       list-style-type: none;
 
       li {
-        flex-basis: 20%;
+        flex-basis: 10rem;
         padding: 2%;
 
         a {
-          color: black;
+          color: #0C4C58;
+          // text-decoration: none;
+          font-size: 1.3rem;
         }
 
         p {
@@ -27,9 +29,12 @@
         }
 
         img {
-          width: 100%;
-          border-radius: 20%;
-          border: 2px solid black;
+          height: 150px;
+          width: 150px;
+          margin-left: 1%;
+          object-fit: contain;
+          border-radius: 50%;
+          border: 2px solid #0C4C58;
         }
 
       }

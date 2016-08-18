@@ -52,7 +52,8 @@ const UserProfile = React.createClass({
     return (
       <div className="user-profile-container">
         {userProfile}
-      <ul>
+      <h2>My Library</h2>
+      <ul className="library-book-ul">
         {library}
       </ul>
       </div>

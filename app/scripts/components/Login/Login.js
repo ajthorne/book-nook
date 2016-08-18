@@ -28,7 +28,7 @@ const Login = React.createClass({
       },
   render: function () {
     return (
-      <div>
+      <div className="login-holder">
         <form onSubmit={this.loginHandler}>
           <h2>Login</h2>
           <input type="text" placeholder="Enter your username" ref="loginuser"/>

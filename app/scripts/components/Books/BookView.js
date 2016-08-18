@@ -8,7 +8,6 @@ const BookView = React.createClass({
     books: store.books.toJSON()}
   },
   updateState: function() {
-    // console.log('updating state...');
       this.setState({books: store.books.toJSON()});
   },
   componentDidMount: function () {

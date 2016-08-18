@@ -1,0 +1,119 @@
+//bookmark for aside background
+
+.user-profile-container {
+  margin-top: 13vh;
+
+  // aside:before {
+  //   bottom: -32%;
+  //   // height: 20rem;
+  //   width: 14.9rem;
+  //   height: 100%;
+  //   margin-left: -3%;
+  //   // width: 25.7%;
+  //   background-image:
+  //     linear-gradient(
+  //       -45deg,
+  //       transparent 50%,
+  //       #F56F6C 50%),
+  //     linear-gradient(
+  //       45deg,
+  //       transparent 50%,
+  //       #F56F6C 50%);
+  //   z-index: -1;
+  // }
+
+  // aside:after {
+  //   content: '';
+  //   display: block;
+  //   position: absolute;
+  //   height: 38rem;
+  //   width: 12rem;
+  //   left: 3rem;
+  //   top: 0;
+  //   border-style: dashed;
+  //   border-color: #0C4C58;
+  //   border-width: 0 2px;
+  //   z-index: -1
+  // }
+
+  // aside:before,
+  // aside:after{
+  //   content: '';
+  //   display: block;
+  //   position: absolute;
+  // }
+
+  aside {
+    float: left;
+    height: 100vh;
+    width: 13rem;
+    margin-left: 2rem;
+    padding-left: 3%;
+    margin-right: 2rem;
+    border-right: 2px dashed gray;
+    // position: absolute;
+    // background-color: #F56F6C;
+    // z-index: 0;
+    // background-image:
+    //     linear-gradient(
+    //       hsla(0, 0%, 100%, 0),
+    //       hsla(0, 0%, 100%, 0.5) 5px,
+    //       hsla(0, 0%, 100%, 0) 25px);
+    //   -webkit-filter: drop-shadow(0 2px 6px hsla(0, 0%, 0%, 0.75));
+    // box-sizing: border-box;
+
+    h2 {
+      text-align: left;
+      font-size: 1.5rem;
+      font-family: 'Quicksand', sans-serif;
+      color: #252932;
+    }
+
+    img {
+      height: 8rem;
+      width: 8rem;
+      margin-left: 10%;
+      object-fit: contain;
+      border-radius: 50%;
+      border: 2px solid #252932;
+    }
+  }
+
+  h2{
+  text-align: center;
+  font-family: 'Quicksand', sans-serif;
+  color: #0C4C58;
+}
+
+  .library-book-ul {
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+    list-style-type: none;
+    padding-left: 0;
+
+    li {
+      flex-basis: 22%;
+      margin-right: 1rem;
+      margin-bottom: 1rem;
+
+      img {
+        width: 130px;
+        height: 200px;
+        object-fit: cover;
+        // margin-left: 5%;
+      }
+
+      .library-book-title {
+        margin: 0;
+        font-size: 1.1rem;
+        font-weight: bold;
+      }
+
+      .library-book-author {
+        margin: 0;
+        font-style: italic;
+      }
+    }
+  }
+}

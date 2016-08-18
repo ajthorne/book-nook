@@ -9,7 +9,8 @@ nav {
   right: 0;
   width: 100%;
   height: 10vh;
-  border-bottom: 1px solid #252932; }
+  border-bottom: 1px solid #252932;
+  z-index: 1; }
 
 .home-link {
   text-decoration: none;
@@ -131,17 +132,21 @@ footer {
     flex-wrap: nowrap;
     list-style-type: none; }
     .users-holder ul li {
-      flex-basis: 20%;
+      flex-basis: 10rem;
       padding: 2%; }
       .users-holder ul li a {
-        color: black; }
+        color: #0C4C58;
+        font-size: 1.3rem; }
       .users-holder ul li p {
         text-align: center;
         margin-top: 0; }
       .users-holder ul li img {
-        width: 100%;
-        border-radius: 20%;
-        border: 2px solid black; }
+        height: 150px;
+        width: 150px;
+        margin-left: 1%;
+        object-fit: contain;
+        border-radius: 50%;
+        border: 2px solid #0C4C58; }
 
 .books-container {
   margin-top: 13vh; }
@@ -201,6 +206,65 @@ footer {
         border: 0;
         color: white;
         float: right; }
+
+.user-profile-container {
+  margin-top: 13vh; }
+  .user-profile-container aside {
+    float: left;
+    height: 100vh;
+    width: 13rem;
+    margin-left: 2rem;
+    padding-left: 3%;
+    margin-right: 2rem;
+    border-right: 2px dashed gray; }
+    .user-profile-container aside h2 {
+      text-align: left;
+      font-size: 1.5rem;
+      font-family: 'Quicksand', sans-serif;
+      color: #252932; }
+    .user-profile-container aside img {
+      height: 8rem;
+      width: 8rem;
+      margin-left: 10%;
+      object-fit: contain;
+      border-radius: 50%;
+      border: 2px solid #252932; }
+  .user-profile-container h2 {
+    text-align: center;
+    font-family: 'Quicksand', sans-serif;
+    color: #0C4C58; }
+  .user-profile-container .library-book-ul {
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+    list-style-type: none;
+    padding-left: 0; }
+    .user-profile-container .library-book-ul li {
+      flex-basis: 22%;
+      margin-right: 1rem;
+      margin-bottom: 1rem; }
+      .user-profile-container .library-book-ul li img {
+        width: 130px;
+        height: 200px;
+        object-fit: cover; }
+      .user-profile-container .library-book-ul li .library-book-title {
+        margin: 0;
+        font-size: 1.1rem;
+        font-weight: bold; }
+      .user-profile-container .library-book-ul li .library-book-author {
+        margin: 0;
+        font-style: italic; }
+
+.login-holder {
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 13vh;
+  border: 2px solid #F56F6C;
+  text-align: center;
+  padding: 2%; }
+  .login-holder h2 {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.7rem; }
 
 html {
   height: 100%;
