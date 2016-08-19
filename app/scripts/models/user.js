@@ -16,33 +16,34 @@ followUser: function (data, username) {
   // console.log(data);
   let id = data.id
   // console.log(id);
-  this.fetch({success: (model) => {
-    let followers = model.get('followers');
-    if (followers.length === 0) {
-      console.log('Thanks for following me!');
+  // this.fetch({success: (model) => {
+    // console.log(model);
+    // let followers = model.get('followers');
+    // if (followers.length === 0) {
+    //   console.log('Thanks for following me!');
       // console.log(this.get('id'));
-      $.ajax({
-        type: 'POST',
-        url: `https://baas.kinvey.com/appdata/${settings.appId}/followers`,
-        data: JSON.stringify({username: data.username}),
-        contentType: 'application/json',
-        success: (response) => {
-          console.log('followers', this.get('followers').concat(username));
-          // console.log(this);
-          model.save({
-            followers: followers.concat(username)
-          }, {
-            success: function (response) {
-              console.log(response);
-            }
-          });
+      // $.ajax({
+      //   type: 'POST',
+      //   url: `https://baas.kinvey.com/appdata/${settings.appId}/followers`,
+      //   data: JSON.stringify({username: data.username}),
+      //   contentType: 'application/json',
+      //   success: (response) => {
+      //     console.log('followers', this.get('followers').concat(username));
+      //     // console.log(this);
+      //     model.save({
+      //       followers: followers.concat(username)
+      //     }, {
+      //       success: function (response) {
+      //         console.log(response);
+      //       }
+      //     });
           // console.log(this.get('followers'));
-        }
-    })
-  }
-  }})
-  // let model = this.fetch(id);
-  // console.log(model);
+        // }
+    // })
+  // }
+  // }})
+  let model = this.fetch(id);
+  console.log(model);
   // console.log(model.get('followers'));
 
   // else if (this.get('followers').indexOf(this.get('name')) === -1) {

@@ -118,6 +118,9 @@ footer {
   height: 10vh;
   border-top: 1px solid #252932;
   text-align: center; }
+  footer .footer-copy {
+    color: white;
+    font-size: 1.3rem; }
 
 .users-holder {
   margin-top: 12vh; }
@@ -213,12 +216,11 @@ footer {
     float: left;
     height: 100vh;
     width: 13rem;
-    margin-left: 2rem;
+    margin-left: 1rem;
     padding-left: 3%;
-    margin-right: 2rem;
-    border-right: 2px dashed gray; }
+    margin-right: 3rem; }
     .user-profile-container aside h2 {
-      text-align: left;
+      text-align: center;
       font-size: 1.5rem;
       font-family: 'Quicksand', sans-serif;
       color: #252932; }

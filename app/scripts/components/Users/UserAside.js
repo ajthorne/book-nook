@@ -11,10 +11,11 @@ const UserAside = React.createClass({
       <aside>
         <h2>{this.props.name}'s Profile</h2>
         <img className="user-profile-img" src={`${this.props.userImg}`}/>
-        <button onClick={this.followHandler}><i className="fa fa-user-plus"></i> Follow</button>
       </aside>
     )
   }
 })
 
 export default UserAside;
+
+// <button onClick={this.followHandler}><i className="fa fa-user-plus"></i> Follow</button>

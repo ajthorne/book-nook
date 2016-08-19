@@ -29,12 +29,14 @@ const Nav = React.createClass({
     let navView;
 
     if (store.session.get('username')) {
+      let id = store.session.get('_id');
       navView = (
         <nav>
           <Link to="/" className="home-link">Book Nook</Link>
           <Search />
           <Link to="/" className="login-link" onClick={this.logOutHandler}>Log Out</Link>
           <Link to="/users" className="login-link">Users</Link>
+          <Link to={`/users/${id}`} className="login-link">My Profile</Link>
         </nav>
       )
     } else {
