@@ -12,7 +12,7 @@ const BookView = React.createClass({
   },
   componentDidMount: function () {
     let searchValue = this.props.location.search;
-    let book = decodeURI(searchValue.substring(6))
+    let book = decodeURI(searchValue.substring(6));
     store.books.fetch(
       {
         data: {
@@ -29,7 +29,7 @@ const BookView = React.createClass({
     let searchValue = nextProps.location.search;
     let book = decodeURI(searchValue.substring(6));
     if (this.props.location.search !== nextProps.location.search) {
-      console.log('fetching new collection', store.books);
+      // console.log('fetching new collection', store.books);
       store.books.fetch(
         {
           data: {

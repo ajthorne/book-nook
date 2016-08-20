@@ -2,6 +2,7 @@ import Backbone from 'backbone';
 import $ from 'jquery';
 import settings from '../settings';
 import { hashHistory } from 'react-router';
+import store from '../store';
 
 const User = Backbone.Model.extend({
   urlRoot: `https://baas.kinvey.com/user/${settings.appId}`,
@@ -15,58 +16,50 @@ const User = Backbone.Model.extend({
 followUser: function (data, username) {
   // console.log(data);
   let id = data.id
-  // console.log(id);
-  // this.fetch({success: (model) => {
-    // console.log(model);
-    // let followers = model.get('followers');
-    // if (followers.length === 0) {
-    //   console.log('Thanks for following me!');
-      // console.log(this.get('id'));
-      // $.ajax({
-      //   type: 'POST',
-      //   url: `https://baas.kinvey.com/appdata/${settings.appId}/followers`,
-      //   data: JSON.stringify({username: data.username}),
-      //   contentType: 'application/json',
-      //   success: (response) => {
-      //     console.log('followers', this.get('followers').concat(username));
-      //     // console.log(this);
-      //     model.save({
-      //       followers: followers.concat(username)
-      //     }, {
-      //       success: function (response) {
-      //         console.log(response);
-      //       }
-      //     });
-          // console.log(this.get('followers'));
-        // }
-    // })
-  // }
-  // }})
-  let model = this.fetch(id);
-  console.log(model);
-  // console.log(model.get('followers'));
+  // console.log(data.username);
+  let user = store.users.get(id);
+  console.log(user);
+  let followers = user.get('followers')
+  // console.log(followers);
 
-  // else if (this.get('followers').indexOf(this.get('name')) === -1) {
-  //   console.log('You haven\'t followed this person yet...');
-  //   $.ajax({
-  //     type: 'PUT',
-  //     url: `https://baas.kinvey.com/appdata/${settings.appId}/followers`,
-  //     data: JSON.stringify({username: data.username}),
-  //     contentType: 'application/json',
-  //     success: (response) => {
-  //       console.log(response);
-  //       // console.log(this);
-  //       this.save({
-  //         followers: this.get('followers').concat(username)
-  //       });
-  //       console.log(this.get('followers'));
-  //     }
-  // })
-  // } else {
-  //   console.log('You\'ve already followed this person...');
-  // }
-  // console.log(this.get('name'));
-
+    if (followers.length === 0) {
+      console.log('Thanks for following me!');
+      $.ajax({
+        type: 'POST',
+        url: `https://baas.kinvey.com/appdata/${settings.appId}/followers`,
+        data: JSON.stringify({username: data.username}),
+        contentType: 'application/json',
+        success: (response) => {
+          console.log('followers', followers.concat(username));
+          user.save({
+            followers: followers.concat(username)
+          }, {
+            success: function (response) {
+              console.log(response);
+            }
+          });
+        }
+    })
+  }
+  else if (followers.indexOf(this.get('username')) === -1) {
+    console.log('You haven\'t followed this person yet...');
+    $.ajax({
+      type: 'PUT',
+      url: `https://baas.kinvey.com/appdata/${settings.appId}/followers`,
+      data: JSON.stringify({username: data.username}),
+      contentType: 'application/json',
+      success: (response) => {
+        console.log(response);
+        user.set({
+          followers: followers.concat(username)
+        })},
+      error: (err) => {
+        console.log(err);
+      }
+  })
+  } else {
+    console.log('You\'ve already followed this person...');
+  }
 },
 
 login: function (data, url) {

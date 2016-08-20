@@ -10,7 +10,7 @@ const LibraryBook = Backbone.Model.extend({
     bookId: '',
     bookTitle: '',
     bookAuthors: '',
-    bookImg: ''
+    bookImg: '',
   }
 })
 

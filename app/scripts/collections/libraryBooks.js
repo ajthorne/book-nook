@@ -12,7 +12,7 @@ const LibraryBooks = Backbone.Collection.extend({
     let bookAuthors = props.authors
     let bookId = props.id;
     let userId = id;
-    console.log(props, id);
+    // console.log(props, id);
     // console.log(this);
     this.fetch({
         data: {query: JSON.stringify({
@@ -22,12 +22,14 @@ const LibraryBooks = Backbone.Collection.extend({
      success: (coll, response) => {
        console.log('success, here it is: ', response);
        if (response.length === 0) {
+         //if the book does not exist in the collection... then create it.
          this.create({
             userId: userId,
             bookId: bookId,
             bookTitle: bookTitle,
             bookAuthors: bookAuthors,
-            bookImg: bookImg
+            bookImg: bookImg,
+            userRead: true
        },
        {
        success: (response) => {
@@ -40,7 +42,7 @@ const LibraryBooks = Backbone.Collection.extend({
        }
      },
      error: (err) => {
-       console.log('an error occurred');
+       console.log('An error occurred adding this book');
      }
    })
   }
