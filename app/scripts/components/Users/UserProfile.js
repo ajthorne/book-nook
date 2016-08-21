@@ -2,6 +2,7 @@ import React from 'react';
 import store from '../../store';
 import UserLibrary from './UserLibrary';
 import UserAside from './UserAside';
+//my profile link bug --not moving to my profile if im on another users profile page
 
 const UserProfile = React.createClass({
   getInitialState: function () {
@@ -46,10 +47,12 @@ const UserProfile = React.createClass({
     });
 
     let library = store.libraryBooks.map(function(book, i, arr) {
+      let userId = book.get('userId');
+      let bookId = book.get('bookId');
       let title = book.get('bookTitle');
       let bookImg = book.get('bookImg');
       let authors = book.get('bookAuthors');
-      return <UserLibrary key={i} title={title} bookImg={bookImg} authors={authors}/>
+      return <UserLibrary key={i} title={title} bookImg={bookImg} authors={authors} userId={userId} bookId={bookId}/>
     });
 
     return (

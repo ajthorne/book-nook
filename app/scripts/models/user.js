@@ -14,14 +14,17 @@ const User = Backbone.Model.extend({
   followers: []
 },
 followUser: function (data, username) {
+  //data = this.props from user profile
   // console.log(data);
   let id = data.id
   // console.log(data.username);
   let user = store.users.get(id);
+  // user.fetch({success: (response) => {
+  //   console.log(response);
+  // }});
   console.log(user);
   let followers = user.get('followers')
-  // console.log(followers);
-
+  console.log(followers);
     if (followers.length === 0) {
       console.log('Thanks for following me!');
       $.ajax({

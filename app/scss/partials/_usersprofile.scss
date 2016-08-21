@@ -129,4 +129,17 @@
       }
     }
   }
+
+  .fa-heart, .fa-trash {
+    color: #A7A9AC;
+
+    &:hover {
+      color: #282828;
+    }
+  }
+
+  .fa-trash {
+    // float: right;
+    margin-left: 1rem;
+  }
 }

@@ -3,7 +3,9 @@ import Users from './collections/users';
 import Books from './collections/books';
 import LibraryBooks from './collections/libraryBooks';
 import LibraryBook from './models/libraryBook';
+import Favorites from './collections/favorites';
 
+//stores all instances of necessary models and collections
 let store = {
   session: new User(),
   //access using store.user
@@ -17,8 +19,12 @@ let store = {
   libraryBook: new LibraryBook(),
   //access using store.libraryBook
 
-  libraryBooks: new LibraryBooks()
+  libraryBooks: new LibraryBooks(),
   //access using store.libraryBooks
+
+  favorites: new Favorites()
+  //access using store.favorites
+
 }
 
 export default store;
