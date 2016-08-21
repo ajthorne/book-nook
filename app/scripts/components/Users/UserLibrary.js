@@ -4,6 +4,10 @@ import store from '../../store';
 
 
 const UserLibrary = React.createClass({
+  deleteBook: function () {
+    store.libraryBooks.deleteBook(this.props)
+  },
+
   favHandler: function () {
     store.favorites.addFav(this.props, store.session.get('_id'));
     //change to red when favorited

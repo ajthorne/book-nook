@@ -47,12 +47,13 @@ const UserProfile = React.createClass({
     });
 
     let library = store.libraryBooks.map(function(book, i, arr) {
+      let id = book.get('_id')
       let userId = book.get('userId');
       let bookId = book.get('bookId');
       let title = book.get('bookTitle');
       let bookImg = book.get('bookImg');
       let authors = book.get('bookAuthors');
-      return <UserLibrary key={i} title={title} bookImg={bookImg} authors={authors} userId={userId} bookId={bookId}/>
+      return <UserLibrary key={i} title={title} bookImg={bookImg} authors={authors} userId={userId} id={id} bookId={bookId}/>
     });
 
     return (

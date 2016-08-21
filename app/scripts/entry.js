@@ -10,6 +10,7 @@ import settings from './settings';
 import UserView from './components/Users/UsersView';
 import BookView from './components/Books/BookView';
 import UserProfile from './components/Users/UserProfile';
+import UserFavorites from './components/Users/UserFavorites';
 
 $(document).ajaxSend(function(evt, xhrAjax, jqueryAjax) {
   // console.log('intercepted');
@@ -37,8 +38,15 @@ const router = (
       <Route path="/users" component={UserView}/>
       <Route path="/books" component={BookView}/>
       <Route path="/users/:id" component={UserProfile}/>
+      <Route path="/users/:id/favorites" component={UserFavorites}/>
     </Route>
   </Router>
 )
 
 ReactDOM.render(router, document.querySelector('.container'));
+
+//QUESTIONS
+//Added, Followed, and changing heart color when favorited
+//Reflecting this from collection
+
+//Rendering userprofile children to show with aside

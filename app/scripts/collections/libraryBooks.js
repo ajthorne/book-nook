@@ -45,7 +45,16 @@ const LibraryBooks = Backbone.Collection.extend({
        console.log('An error occurred adding this book');
      }
    })
-  }
+ },
+ deleteBook: function (data) {
+   let id = data.id
+   let model = this.get(id);
+   console.log(model);
+   console.log('Deleting from your collection...');
+   model.destroy({success: function (response) {
+     console.log(response);
+   }});
+ }
 })
 
 export default LibraryBooks;
