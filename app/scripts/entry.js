@@ -11,6 +11,8 @@ import UserView from './components/Users/UsersView';
 import BookView from './components/Books/BookView';
 import UserProfile from './components/Users/UserProfile';
 import UserFavorites from './components/Users/UserFavorites';
+import UserLibraryView from './components/Users/UserLibraryView';
+import UserPosts from './components/Users/UserPosts';
 
 $(document).ajaxSend(function(evt, xhrAjax, jqueryAjax) {
   // console.log('intercepted');
@@ -37,8 +39,11 @@ const router = (
       <Route path="/login" component={Login}/>
       <Route path="/users" component={UserView}/>
       <Route path="/books" component={BookView}/>
-      <Route path="/users/:id" component={UserProfile}/>
-      <Route path="/users/:id/favorites" component={UserFavorites}/>
+      <Route path="/users/:id" component={UserProfile}>
+        <IndexRoute component={UserLibraryView}/>
+        <Route path="/users/:id/favorites" component={UserFavorites}/>
+        <Route path="/users/:id/posts" component={UserPosts}/>
+      </Route>
     </Route>
   </Router>
 )
@@ -49,4 +54,4 @@ ReactDOM.render(router, document.querySelector('.container'));
 //Added, Followed, and changing heart color when favorited
 //Reflecting this from collection
 
-//Rendering userprofile children to show with aside
+//Following is not registering that that user has followers and just rewriting over the previous follower

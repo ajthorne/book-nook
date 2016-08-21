@@ -4,6 +4,7 @@ import Books from './collections/books';
 import LibraryBooks from './collections/libraryBooks';
 import LibraryBook from './models/libraryBook';
 import Favorites from './collections/favorites';
+import WallPosts from './collections/wallposts';
 
 //stores all instances of necessary models and collections
 let store = {
@@ -22,9 +23,11 @@ let store = {
   libraryBooks: new LibraryBooks(),
   //access using store.libraryBooks
 
-  favorites: new Favorites()
+  favorites: new Favorites(),
   //access using store.favorites
 
+  wallPosts: new WallPosts()
+  //access using store.wallposts
 }
 
 export default store;

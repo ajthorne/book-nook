@@ -46,23 +46,10 @@ const UserProfile = React.createClass({
       return <UserAside key={i} id={id} name={name} username={username} userImg={userImg}/>
     });
 
-    let library = store.libraryBooks.map(function(book, i, arr) {
-      let id = book.get('_id')
-      let userId = book.get('userId');
-      let bookId = book.get('bookId');
-      let title = book.get('bookTitle');
-      let bookImg = book.get('bookImg');
-      let authors = book.get('bookAuthors');
-      return <UserLibrary key={i} title={title} bookImg={bookImg} authors={authors} userId={userId} id={id} bookId={bookId}/>
-    });
-
     return (
       <div className="user-profile-container">
         {userProfile}
-      <h2>My Library</h2>
-      <ul className="library-book-ul">
-        {library}
-      </ul>
+        {this.props.children}
       </div>
     )
   }
