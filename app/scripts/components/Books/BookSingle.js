@@ -5,49 +5,28 @@ import store from '../../store';
 
 
 const SingleBook = React.createClass({
-  getInitialState: function () {
-    return {notAdded: 'Add to My Library',
-  libraryBooks: store.libraryBooks.toJSON()}
-  },
-
   clickHandler: function () {
     console.log(this.props);
     store.libraryBooks.addBook(this.props, store.session.get('_id'));
-    this.setState({notAdded: 'Added to Library'});
-  },
-
-  updateState: function() {
-      this.setState({libraryBooks: store.libraryBooks.toJSON()});
-  },
-
-  componentDidMount: function () {
-    let userId = store.session.get('_id');
-    store.libraryBooks.fetch({
-    data: {query: JSON.stringify({
-      userId: userId,
-    })}
-  })
-    store.libraryBooks.on('update change', this.updateState)
-  },
-
-  componentWillUnmount: function () {
-    store.libraryBooks.off('update change', this.updateState)
   },
 
   render: function () {
-    // console.log(this.state.libraryBooks);
-    // let added;
-    // let libraryBtn = this.state.libraryBooks.map(function(book, i, arr) {
-    //   added = book.userRead;
-    //   return added
-    // });
+    // console.log(this.props);
+    // console.log(this.props.state);
+    let userBooks = this.props.state.filter((book, i, arr) => {
+      // console.log('comparing current user to book user');
+      return book.bookId === this.props.id
+    }).filter((thisBook) => {
+      return thisBook.userId === store.session.get('_id');
+    })
+    // console.log(userBooks);
 
     let addBtn;
-
-    if (store.session.get('username')) {
-      addBtn = <button className="single-book-add" onClick={this.clickHandler}>{this.state.notAdded}</button>
-    } else if (store.session.get('username') && ({added} === true)) {
-      addBtn = <button className="single-book-add" onClick={this.clickHandler}>Added to Library</button>
+    if (store.session.get('username') && !userBooks.length) {
+      addBtn = <button className="single-book-add" onClick={this.clickHandler}>Add to Library</button>
+    }
+    else if (store.session.get('username') && (userBooks.length)) {
+      addBtn = <button className="single-book-add"><i className="fa fa-check"></i> Added to Library</button>
     } else {
       addBtn = ''
     }

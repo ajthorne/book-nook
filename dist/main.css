@@ -270,6 +270,8 @@ footer {
     color: #A7A9AC; }
     .user-profile-container .fa-heart:hover, .user-profile-container .fa-trash:hover {
       color: #282828; }
+  .user-profile-container .favorited {
+    color: red; }
   .user-profile-container .fa-trash {
     margin-left: 1rem; }
 

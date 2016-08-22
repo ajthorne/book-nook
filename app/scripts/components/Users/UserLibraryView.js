@@ -6,11 +6,13 @@ import UserLibrary from './UserLibrary';
 const UserLibraryView = React.createClass({
   getInitialState: function () {
   return {
-    libraryBooks: store.libraryBooks.toJSON()}
+    libraryBooks: store.libraryBooks.toJSON(),
+    favorites: store.favorites.toJSON()}
   },
 
   updateState: function() {
-      this.setState({libraryBooks: store.libraryBooks.toJSON()});
+      this.setState({libraryBooks: store.libraryBooks.toJSON(),
+      favorites: store.favorites.toJSON()});
   },
 
   componentDidMount: function () {
@@ -20,21 +22,43 @@ const UserLibraryView = React.createClass({
       userId: userId,
     })}
   })
+  store.favorites.fetch({
+  data: {query: JSON.stringify({
+    userId: userId,
+   })}
+})
     store.libraryBooks.on('update change', this.updateState)
+    store.favorites.on('update change', this.updateState)
   },
 
   componentWillUnmount: function () {
     store.libraryBooks.off('update change', this.updateState)
+    store.favorites.off('update change', this.updateState)
   },
   render: function () {
-    let library = store.libraryBooks.map(function(book, i, arr) {
+    let id = this.props.params.id;
+    // console.log(this.state);
+    // console.log(this.state.favorites);
+    let library = store.libraryBooks.map((book, i, arr) => {
+
+      // console.log(favorite);
+      // .filter((thisBook) => {
+      //   return thisBook.userId === store.session.get('_id');
+      // })
+
+      // console.log(this.state);
       let id = book.get('_id')
       let userId = book.get('userId');
       let bookId = book.get('bookId');
       let title = book.get('bookTitle');
       let bookImg = book.get('bookImg');
       let authors = book.get('bookAuthors');
-      return <UserLibrary key={i} title={title} bookImg={bookImg} authors={authors} userId={userId} id={id} bookId={bookId}/>
+
+      let favorited = this.state.favorites.filter((fav, i, arr) => {
+          return fav.bookId === bookId;
+        })
+
+      return <UserLibrary key={i} favorited={favorited} title={title} bookImg={bookImg} authors={authors} userId={userId} id={id} bookId={bookId}/>
     });
 
     return (

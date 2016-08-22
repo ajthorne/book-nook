@@ -1,5 +1,6 @@
 import React from 'react';
 import store from '../../store';
+import $ from 'jquery';
 // <UserLibrary key={i} title={title} bookImg={bookImg} authors={authors}/>
 
 
@@ -8,16 +9,22 @@ const UserLibrary = React.createClass({
     store.libraryBooks.deleteBook(this.props)
   },
 
-  favHandler: function () {
+  favHandler: function (e) {
     store.favorites.addFav(this.props, store.session.get('_id'));
     //change to red when favorited
   },
 
 
   render: function () {
-    // console.log(this.props);
+    console.log(this.props.favorited);
     let optionBtns;
-    if (store.session.get('_id') === this.props.userId) {
+    if ((store.session.get('_id') === this.props.userId) && (this.props.favorited.length)) {
+      optionBtns = (
+            <div>
+              <i onClick={this.favHandler} className="fa fa-heart favorited"></i>
+              <i onClick={this.deleteBook} className="fa fa-trash"></i>
+            </div>)
+    } else if (store.session.get('_id') === this.props.userId) {
       optionBtns = (
             <div>
               <i onClick={this.favHandler} className="fa fa-heart"></i>
