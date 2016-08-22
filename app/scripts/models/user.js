@@ -62,6 +62,8 @@ followUser: function (data, username) {
 },
 
 unfollowUser: function (data, username) {
+  console.log(data);
+
   // console.log(data.id);
   // console.log(username);
     let id = data.id

@@ -50,7 +50,7 @@ const UserPosts = React.createClass({
     return (
       <div>
         <h2>My Posts</h2>
-        <ul>
+        <ul className="posts-holder">
           {posts}
         </ul>
         <form onSubmit={this.submitPost}>

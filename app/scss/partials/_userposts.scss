@@ -1,0 +1,33 @@
+.posts-holder {
+  list-style-type: none;
+
+  .single-post-holder {
+    margin-bottom: 2rem;
+    // border: 2px solid black;
+    float: left;
+    // padding: 1%;
+    width: 70%;
+
+    .single-post-title {
+      // text-transform: uppercase;
+      // font-weight: bold;
+      border-bottom: 2px solid #0C4C58;
+      font-size: 1.3rem;
+      // color: white;
+      letter-spacing: -1px;
+      padding: 1%;
+      // background: #0C4C58;
+      margin-top: 0;
+
+    }
+
+    .single-post-body {
+      padding: 2%;
+    }
+
+    .single-post-timestamp {
+      text-align: right;
+      margin-bottom: 0;
+    }
+  }
+}

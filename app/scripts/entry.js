@@ -51,3 +51,4 @@ const router = (
 ReactDOM.render(router, document.querySelector('.container'));
 
 //QUESTIONS
+//getting id of follower to delete

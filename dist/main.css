@@ -286,6 +286,24 @@ footer {
     font-family: 'Quicksand', sans-serif;
     font-size: 1.7rem; }
 
+.posts-holder {
+  list-style-type: none; }
+  .posts-holder .single-post-holder {
+    margin-bottom: 2rem;
+    float: left;
+    width: 70%; }
+    .posts-holder .single-post-holder .single-post-title {
+      border-bottom: 2px solid #0C4C58;
+      font-size: 1.3rem;
+      letter-spacing: -1px;
+      padding: 1%;
+      margin-top: 0; }
+    .posts-holder .single-post-holder .single-post-body {
+      padding: 2%; }
+    .posts-holder .single-post-holder .single-post-timestamp {
+      text-align: right;
+      margin-bottom: 0; }
+
 html {
   height: 100%;
   margin: 0;
