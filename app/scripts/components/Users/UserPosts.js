@@ -64,3 +64,7 @@ const UserPosts = React.createClass({
 })
 
 export default UserPosts;
+
+//to do
+//make new post into modal
+//add icon for new post to top right side

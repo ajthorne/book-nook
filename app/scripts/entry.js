@@ -53,5 +53,5 @@ ReactDOM.render(router, document.querySelector('.container'));
 //QUESTIONS
 //Added, Followed, and changing heart color when favorited
 //Reflecting this from collection
-
-//Following is not registering that that user has followers and just rewriting over the previous follower
+//fetch the library books when they log in
+//check if book is by bookId

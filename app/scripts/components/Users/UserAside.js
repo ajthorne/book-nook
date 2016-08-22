@@ -4,16 +4,18 @@ import {Link } from 'react-router';
 
 const UserAside = React.createClass({
   followHandler: function () {
-    // console.log(this.props);
     store.session.followUser(this.props, store.session.get('username'));
   },
   render: function () {
-    // console.log(this.props);
+    let id = this.props.id;
+    let user = store.users.get(id);
     let followBtn;
-    if (store.session.get('_id') === this.props.id) {
+    if (store.session.get('_id') === id) {
       followBtn = ''
-    } else {
+    } else if (user.get('followers').indexOf(store.session.get('username')) === -1) {
       followBtn = <button onClick={this.followHandler}><i className="fa fa-user-plus"></i> Follow</button>
+    } else {
+      followBtn = <button onClick={this.deleteFollow}> Following</button>
     }
 
     return (

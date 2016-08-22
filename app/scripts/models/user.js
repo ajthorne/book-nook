@@ -19,12 +19,9 @@ followUser: function (data, username) {
   let id = data.id
   // console.log(data.username);
   let user = store.users.get(id);
-  // user.fetch({success: (response) => {
-  //   console.log(response);
-  // }});
-  console.log(user);
+  // console.log('user', user.toJSON());
   let followers = user.get('followers')
-  console.log(followers);
+  // console.log(followers);
     if (followers.length === 0) {
       console.log('Thanks for following me!');
       $.ajax({
@@ -47,15 +44,16 @@ followUser: function (data, username) {
   else if (followers.indexOf(this.get('username')) === -1) {
     console.log('You haven\'t followed this person yet...');
     $.ajax({
-      type: 'PUT',
+      type: 'POST',
       url: `https://baas.kinvey.com/appdata/${settings.appId}/followers`,
       data: JSON.stringify({username: data.username}),
       contentType: 'application/json',
       success: (response) => {
-        console.log(response);
-        user.set({
+        user.save({
           followers: followers.concat(username)
-        })},
+        })
+        // console.log(user.toJSON())
+      },
       error: (err) => {
         console.log(err);
       }
@@ -86,9 +84,11 @@ signup: function (data) {
 },
 parse: function(response) {
   // console.log('parsed data:', response)
+  //anything that you want returned from the user, you need to set here!
     if (response) {
       return {
-        username: response.username, _id: response._id, name: response.name, authtoken: response._kmd.authtoken
+        username: response.username, _id: response._id, name: response.name, authtoken: response._kmd.authtoken,
+        followers: response.followers, imgUrl: response.imgUrl
       };
     }
   },

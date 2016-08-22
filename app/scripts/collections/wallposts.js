@@ -9,7 +9,9 @@ const WallPosts = Backbone.Collection.extend({
   createPost: function (data) {
     console.log('Submitting post....');
          this.create(data)
-  }
+  },
+
+  // comparator: this.get
 })
 
 export default WallPosts;
