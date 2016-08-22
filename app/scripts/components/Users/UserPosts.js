@@ -1,6 +1,7 @@
 import React from 'react';
 import store from '../../store';
 import UserSinglePost from './UserSinglePost';
+import moment from 'moment';
 
 const UserPosts = React.createClass({
   getInitialState: function () {
@@ -43,7 +44,7 @@ const UserPosts = React.createClass({
       let userId = post.get('userId');
       let body = post.get('body');
       let title = post.get('title');
-      let timestamp = post.get('_kmd').lmt
+      let timestamp = moment(post.get('_kmd').lmt).format('MMMM Do YYYY, h:mm:ss a')
       return <UserSinglePost key={i} title={title} userId={userId} id={id} body={body} timestamp={timestamp}/>
     });
     return (
