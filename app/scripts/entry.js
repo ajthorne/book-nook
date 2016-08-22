@@ -51,7 +51,3 @@ const router = (
 ReactDOM.render(router, document.querySelector('.container'));
 
 //QUESTIONS
-//Added, Followed, and changing heart color when favorited
-//Reflecting this from collection
-//fetch the library books when they log in
-//check if book is by bookId
