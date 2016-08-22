@@ -58,10 +58,36 @@ followUser: function (data, username) {
         console.log(err);
       }
   })
-  } else {
-    console.log('You\'ve already followed this person...');
   }
 },
+
+unfollowUser: function (data, username) {
+  // console.log(data.id);
+  // console.log(username);
+    let id = data.id
+    let model = store.users.get(id).toJSON();
+    let followers = model.followers
+    let follower = followers.indexOf(username)
+    console.log(follower);
+    console.log(followers.splice(follower, 1));
+    console.log(followers);
+
+    //need to get id of follower to delete
+
+
+    $.ajax({
+      type: 'DELETE',
+      url: `https://baas.kinvey.com/appdata/${settings.appId}/followers`,
+      // data: JSON.stringify({username: username}),
+      dataType: 'application/json',
+      success: (response) => {
+        console.log(response);
+      },
+      error: (err) => {
+        console.log(err);
+      }
+  })
+  },
 
 login: function (data, url) {
   this.save(data,
