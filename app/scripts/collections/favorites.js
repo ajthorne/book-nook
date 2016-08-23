@@ -12,7 +12,7 @@ const Favorites = Backbone.Collection.extend({
         let bookAuthors = props.authors
         let bookId = props.bookId;
         let userId = id;
-        // console.log(props, id);
+        console.log(props, id);
         // console.log(this);
         this.fetch({
             data: {
@@ -35,19 +35,18 @@ const Favorites = Backbone.Collection.extend({
                     }, {
                         success: (response) => {
                             console.log('You\'ve successfully added this book to your favorites!');
-                            console.log(response);
+                            // console.log(response);
                         }
                     })
                 } else {
-                    console.log('Sorry, this book is already a favorite!');
-                    console.log(this.get(bookId));
-
-                    //  let id = data.id
-                    //  let model = this.get(id);
-                    // //  console.log(model);
-                    //  model.destroy({success: function (response) {
-                    //    console.log('Deleting from your collection...');
-                    //  }});
+                    let modelId = response[0]._id;
+                    let model = this.get(modelId);
+                    // console.log(model);
+                    model.destroy({
+                        success: function(response) {
+                            console.log('I\'m no longer a favorite :(');
+                        }
+                    });
                 }
             },
             error: (err) => {

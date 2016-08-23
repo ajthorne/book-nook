@@ -83,12 +83,11 @@ const User = Backbone.Model.extend({
                     success: (response) => {
                         let followerId = response[0]._id;
                         // console.log(followerId);
-                        // let follower = followers.indexOf(username);
                         // console.log(follower);
                         // console.log(_.without(followers, username));
-
                         user.save({
                                 followers: _.without(followers, username)
+                                //return new array without the username of person who unfollowed
                             }, {
                                 success: (response) => {
                                     console.log("DELETED!!");
