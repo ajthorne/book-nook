@@ -6,11 +6,14 @@ import moment from 'moment';
 const UserPosts = React.createClass({
   getInitialState: function () {
   return {
-    favorites: store.wallPosts.toJSON()}
+    wallPosts: store.wallPosts.toJSON(),
+    comments: store.comments.toJSON(),
+    showModal: false}
   },
 
   updateState: function() {
-      this.setState({favorites: store.wallPosts.toJSON()});
+      this.setState({wallPosts: store.wallPosts.toJSON(),
+      comments: store.comments.toJSON()});
   },
 
   componentDidMount: function () {
@@ -21,11 +24,18 @@ const UserPosts = React.createClass({
     })}
   })
     store.wallPosts.on('update change', this.updateState)
+    store.comments.on('update change', this.updateState)
   },
 
   componentWillUnmount: function () {
     store.wallPosts.off('update change', this.updateState)
+    store.comments.off('update change', this.updateState)
   },
+
+  toggleModal: function () {
+  this.setState({showModal: !this.state.showModal})
+  console.log('hi');
+},
 
   submitPost: function (e) {
     e.preventDefault();
@@ -39,6 +49,19 @@ const UserPosts = React.createClass({
   },
 
   render: function () {
+    let modal;
+    if (this.state.showModal) {
+      modal = (
+        <div className="modal-container">
+        <form className="modal" onSubmit={this.submitPost}>
+          <button className="cancel-btn" onClick={this.toggleModal}><i className="fa fa-remove"></i></button>
+          <input className="post-title" type="text" placeholder="Enter a title" ref="title"/>
+          <input className="post-body" type="text" placeholder="Enter text" ref="bodyText"/>
+          <input className="post-btn" type="submit" value="Create Post"/>
+       </form>
+      </div>)
+     }
+
     let posts = store.wallPosts.map(function(post, i, arr) {
       let id = post.get('_id')
       let userId = post.get('userId');
@@ -50,14 +73,11 @@ const UserPosts = React.createClass({
     return (
       <div className="posts-container">
         <h2>My Posts</h2>
+        <button onClick={this.toggleModal}><i className="fa fa-edit"></i> New Post</button>
         <ul className="posts-holder">
           {posts}
         </ul>
-        <form onSubmit={this.submitPost}>
-          <input type="text" placeholder="Enter a title" ref="title"/>
-          <input type="text" placeholder="Enter text" ref="bodyText"/>
-          <input type="submit" value="Create Post"/>
-        </form>
+        {modal}
       </div>
     )
   }

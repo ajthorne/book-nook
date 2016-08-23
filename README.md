@@ -97,7 +97,10 @@
 ###Libraries
 1. Backbone
 2. JQuery
+3. Underscore
 
+###Credits
+1. Designs inspired by Twitter and OverDrive
 
 ###Special Features
 1. Geolocation

@@ -53,3 +53,4 @@ ReactDOM.render(router, document.querySelector('.container'));
 //QUESTIONS
 //comments and wallposts are join table
 //comments should be a separate collection that refers to wall posts
+//where to fetch comments collection and how to render for each specific post??

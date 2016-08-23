@@ -282,6 +282,18 @@ footer {
     color: red; }
   .user-profile-container .fa-trash {
     margin-left: 1rem; }
+  .user-profile-container .modal-container {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    top: -1rem;
+    bottom: -1rem;
+    left: 0;
+    right: 0; }
 
 .login-holder {
   width: 50%;
@@ -302,7 +314,7 @@ footer {
   list-style-type: none;
   padding: 0; }
   .posts-holder .single-post-holder {
-    background: linear-gradient(rgba(245, 111, 108, 0.3), rgba(245, 111, 108, 0.75)), url("https://s-media-cache-ak0.pinimg.com/736x/41/83/b9/4183b998758372ee14efaa4b2a430b4c.jpg");
+    background: linear-gradient(rgba(245, 111, 108, 0.3), rgba(245, 111, 108, 0.75));
     margin-bottom: 2rem;
     width: 100%;
     border-bottom: 2px solid black;

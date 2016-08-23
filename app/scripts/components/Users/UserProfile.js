@@ -50,14 +50,14 @@ const UserProfile = React.createClass({
                 })
             }
         });
+        store.libraryBooks.fetch({
+            data: {
+                query: JSON.stringify({ 
+                    userId: user,
+                })
+            }
+        })
     }
-    store.libraryBooks.fetch({
-        data: {
-            query: JSON.stringify({ 
-                userId: user,
-            })
-        }
-    })
     return true;
 },
   render: function () {
