@@ -37,7 +37,15 @@ const UserSinglePost = React.createClass({
                       <i className="fa fa-trash"></i>
                     </div>
     } else {
-      optionBtns = <i className="fa fa-comment-o" onClick={this.toggleComments}></i>
+      let commentNumber = Number(this.props.comments.length);
+      if (commentNumber > 1){
+        optionBtns = <span><i className="fa fa-comment-o" onClick={this.toggleComments}></i> {commentNumber} Comments</span>
+      } else if (commentNumber === 1) {
+        optionBtns = <span><i className="fa fa-comment-o" onClick={this.toggleComments}></i> {commentNumber} Comment</span>
+      }
+      else {
+        optionBtns = <span><i className="fa fa-comment-o" onClick={this.toggleComments}></i> Add a Comment</span>
+      }
     }
 
     let commentArea = []
@@ -55,6 +63,11 @@ const UserSinglePost = React.createClass({
         let timestamp = moment(comment._kmd.lmt).format('MMMM Do YYYY, h:mm a')
         commentArea.push(<UserComments key={i} name={name} commentBody={commentBody} timestamp={timestamp} id={id}/>);
       })
+    } else if (this.state.showComments) {
+      commentArea = [<form className="comment-box" key='form'>
+              <input type="text" placeholder="What's on your mind?" key='comment' ref="commentBody"/>
+              <input type="submit" key='submit' value="Add" onClick={this.commentHandler}/>
+              </form>]
     }
     return (
       <li className="single-post-holder">
