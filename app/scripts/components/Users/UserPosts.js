@@ -23,6 +23,13 @@ const UserPosts = React.createClass({
       userId: userId,
     })}
   })
+
+  store.comments.fetch({
+    data: {query: JSON.stringify({
+      userId: userId,
+    })}
+  })
+
     store.wallPosts.on('update change', this.updateState)
     store.comments.on('update change', this.updateState)
   },
@@ -49,6 +56,7 @@ const UserPosts = React.createClass({
   },
 
   render: function () {
+    // console.log(this.state.comments);
     let modal;
     if (this.state.showModal) {
       modal = (
@@ -62,13 +70,17 @@ const UserPosts = React.createClass({
       </div>)
      }
 
-    let posts = store.wallPosts.map(function(post, i, arr) {
-      let id = post.get('_id')
+    let posts = store.wallPosts.map((post, i, arr) =>  {
+      let comments = this.state.comments.filter(function (comment, i, arr) {
+        return comment.wallPostId === post.get('_id')
+      });
+      let id = post.get('_id');
+      // console.log(id);
       let userId = post.get('userId');
       let body = post.get('body');
       let title = post.get('title');
       let timestamp = moment(post.get('_kmd').lmt).format('MMMM Do YYYY, h:mm:ss a')
-      return <UserSinglePost key={i} title={title} userId={userId} id={id} body={body} timestamp={timestamp}/>
+      return <UserSinglePost key={i} title={title} userId={userId} id={id} body={body} timestamp={timestamp} comments={comments}/>
     });
     return (
       <div className="posts-container">
