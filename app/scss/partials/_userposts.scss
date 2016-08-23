@@ -1,14 +1,20 @@
+.posts-container {
+  display: inline-block;
+  width: 65%;
+}
+
 .posts-holder {
   list-style-type: none;
+  padding: 0;
 
   .single-post-holder {
     background: linear-gradient( rgba(245, 111, 108, 0.30), rgba(245, 111, 108, 0.75)), url('https://s-media-cache-ak0.pinimg.com/736x/41/83/b9/4183b998758372ee14efaa4b2a430b4c.jpg');
     margin-bottom: 2rem;
+    width: 100%;
     border-bottom: 2px solid black;
-    float: left;
+    // float: left;
     // padding: 1%;
     border-radius: 8px;
-    width: 70%;
 
     .single-post-title {
       // text-transform: uppercase;
@@ -21,7 +27,6 @@
       // background: #0C4C58;
       margin-top: 0;
       margin-bottom: 0;
-
     }
 
     .single-post-body {

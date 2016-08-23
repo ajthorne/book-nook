@@ -2,7 +2,6 @@ import React from 'react';
 import store from '../../store';
 import UserLibrary from './UserLibrary';
 import UserAside from './UserAside';
-//my profile link bug --not moving to my profile if im on another users profile page
 
 const UserProfile = React.createClass({
   getInitialState: function () {
@@ -36,6 +35,31 @@ const UserProfile = React.createClass({
     store.libraryBooks.off('update change', this.updateState)
     store.users.off('update change', this.updateState)
   },
+
+  shouldComponentUpdate: function (nextProps, nextState) {
+    // console.log(nextProps.params.id);
+    // console.log('this props', this.props.params.id);
+    let user = nextProps.params.id;
+    // console.log('nextProps', user);
+    if (this.props.params.id !== nextProps.params.id) {
+          console.log('moving to new user', store.users);
+        store.users.fetch({
+            data: {
+                query: JSON.stringify({
+                    _id: user
+                })
+            }
+        });
+    }
+    store.libraryBooks.fetch({
+        data: {
+            query: JSON.stringify({ 
+                userId: user,
+            })
+        }
+    })
+    return true;
+},
   render: function () {
     // console.log(this.state);
     let userProfile = store.users.map(function(user, i, arr) {

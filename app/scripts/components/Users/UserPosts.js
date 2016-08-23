@@ -48,7 +48,7 @@ const UserPosts = React.createClass({
       return <UserSinglePost key={i} title={title} userId={userId} id={id} body={body} timestamp={timestamp}/>
     });
     return (
-      <div>
+      <div className="posts-container">
         <h2>My Posts</h2>
         <ul className="posts-holder">
           {posts}
