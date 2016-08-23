@@ -26,7 +26,7 @@ const SingleBook = React.createClass({
       addBtn = <button className="single-book-add" onClick={this.clickHandler}>Add to Library</button>
     }
     else if (store.session.get('username') && (userBooks.length)) {
-      addBtn = <button className="single-book-add"><i className="fa fa-check"></i> Added to Library</button>
+      addBtn = <button className="single-book-added"><i className="fa fa-check"></i> Added to Library</button>
     } else {
       addBtn = ''
     }

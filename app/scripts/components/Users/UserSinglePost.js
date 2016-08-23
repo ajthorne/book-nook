@@ -8,8 +8,8 @@ const UserSinglePost = React.createClass({
     return (
       <li className="single-post-holder">
       <p className="single-post-title">{this.props.title}</p>
-      <p className="single-post-body">{this.props.body}</p>
       <p className="single-post-timestamp">{this.props.timestamp}</p>
+      <p className="single-post-body">{this.props.body}</p>
       </li>
     )
   }
