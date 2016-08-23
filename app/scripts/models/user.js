@@ -1,10 +1,9 @@
 import Backbone from 'backbone';
 import $ from 'jquery';
 import settings from '../settings';
-import {
-    hashHistory
-} from 'react-router';
+import {hashHistory} from 'react-router';
 import store from '../store';
+import _ from 'underscore';
 
 const User = Backbone.Model.extend({
     urlRoot: `https://baas.kinvey.com/user/${settings.appId}`,
@@ -83,12 +82,13 @@ const User = Backbone.Model.extend({
                     },
                     success: (response) => {
                         let followerId = response[0]._id;
-                        console.log(followerId);
-                        let follower = followers.indexOf(username);
-                        console.log(follower);
+                        // console.log(followerId);
+                        // let follower = followers.indexOf(username);
+                        // console.log(follower);
+                        // console.log(_.without(followers, username));
 
                         user.save({
-                                followers: followers.splice(follower, 1)
+                                followers: _.without(followers, username)
                             }, {
                                 success: (response) => {
                                     console.log("DELETED!!");
@@ -98,13 +98,7 @@ const User = Backbone.Model.extend({
                     $.ajax({
                         type: 'DELETE',
                         url: `https://baas.kinvey.com/appdata/${settings.appId}/followers/` + followerId,
-                        dataType: 'application/json',
-                        success: (response) => {
-                            console.log("DELETED!!");
-                        },
-                        error: (err) => {
-                            console.log(err);
-                        }
+                        dataType: 'application/json'
                     })
                 }
             })
