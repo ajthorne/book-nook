@@ -7,7 +7,7 @@ const UserAside = React.createClass({
     store.session.toggleFollow(this.props, store.session.get('username'))
   },
   render: function () {
-    console.log('logged in user:', store.session.get('username'));
+    // console.log('logged in user:', store.session.get('username'));
     let id = this.props.id;
     let user = store.users.get(id);
     let followBtn;

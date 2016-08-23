@@ -8,7 +8,13 @@ const WallPost = Backbone.Model.extend({
     userId: '',
     title: '',
     body: ''
-  }
+  },
+
+  // comparator: function (post) {
+  //   return Date(post.get('timestamp')) * -1
+  // }
+  //comparator is not working!
+  //using reverse instead for now...
 })
 
 export default WallPost;

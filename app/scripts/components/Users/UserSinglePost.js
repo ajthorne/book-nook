@@ -6,6 +6,10 @@ import moment from 'moment';
 
 
 const UserSinglePost = React.createClass({
+  getInitialState: function () {
+    return {showComments: false}
+  },
+
   commentHandler: function (e) {
     e.preventDefault();
     // console.log(this.props);
@@ -19,8 +23,13 @@ const UserSinglePost = React.createClass({
     store.comments.addComment(data);
   },
 
+  toggleComments: function () {
+    // console.log('hi');
+    this.setState({showComments: !this.state.showComments})
+  },
+
   render: function () {
-    console.log(this.props.comments);
+    // console.log(this.state.showComments, this.props.comments);
     let optionBtns;
     if (store.session.get('_id') === this.props.userId) {
       optionBtns = <div>
@@ -28,23 +37,25 @@ const UserSinglePost = React.createClass({
                       <i className="fa fa-trash"></i>
                     </div>
     } else {
-      optionBtns = <i className="fa fa-comment-o"></i>
+      optionBtns = <i className="fa fa-comment-o" onClick={this.toggleComments}></i>
     }
 
-    let commentArea;
+    let commentArea = []
 
-    if (this.props.comments.length) {
-      commentArea = this.props.comments.map(function(comment, i, arr) {
+    if (this.state.showComments && this.props.comments.length) {
+      commentArea = [<form className="comment-box" key='form'>
+              <input type="text" placeholder="What's on your mind?" key='comment' ref="commentBody"/>
+              <input type="submit" key='submit' value="Add" onClick={this.commentHandler}/>
+              </form>]
+      // console.log(this.props.comments.map(function(comment, i, arr) {
+      this.props.comments.forEach((comment, i, arr) => {
         let id = comment.creatorId;
         let name = comment.creatorName;
         let commentBody = comment.body;
-        let timestamp = moment(comment._kmd.lmt).format('MMMM Do YYYY, h:mm:ss a')
-        return <UserComments key={i} name={name} commentBody={commentBody} timestamp={timestamp} id={id}/>
+        let timestamp = moment(comment._kmd.lmt).format('MMMM Do YYYY, h:mm a')
+        commentArea.push(<UserComments key={i} name={name} commentBody={commentBody} timestamp={timestamp} id={id}/>);
       })
-    } else {
-      commentArea = ''
     }
-
     return (
       <li className="single-post-holder">
         <p className="single-post-title">{this.props.title}</p>
@@ -54,10 +65,6 @@ const UserSinglePost = React.createClass({
         <ul>
           {commentArea}
         </ul>
-        <form className="comment-box">
-          <input type="text" placeholder="What's on your mind?" ref="commentBody"/>
-          <input type="submit" value="Add" onClick={this.commentHandler}/>
-        </form>
       </li>
     )
   }

@@ -41,7 +41,6 @@ const UserPosts = React.createClass({
 
   toggleModal: function () {
   this.setState({showModal: !this.state.showModal})
-  console.log('hi');
 },
 
   submitPost: function (e) {
@@ -79,15 +78,17 @@ const UserPosts = React.createClass({
       let userId = post.get('userId');
       let body = post.get('body');
       let title = post.get('title');
-      let timestamp = moment(post.get('_kmd').lmt).format('MMMM Do YYYY, h:mm:ss a')
+      let timestamp = moment(post.get('_kmd').lmt).format('MMMM Do YYYY, h:mm a')
       return <UserSinglePost key={i} title={title} userId={userId} id={id} body={body} timestamp={timestamp} comments={comments}/>
     });
+    let postList = posts.reverse();
+
     return (
       <div className="posts-container">
         <h2>My Posts</h2>
         <button onClick={this.toggleModal}><i className="fa fa-edit"></i> New Post</button>
         <ul className="posts-holder">
-          {posts}
+          {postList}
         </ul>
         {modal}
       </div>
