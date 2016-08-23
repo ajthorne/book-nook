@@ -3,13 +3,11 @@ import store from '../../store';
 import {Link } from 'react-router';
 
 const UserAside = React.createClass({
-  unfollowHandler: function () {
-    store.session.unfollowUser(this.props, store.session.get('username'))
-  },
   followHandler: function () {
-    store.session.followUser(this.props, store.session.get('username'));
+    store.session.toggleFollow(this.props, store.session.get('username'))
   },
   render: function () {
+    console.log('logged in user:', store.session.get('username'));
     let id = this.props.id;
     let user = store.users.get(id);
     let followBtn;
@@ -18,7 +16,7 @@ const UserAside = React.createClass({
     } else if (user.get('followers').indexOf(store.session.get('username')) === -1) {
       followBtn = <button onClick={this.followHandler}><i className="fa fa-user-plus"></i> Follow</button>
     } else {
-      followBtn = <button onClick={this.unfollowHandler}> Following</button>
+      followBtn = <button onClick={this.followHandler}> Following</button>
     }
 
     return (

@@ -40,12 +40,6 @@ const UserLibraryView = React.createClass({
     // console.log(this.state);
     // console.log(this.state.favorites);
     let library = store.libraryBooks.map((book, i, arr) => {
-
-      // console.log(favorite);
-      // .filter((thisBook) => {
-      //   return thisBook.userId === store.session.get('_id');
-      // })
-
       // console.log(this.state);
       let id = book.get('_id')
       let userId = book.get('userId');

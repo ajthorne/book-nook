@@ -52,3 +52,6 @@ ReactDOM.render(router, document.querySelector('.container'));
 
 //QUESTIONS
 //getting id of follower to delete
+
+//comments and wallposts are join table
+//comments should be a separate collection that refers to wall posts

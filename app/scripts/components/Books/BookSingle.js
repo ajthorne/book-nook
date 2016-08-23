@@ -1,8 +1,6 @@
 import React from 'react';
 import store from '../../store';
 // <SingleBook key={i} title={title} description-{description} authors={authors} bookImg={bookImg} id={id}/>
-//to do - fix "Added" button...
-
 
 const SingleBook = React.createClass({
   clickHandler: function () {
