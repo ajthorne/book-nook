@@ -31,7 +31,9 @@ const User = Backbone.Model.extend({
                 type: 'POST',
                 url: `https://baas.kinvey.com/appdata/${settings.appId}/followers`,
                 data: JSON.stringify({
-                    username: data.username
+                    username: data.username,
+                    userId: data.id,
+                    followerName: username
                 }),
                 contentType: 'application/json',
                 success: (response) => {
@@ -53,7 +55,10 @@ const User = Backbone.Model.extend({
                 type: 'POST',
                 url: `https://baas.kinvey.com/appdata/${settings.appId}/followers`,
                 data: JSON.stringify({
-                    username: data.username
+                    username: data.username,
+                    userId: data.id,
+                    followerName: username
+
                 }),
                 contentType: 'application/json',
                 success: (response) => {
@@ -103,6 +108,23 @@ const User = Backbone.Model.extend({
             })
     }
 },
+
+// getFollowers: function (data) {
+  // console.log('trying to get your followers...');
+  // $.ajax({
+  //   url: `https://baas.kinvey.com/appdata/${settings.appId}/followers`,
+  //       data: {
+  //           query: JSON.stringify({username: data.username})
+  //           },
+  //   success: function(followers) {
+  //   // console.log(followers);
+  //   followers.map((follower, i, arr) => {
+  //       console.log(follower);
+  //       let id = follower._id;
+  //   })
+  //   }
+  //   })
+    // },
 
 login: function(data, url) {
     this.save(data, {

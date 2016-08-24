@@ -3,6 +3,9 @@ import store from '../../store';
 import {Link } from 'react-router';
 
 const UserAside = React.createClass({
+  getFollowers: function () {
+    store.session.getFollowers(this.props, store.session.get('username'))
+  },
   followHandler: function () {
     store.session.toggleFollow(this.props, store.session.get('username'))
   },

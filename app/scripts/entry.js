@@ -53,6 +53,6 @@ const router = (
 ReactDOM.render(router, document.querySelector('.container'));
 
 //QUESTIONS
-//comments and wallposts are join table
-//comments should be a separate collection that refers to wall posts
-//where to fetch comments collection and how to render for each specific post??
+
+//TO DO --
+//Since I added a followers collection, it would be helpful to clean up my code and replace manual ajax requests with fetching and get requests instead

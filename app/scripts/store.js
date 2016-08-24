@@ -6,6 +6,7 @@ import LibraryBook from './models/libraryBook';
 import Favorites from './collections/favorites';
 import WallPosts from './collections/wallposts';
 import Comments from './collections/comments';
+import Followers from './collections/followers';
 
 //stores all instances of necessary models and collections
 let store = {
@@ -30,8 +31,11 @@ let store = {
   wallPosts: new WallPosts(),
   //access using store.wallposts
 
-  comments: new Comments()
+  comments: new Comments(),
   ///access using store.comments
+
+  followers: new Followers()
+  ///access using store.followers
 }
 
 export default store;
