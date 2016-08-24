@@ -173,12 +173,19 @@ footer {
       max-height: 50vh;
       margin-bottom: 2rem; }
     .books-container .book-results .single-book-img {
-      display: inline-block; }
+      display: inline-block;
+      position: relative; }
       .books-container .book-results .single-book-img img {
         height: 200px;
         width: 130px;
         object-fit: cover;
         margin-top: 1rem; }
+      .books-container .book-results .single-book-img .fa-search-plus {
+        position: absolute;
+        top: 1.1rem;
+        right: 0.3rem;
+        font-size: 1.3rem;
+        color: white; }
     .books-container .book-results .single-book-copy {
       display: inline-block;
       padding: 2%;
@@ -217,6 +224,30 @@ footer {
         border: 0;
         color: white;
         float: right; }
+  .books-container .book-modal-container {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1; }
+  .books-container .book-modal {
+    padding: 0.3rem;
+    background: white;
+    z-index: 0;
+    height: 55%;
+    width: 55%;
+    overflow: auto; }
+    .books-container .book-modal button {
+      float: right;
+      border: 0;
+      background: transparent; }
+      .books-container .book-modal button .fa-remove {
+        font-size: 1.3rem; }
 
 .user-profile-container {
   margin-top: 13vh; }
@@ -282,18 +313,19 @@ footer {
     color: red; }
   .user-profile-container .fa-trash {
     margin-left: 1rem; }
-  .user-profile-container .modal-container {
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(0, 0, 0, 0.5);
-    width: 100%;
-    height: 100%;
-    top: -1rem;
-    bottom: -1rem;
-    left: 0;
-    right: 0; }
+
+.modal-container {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  top: -1rem;
+  bottom: -1rem;
+  left: 0;
+  right: 0; }
 
 .login-holder {
   width: 50%;

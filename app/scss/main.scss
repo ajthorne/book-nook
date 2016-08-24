@@ -13,6 +13,9 @@ body {
   margin: 0;
   font-family: helvetica;
 
+//set this to lock scrolling when modal is open...
+// overflow-y: hidden;
+
   .container {
     min-height: 100%;
     position: relative;

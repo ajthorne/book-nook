@@ -8,6 +8,7 @@ const Books = Backbone.Collection.extend({
   parse: function(response) {
     //parses through response to store data as specified
   if (response) {
+    this.totalBooks = response.totalItems;
     return response.items
     //return an array
   }

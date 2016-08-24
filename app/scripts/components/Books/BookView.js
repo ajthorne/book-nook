@@ -59,6 +59,12 @@ const BookView = React.createClass({
 
   },
   render: function () {
+    let totalItems = store.books.totalBooks;
+    // console.log(totalItems);
+    let getPageTotal = function () {
+      return Math.ceil(totalItems / 10);
+    };
+    console.log(getPageTotal());
     // console.log(store.libraryBooks);
       let bookCollection = store.books
       let books = bookCollection.map((book, i, arr) => {
@@ -67,7 +73,7 @@ const BookView = React.createClass({
           let state = this.state.libraryBooks;
           let id = book.get('id');
           let title = book.get('volumeInfo').title;
-          let description = book.get('volumeInfo').description;
+          // let snippet = book.get('searchInfo').textSnippet;
           let authors;
           let bookImg;
 
@@ -84,11 +90,12 @@ const BookView = React.createClass({
           }
 
           //info needed for book modal..
-          let published = book.get('volumeInfo').publishedDate;
+          let published = book.get('volumeInfo').publishedDate.substring(0, 4);
           let pageCount = book.get('volumeInfo').pageCount;
           let categories = book.get('volumeInfo').categories.toString();
           let infoLink = book.get('volumeInfo').infoLink;
           let publisher = book.get('volumeInfo').publisher;
+          let description = book.get('volumeInfo').description;
 
       return <SingleBook key={i} state={state} title={title} description={description} authors={authors} bookImg={bookImg} id={id} published={published} pageCount={pageCount} categories={categories} infoLink={infoLink} publisher={publisher}/>
     })
@@ -108,3 +115,9 @@ const BookView = React.createClass({
 })
 
 export default BookView;
+
+//adding pagination...
+// Pagination
+// You can paginate the volumes list by specifying two values in the parameters for the request:
+// startIndex - The position in the collection at which to start. The index of the first item is 0.
+// maxResults - The maximum number of results to return. The default is 10, and the maximum allowable value is 40.

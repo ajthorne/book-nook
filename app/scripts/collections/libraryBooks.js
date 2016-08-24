@@ -5,7 +5,7 @@ import settings from '../settings';
 const LibraryBooks = Backbone.Collection.extend({
   model: LibraryBook,
   url: `https://baas.kinvey.com/appdata/${settings.appId}/librarybooks`,
-
+  
   addBook: function (props, id) {
     let bookTitle = props.title
     let bookImg = props.bookImg

@@ -11,7 +11,7 @@ const SingleBook = React.createClass({
 
   toggleModal: function () {
     this.setState({showModal: !this.state.showModal})
-  },
+    },
 
   clickHandler: function () {
     console.log(this.props);
@@ -23,11 +23,14 @@ const SingleBook = React.createClass({
     if (this.state.showModal) {
       modal = (
         <div className="book-modal-container">
-          <p className="modal-title">{this.props.title} by {this.props.authors}</p>
-          <p className="modal-date"><span>Published by </span>{this.props.publisher} in {this.props.published}</p>
-          <p className="modal-count"><span>Page Count</span>: {this.props.pageCount}</p>
-          <p className="modal-book-description"><span>Full Description</span>: {this.props.description}</p>
-          <a href={this.props.infoLink} className="modal-book-link">More Info</a>
+          <div className="book-modal">
+            <button><i className="fa fa-remove" onClick={this.toggleModal}></i></button>
+            <p className="modal-title">{this.props.title} by {this.props.authors}</p>
+            <p className="modal-date"><span>Published by </span>{this.props.publisher}, {this.props.published}</p>
+            <p className="modal-count"><span>Page Count</span>: {this.props.pageCount}</p>
+            <p className="modal-book-description"><span>Full Description</span>: {this.props.description}</p>
+            <a href={this.props.infoLink} className="modal-book-link">More Info</a>
+          </div>
       </div>)
 
       // published={published} pageCount={pageCount} categories={categories} infoLink={infoLink} publisher={publisher}
@@ -55,6 +58,7 @@ const SingleBook = React.createClass({
     return (
       <li className="single-book-holder">
       <div className="single-book-img">
+        <i className="fa fa-search-plus"></i>
         <img src={`${this.props.bookImg}`} onClick={this.toggleModal}/>
       </div>
       <div className="single-book-copy">
