@@ -19,6 +19,7 @@ const LibraryBooks = Backbone.Collection.extend({
           userId: userId,
           bookId: bookId,
      })},
+     remove: false,
      success: (coll, response) => {
        console.log('success, here it is: ', response);
        if (response.length === 0) {
@@ -46,7 +47,7 @@ const LibraryBooks = Backbone.Collection.extend({
      }
    })
  },
- 
+
  deleteBook: function (data) {
    let id = data.id
    let model = this.get(id);

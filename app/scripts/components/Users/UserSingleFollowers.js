@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router';
+import store from '../../store';
 // <UserSingleFollowers key={i} followerId={followerId} followerName={followerName}/>
 
 
