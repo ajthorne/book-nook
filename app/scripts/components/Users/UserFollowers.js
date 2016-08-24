@@ -1,7 +1,6 @@
 import React from 'react';
 import UserSingleFollowers from './UserSingleFollowers';
 import store from '../../store';
-//get ids of those following?
 
 const UserFollowers = React.createClass({
   getInitialState: function () {
