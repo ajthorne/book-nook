@@ -82,7 +82,15 @@ const BookView = React.createClass({
           } else  {
             bookImg = 'http://images.clipartpanda.com/book-20clip-20art-book_blue.png';
           }
-      return <SingleBook key={i} state={state} title={title} description={description} authors={authors} bookImg={bookImg} id={id}/>
+
+          //info needed for book modal..
+          let published = book.get('volumeInfo').publishedDate;
+          let pageCount = book.get('volumeInfo').pageCount;
+          let categories = book.get('volumeInfo').categories.toString();
+          let infoLink = book.get('volumeInfo').infoLink;
+          let publisher = book.get('volumeInfo').publisher;
+
+      return <SingleBook key={i} state={state} title={title} description={description} authors={authors} bookImg={bookImg} id={id} published={published} pageCount={pageCount} categories={categories} infoLink={infoLink} publisher={publisher}/>
     })
 
     let searchValue = this.props.location.search;

@@ -1,14 +1,37 @@
 import React from 'react';
 import store from '../../store';
-// <SingleBook key={i} title={title} description-{description} authors={authors} bookImg={bookImg} id={id}/>
+import {Link} from 'react-router';
+//props passed down from parent
+// <SingleBook key={i} state={state} title={title} description={description} authors={authors} bookImg={bookImg} id={id} published={published} pageCount={pageCount} categories={categories} infoLink={infoLink} publisher={publisher}/>
 
 const SingleBook = React.createClass({
+  getInitialState: function () {
+    return {showModal: false}
+  },
+
+  toggleModal: function () {
+    this.setState({showModal: !this.state.showModal})
+  },
+
   clickHandler: function () {
     console.log(this.props);
     store.libraryBooks.addBook(this.props, store.session.get('_id'));
   },
 
   render: function () {
+    let modal;
+    if (this.state.showModal) {
+      modal = (
+        <div className="book-modal-container">
+          <p className="modal-title">{this.props.title} by {this.props.authors}</p>
+          <p className="modal-date"><span>Published by </span>{this.props.publisher} in {this.props.published}</p>
+          <p className="modal-count"><span>Page Count</span>: {this.props.pageCount}</p>
+          <p className="modal-book-description"><span>Full Description</span>: {this.props.description}</p>
+          <a href={this.props.infoLink} className="modal-book-link">More Info</a>
+      </div>)
+
+      // published={published} pageCount={pageCount} categories={categories} infoLink={infoLink} publisher={publisher}
+     }
     // console.log(this.props);
     // console.log(this.props.state);
     let userBooks = this.props.state.filter((book, i, arr) => {
@@ -32,7 +55,7 @@ const SingleBook = React.createClass({
     return (
       <li className="single-book-holder">
       <div className="single-book-img">
-        <img src={`${this.props.bookImg}`}/>
+        <img src={`${this.props.bookImg}`} onClick={this.toggleModal}/>
       </div>
       <div className="single-book-copy">
         <p className="single-book-title">{this.props.title}</p>
@@ -40,6 +63,7 @@ const SingleBook = React.createClass({
         <p className="single-book-description"><span>About: </span>{this.props.description}</p>
         {addBtn}
       </div>
+      {modal}
       </li>
     )
   }

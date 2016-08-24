@@ -56,3 +56,6 @@ ReactDOM.render(router, document.querySelector('.container'));
 
 //TO DO --
 //Since I added a followers collection, it would be helpful to clean up my code and replace manual ajax requests with fetching and get requests instead
+
+//modal
+//how do I get the modal to take up full width of screen not just the container its relative to?
