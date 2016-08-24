@@ -13,6 +13,7 @@ import UserProfile from './components/Users/UserProfile';
 import UserFavorites from './components/Users/UserFavorites';
 import UserLibraryView from './components/Users/UserLibraryView';
 import UserPosts from './components/Users/UserPosts';
+import UserFollowers from './components/Users/UserFollowers';
 
 $(document).ajaxSend(function(evt, xhrAjax, jqueryAjax) {
   // console.log('intercepted');
@@ -43,6 +44,7 @@ const router = (
         <IndexRoute component={UserLibraryView}/>
         <Route path="/users/:id/favorites" component={UserFavorites}/>
         <Route path="/users/:id/posts" component={UserPosts}/>
+        <Route path="/users/:id/followers" component={UserFollowers}/>
       </Route>
     </Route>
   </Router>
