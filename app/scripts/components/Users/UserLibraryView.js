@@ -1,7 +1,6 @@
 import React from 'react';
 import store from '../../store';
 import UserLibrary from './UserLibrary';
-//my profile link bug --not moving to my profile if im on another users profile page
 
 const UserLibraryView = React.createClass({
   getInitialState: function () {

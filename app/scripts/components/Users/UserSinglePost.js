@@ -31,29 +31,29 @@ const UserSinglePost = React.createClass({
   render: function () {
     // console.log(this.state.showComments, this.props.comments);
     let optionBtns;
-    if (store.session.get('_id') === this.props.userId) {
-      optionBtns = <div>
-                      <i className="fa fa-pencil"></i>
-                      <i className="fa fa-trash"></i>
-                    </div>
-    } else {
+    // if (store.session.get('_id') === this.props.userId) {
+    //   optionBtns = <div>
+    //                   <i className="fa fa-pencil"></i>
+    //                   <i className="fa fa-trash"></i>
+    //                 </div>
+    // } else {
       let commentNumber = Number(this.props.comments.length);
       if (commentNumber > 1){
-        optionBtns = <span><i className="fa fa-comment-o" onClick={this.toggleComments}></i> {commentNumber} Comments</span>
+        optionBtns = <p className="option-btn"><i className="fa fa-comment-o" onClick={this.toggleComments}></i> {commentNumber} Comments</p>
       } else if (commentNumber === 1) {
-        optionBtns = <span><i className="fa fa-comment-o" onClick={this.toggleComments}></i> {commentNumber} Comment</span>
+        optionBtns = <p className="option-btn"><i className="fa fa-comment-o" onClick={this.toggleComments}></i> {commentNumber} Comment</p>
       }
       else {
-        optionBtns = <span><i className="fa fa-comment-o" onClick={this.toggleComments}></i> Add a Comment</span>
+        optionBtns = <p className="option-btn"><i className="fa fa-comment-o" onClick={this.toggleComments}></i> Add a Comment</p>
       }
-    }
+    // }
 
     let commentArea = []
 
     if (this.state.showComments && this.props.comments.length) {
       commentArea = [<form className="comment-box" key='form'>
-              <input type="text" placeholder="What's on your mind?" key='comment' ref="commentBody"/>
-              <input type="submit" key='submit' value="Add" onClick={this.commentHandler}/>
+              <input className="comment-body" type="text" placeholder="What's on your mind?" key='comment' ref="commentBody"/>
+              <button className="comment-btn" key='submit' onClick={this.commentHandler}>+</button>
               </form>]
       // console.log(this.props.comments.map(function(comment, i, arr) {
       this.props.comments.forEach((comment, i, arr) => {
@@ -65,8 +65,8 @@ const UserSinglePost = React.createClass({
       })
     } else if (this.state.showComments) {
       commentArea = [<form className="comment-box" key='form'>
-              <input type="text" placeholder="What's on your mind?" key='comment' ref="commentBody"/>
-              <input type="submit" key='submit' value="Add" onClick={this.commentHandler}/>
+              <input className="comment-body" type="text" placeholder="Add your thoughts..." key='comment' ref="commentBody"/>
+              <button className="comment-btn" key='submit' onClick={this.commentHandler}>+</button>
               </form>]
     }
     return (
@@ -75,7 +75,7 @@ const UserSinglePost = React.createClass({
         <p className="single-post-timestamp">{this.props.timestamp}</p>
         <p className="single-post-body">{this.props.body}</p>
         {optionBtns}
-        <ul>
+        <ul className="comment-area">
           {commentArea}
         </ul>
       </li>
