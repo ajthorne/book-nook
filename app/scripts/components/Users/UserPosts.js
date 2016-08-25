@@ -84,7 +84,7 @@ const UserPosts = React.createClass({
     let postList = posts.reverse();
 
     return (
-      <div className="posts-container">
+      <div className="profile-content">
         <h2>My Posts</h2>
         <button onClick={this.toggleModal}><i className="fa fa-edit"></i> New Post</button>
         <ul className="posts-holder">

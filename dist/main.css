@@ -250,14 +250,12 @@ footer {
         font-size: 1.3rem; }
 
 .user-profile-container {
-  margin-top: 13vh; }
+  margin-top: 13vh;
+  display: flex; }
   .user-profile-container aside {
-    float: left;
-    height: 100vh;
-    width: 13rem;
     margin-left: 1rem;
-    padding-left: 3%;
-    margin-right: 3rem; }
+    margin-right: 3rem;
+    flex: 1 0 0; }
     .user-profile-container aside h2 {
       text-align: center;
       font-size: 1.5rem;
@@ -266,7 +264,7 @@ footer {
     .user-profile-container aside img {
       height: 8rem;
       width: 8rem;
-      margin-left: 17%;
+      margin-left: 22%;
       object-fit: contain;
       border-radius: 50%;
       border: 2px solid #252932; }
@@ -279,7 +277,26 @@ footer {
       margin: 0 auto;
       margin-top: 1rem;
       border: 0;
-      background-color: #0C4C58; }
+      background-color: #0C4C58;
+      margin-bottom: 0.5rem; }
+    .user-profile-container aside ul {
+      list-style-type: none;
+      padding-left: 0; }
+      .user-profile-container aside ul li {
+        box-sizing: border-box;
+        padding: 5%;
+        width: 100%;
+        background-color: gray;
+        border-bottom: 2px solid darkgray;
+        margin-bottom: 0.5rem;
+        border-radius: 5px; }
+        .user-profile-container aside ul li:hover {
+          opacity: 0.75; }
+        .user-profile-container aside ul li a {
+          text-decoration: none;
+          color: white; }
+  .user-profile-container .profile-content {
+    flex: 3 0 0; }
   .user-profile-container h2 {
     text-align: center;
     font-family: 'Quicksand', sans-serif;

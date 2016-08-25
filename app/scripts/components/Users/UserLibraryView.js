@@ -56,7 +56,7 @@ const UserLibraryView = React.createClass({
     });
 
     return (
-      <div>
+      <div className="profile-content">
         <h2>My Library</h2>
         <ul className="library-book-ul">
           {library}

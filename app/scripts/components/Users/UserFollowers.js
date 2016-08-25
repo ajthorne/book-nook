@@ -50,7 +50,7 @@ const UserFollowers = React.createClass({
       })
       // console.log(followersArr);
     return (
-      <div>
+      <div className="profile-content">
       <h2>My Followers</h2>
       {followersArr}
       </div>

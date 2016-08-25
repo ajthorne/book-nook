@@ -2,65 +2,17 @@
 
 .user-profile-container {
   margin-top: 13vh;
-
-  // aside:before {
-  //   bottom: -32%;
-  //   // height: 20rem;
-  //   width: 14.9rem;
-  //   height: 100%;
-  //   margin-left: -3%;
-  //   // width: 25.7%;
-  //   background-image:
-  //     linear-gradient(
-  //       -45deg,
-  //       transparent 50%,
-  //       #F56F6C 50%),
-  //     linear-gradient(
-  //       45deg,
-  //       transparent 50%,
-  //       #F56F6C 50%);
-  //   z-index: -1;
-  // }
-
-  // aside:after {
-  //   content: '';
-  //   display: block;
-  //   position: absolute;
-  //   height: 38rem;
-  //   width: 12rem;
-  //   left: 3rem;
-  //   top: 0;
-  //   border-style: dashed;
-  //   border-color: #0C4C58;
-  //   border-width: 0 2px;
-  //   z-index: -1
-  // }
-
-  // aside:before,
-  // aside:after{
-  //   content: '';
-  //   display: block;
-  //   position: absolute;
-  // }
+  display: flex;
 
   aside {
-    float: left;
-    height: 100vh;
-    width: 13rem;
+    // float: left;
+    // height: 100vh;
+    // width: 13rem;
     margin-left: 1rem;
-    padding-left: 3%;
+    // padding-left: 3%;
     margin-right: 3rem;
-    // border-right: 2px dashed gray;
-    // position: absolute;
-    // background-color: #F56F6C;
-    // z-index: 0;
-    // background-image:
-    //     linear-gradient(
-    //       hsla(0, 0%, 100%, 0),
-    //       hsla(0, 0%, 100%, 0.5) 5px,
-    //       hsla(0, 0%, 100%, 0) 25px);
-    //   -webkit-filter: drop-shadow(0 2px 6px hsla(0, 0%, 0%, 0.75));
-    // box-sizing: border-box;
+    flex: 1 0 0;
+    // background: linear-gradient( rgba(245, 111, 108, 0.30), rgba(245, 111, 108, 0.75)),;
 
     h2 {
       text-align: center;
@@ -72,7 +24,7 @@
     img {
       height: 8rem;
       width: 8rem;
-      margin-left: 17%;
+      margin-left: 22%;
       object-fit: contain;
       border-radius: 50%;
       border: 2px solid #252932;
@@ -87,9 +39,38 @@
       margin: 0 auto;
       margin-top: 1rem;
       border: 0;
-      // border-radius: 5px;
       background-color: #0C4C58;
+      margin-bottom: 0.5rem;
+      // border-radius: 5px;
     }
+
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+
+      li {
+        box-sizing: border-box;
+        padding: 5%;
+        width: 100%;
+        background-color: gray;
+        border-bottom: 2px solid darkgray;
+        margin-bottom: 0.5rem;
+        border-radius: 5px;
+
+        &:hover {
+          opacity: 0.75;
+        }
+
+        a{
+          text-decoration: none;
+          color: white;
+        }
+      }
+    }
+  }
+
+  .profile-content {
+    flex: 3 0 0;
   }
 
   h2{

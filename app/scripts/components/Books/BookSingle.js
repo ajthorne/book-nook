@@ -29,7 +29,7 @@ const SingleBook = React.createClass({
             <p className="modal-date"><span>Published by </span>{this.props.publisher}, {this.props.published}</p>
             <p className="modal-count"><span>Page Count</span>: {this.props.pageCount}</p>
             <p className="modal-book-description"><span>Full Description</span>: {this.props.description}</p>
-            <a href={this.props.infoLink} className="modal-book-link">More Info</a>
+            <a target="_blank" href={this.props.infoLink} className="modal-book-link">More Info</a>
           </div>
       </div>)
 
