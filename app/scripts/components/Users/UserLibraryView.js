@@ -31,6 +31,21 @@ const UserLibraryView = React.createClass({
     store.favorites.on('update change', this.updateState)
   },
 
+  shouldComponentUpdate: function (nextProps, nextState) {
+    //moving between various profiles is causing the favs collection to get lost, so need to update component to retrieve the correct favs
+    let user = nextProps.params.id;
+    // console.log('nextProps', user);
+    if (this.props.params.id !== nextProps.params.id) {
+          console.log('grabbing favs..', store.favorites);
+          store.favorites.fetch({
+          data: {query: JSON.stringify({
+            userId: user,
+           })}
+        })
+    }
+    return true;
+},
+
   componentWillUnmount: function () {
     store.libraryBooks.off('update change', this.updateState)
     store.favorites.off('update change', this.updateState)

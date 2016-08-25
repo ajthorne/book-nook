@@ -1,144 +1,123 @@
 //bookmark for aside background
-
 .user-profile-container {
-  margin-top: 13vh;
-  display: flex;
-
-  aside {
-    // float: left;
-    // height: 100vh;
-    // width: 13rem;
-    margin-left: 1rem;
-    // padding-left: 3%;
-    margin-right: 3rem;
-    flex: 1 0 0;
-    // background: linear-gradient( rgba(245, 111, 108, 0.30), rgba(245, 111, 108, 0.75)),;
-
-    h2 {
-      text-align: center;
-      font-size: 1.5rem;
-      font-family: 'Quicksand', sans-serif;
-      color: #252932;
-    }
-
-    img {
-      height: 8rem;
-      width: 8rem;
-      margin-left: 22%;
-      object-fit: contain;
-      border-radius: 50%;
-      border: 2px solid #252932;
-    }
-
-    button {
-      display: block;
-      padding: 4%;
-      font-size: 1rem;
-      color: white;
-      width: 50%;
-      margin: 0 auto;
-      margin-top: 1rem;
-      border: 0;
-      background-color: #0C4C58;
-      margin-bottom: 0.5rem;
-      // border-radius: 5px;
-    }
-
-    ul {
-      list-style-type: none;
-      padding-left: 0;
-
-      li {
-        box-sizing: border-box;
-        padding: 5%;
-        width: 100%;
-        background-color: gray;
-        border-bottom: 2px solid darkgray;
-        margin-bottom: 0.5rem;
-        border-radius: 5px;
-
-        &:hover {
-          opacity: 0.75;
-        }
-
-        a{
-          text-decoration: none;
-          color: white;
-        }
-      }
-    }
-  }
-
-  .profile-content {
-    flex: 3 0 0;
-  }
-
-  h2{
-  text-align: center;
-  font-family: 'Quicksand', sans-serif;
-  color: #0C4C58;
-}
-
-  .library-book-ul {
+    margin-top: 13vh;
     display: flex;
-    flex-flow: row;
-    flex-wrap: wrap;
-    list-style-type: none;
-    padding-left: 0;
-
-    li {
-      flex-basis: 22%;
-      margin-right: 1rem;
-      margin-bottom: 1rem;
-
-      img {
-        width: 130px;
-        height: 200px;
-        object-fit: cover;
-        // margin-left: 5%;
-      }
-
-      .library-book-title {
-        margin: 0;
-        font-size: 1.1rem;
-        font-weight: bold;
-      }
-
-      .library-book-author {
-        margin: 0;
-        font-style: italic;
-      }
+    aside {
+        // float: left;
+        // height: 100vh;
+        // width: 13rem;
+        margin-left: 1rem;
+        // padding-left: 3%;
+        margin-right: 3rem;
+        flex: 1 0 0;
+        // background: linear-gradient( rgba(245, 111, 108, 0.30), rgba(245, 111, 108, 0.75)),;
+        h2 {
+            text-align: center;
+            font-size: 1.5rem;
+            font-family: 'Quicksand', sans-serif;
+            color: #252932;
+        }
+        img {
+            height: 8rem;
+            width: 8rem;
+            margin-left: 22%;
+            object-fit: contain;
+            border-radius: 50%;
+            border: 2px solid #252932;
+        }
+        button {
+            display: block;
+            padding: 4%;
+            font-size: 1rem;
+            color: white;
+            width: 50%;
+            margin: 1rem auto 0;
+            border: 0;
+            background-color: #0C4C58;
+            margin-bottom: 0.5rem;
+            // border-radius: 5px;
+        }
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+            a {
+                text-decoration: none;
+                color: white;
+                li {
+                    box-sizing: border-box;
+                    padding: 5%;
+                    width: 100%;
+                    background-color: gray;
+                    border-bottom: 2px solid darkgray;
+                    margin-bottom: 0.5rem;
+                    border-radius: 5px;
+                    &:hover {
+                        opacity: 0.75;
+                    }
+                }
+            }
+        }
     }
-  }
-
-  .fa-heart, .fa-trash {
-    color: #A7A9AC;
-
-    &:hover {
-      color: #282828;
+    .profile-content {
+        flex: 3 0 0;
     }
-  }
-
-  .favorited {
-    color: red;
-  }
-
-  .fa-trash {
-    // float: right;
-    margin-left: 1rem;
-  }
+    h2 {
+        text-align: center;
+        font-family: 'Quicksand', sans-serif;
+        color: #0C4C58;
+    }
+    .library-book-ul {
+        display: flex;
+        flex-flow: row;
+        flex-wrap: wrap;
+        list-style-type: none;
+        padding-left: 0;
+        li {
+            flex-basis: 22%;
+            margin-right: 1rem;
+            margin-bottom: 1rem;
+            img {
+                width: 130px;
+                height: 200px;
+                object-fit: cover;
+                // margin-left: 5%;
+            }
+            .library-book-title {
+                margin: 0;
+                font-size: 1.1rem;
+                font-weight: bold;
+            }
+            .library-book-author {
+                margin: 0;
+                font-style: italic;
+            }
+        }
+    }
+    .fa-heart,
+    .fa-trash {
+        color: #A7A9AC;
+        &:hover {
+            color: #282828;
+        }
+    }
+    .favorited {
+        color: red;
+    }
+    .fa-trash {
+        // float: right;
+        margin-left: 1rem;
+    }
 }
-
 .modal-container {
-  position: absolute;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(black, .5);
-  width: 100%;
-  height: 100%;
-  top: -1rem;
-  bottom: -1rem;
-  left: 0;
-  right: 0;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(black, .5);
+    width: 100%;
+    height: 100%;
+    top: -1rem;
+    bottom: -1rem;
+    left: 0;
+    right: 0;
 }

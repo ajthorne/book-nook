@@ -274,27 +274,26 @@ footer {
       font-size: 1rem;
       color: white;
       width: 50%;
-      margin: 0 auto;
-      margin-top: 1rem;
+      margin: 1rem auto 0;
       border: 0;
       background-color: #0C4C58;
       margin-bottom: 0.5rem; }
     .user-profile-container aside ul {
       list-style-type: none;
       padding-left: 0; }
-      .user-profile-container aside ul li {
-        box-sizing: border-box;
-        padding: 5%;
-        width: 100%;
-        background-color: gray;
-        border-bottom: 2px solid darkgray;
-        margin-bottom: 0.5rem;
-        border-radius: 5px; }
-        .user-profile-container aside ul li:hover {
-          opacity: 0.75; }
-        .user-profile-container aside ul li a {
-          text-decoration: none;
-          color: white; }
+      .user-profile-container aside ul a {
+        text-decoration: none;
+        color: white; }
+        .user-profile-container aside ul a li {
+          box-sizing: border-box;
+          padding: 5%;
+          width: 100%;
+          background-color: gray;
+          border-bottom: 2px solid darkgray;
+          margin-bottom: 0.5rem;
+          border-radius: 5px; }
+          .user-profile-container aside ul a li:hover {
+            opacity: 0.75; }
   .user-profile-container .profile-content {
     flex: 3 0 0; }
   .user-profile-container h2 {
@@ -322,9 +321,11 @@ footer {
       .user-profile-container .library-book-ul li .library-book-author {
         margin: 0;
         font-style: italic; }
-  .user-profile-container .fa-heart, .user-profile-container .fa-trash {
+  .user-profile-container .fa-heart,
+  .user-profile-container .fa-trash {
     color: #A7A9AC; }
-    .user-profile-container .fa-heart:hover, .user-profile-container .fa-trash:hover {
+    .user-profile-container .fa-heart:hover,
+    .user-profile-container .fa-trash:hover {
       color: #282828; }
   .user-profile-container .favorited {
     color: red; }
