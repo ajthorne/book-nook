@@ -41,6 +41,7 @@ const BookView = React.createClass({
     let book = decodeURI(searchValue.substring(6));
     if (this.props.location.search !== nextProps.location.search) {
       // console.log('fetching new collection', store.books);
+      this.setState({pageNumber: 1})
       store.books.fetch(
         {
           data: {
