@@ -6,7 +6,8 @@ const BookView = React.createClass({
   getInitialState: function () {
   return {
     books: store.books.toJSON(),
-    libraryBooks: store.libraryBooks.toJSON()}
+    libraryBooks: store.libraryBooks.toJSON(),
+    pageNumber: 1}
   },
   updateState: function() {
       this.setState({books: store.books.toJSON(),
@@ -58,13 +59,67 @@ const BookView = React.createClass({
     store.libraryBooks.off('update change', this.updateState)
 
   },
+  nextPageHandler: function () {
+    let pageNumber = this.state.pageNumber + 1
+    this.setState({pageNumber: pageNumber})
+    console.log('NextPage pageNumber:', pageNumber);
+    // console.log(this.props.location.search);
+    let searchValue = this.props.location.search;
+    let book = decodeURI(searchValue.substring(6));
+    // console.log(book);
+    store.books.fetch(
+      {
+        data: {
+          q: book,
+          startIndex: pageNumber * 10
+        },
+        success: function (response) {
+          console.log('Here are the next results for', `${book}`);
+        }
+      })
+  },
+
+  prevPageHandler: function () {
+    let pageNumber = this.state.pageNumber - 1
+    this.setState({pageNumber: pageNumber})
+      console.log('PrevPage pageNumber:', pageNumber);
+    // console.log(this.props.location.search);
+    let searchValue = this.props.location.search;
+    let book = decodeURI(searchValue.substring(6));
+    // console.log(book);
+    store.books.fetch(
+      {
+        data: {
+          q: book,
+          startIndex: pageNumber * 10,
+        },
+        success: function (response) {
+          console.log('Here are the previous results for', `${book}`);
+        }
+      })
+  },
+
   render: function () {
+    //function to get total amount of books from search results
     let totalItems = store.books.totalBooks;
-    // console.log(totalItems);
     let getPageTotal = function () {
       return Math.ceil(totalItems / 10);
     };
-    console.log(getPageTotal());
+    getPageTotal();
+
+    let nextBtn;
+    if (getPageTotal() > this.state.pageNumber) {
+      nextBtn = <button onClick={this.nextPageHandler}><i className="fa fa-arrow-circle-right"></i> Next Page</button>
+    } else {
+      nextBtn = ''
+    }
+
+    let prevBtn;
+    if(this.state.pageNumber > 1) {
+      prevBtn = <button onClick={this.prevPageHandler}><i className="fa fa-arrow-circle-left"></i> Previous Page</button>
+    } else {
+      prevBtn = ''
+    }
     // console.log(store.libraryBooks);
       let bookCollection = store.books
       let books = bookCollection.map((book, i, arr) => {
@@ -90,9 +145,20 @@ const BookView = React.createClass({
           }
 
           //info needed for book modal..
-          let published = book.get('volumeInfo').publishedDate.substring(0, 4);
+          let published;
+          if (book.get('volumeInfo').publishedDate) {
+            published = book.get('volumeInfo').publishedDate.substring(0, 4);
+          } else {
+            published = ''
+          }
+
           let pageCount = book.get('volumeInfo').pageCount;
-          let categories = book.get('volumeInfo').categories.toString();
+          let categories;
+          if (book.get('volumeInfo').categories) {
+            categories = book.get('volumeInfo').categories.toString();
+          } else {
+            categories = 'None'
+          }
           let infoLink = book.get('volumeInfo').infoLink;
           let publisher = book.get('volumeInfo').publisher;
           let description = book.get('volumeInfo').description;
@@ -109,15 +175,13 @@ const BookView = React.createClass({
         <ul className="book-results">
           {books}
         </ul>
+        <div>
+        {prevBtn}
+        {nextBtn}
+        </div>
       </div>
     )
   }
 })
 
 export default BookView;
-
-//adding pagination...
-// Pagination
-// You can paginate the volumes list by specifying two values in the parameters for the request:
-// startIndex - The position in the collection at which to start. The index of the first item is 0.
-// maxResults - The maximum number of results to return. The default is 10, and the maximum allowable value is 40.

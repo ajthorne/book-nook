@@ -29,10 +29,10 @@ const UserAside = React.createClass({
         <img className="user-profile-img" src={`${this.props.userImg}`}/>
         {followBtn}
         <ul>
-          <li><Link to={`/users/${this.props.id}`}>My Library</Link></li>
-          <li><Link to={`/users/${this.props.id}/favorites`}>My Favorites</Link></li>
-          <li><Link to={`/users/${this.props.id}/posts`}>My Posts</Link></li>
-          <li><Link to={`/users/${this.props.id}/followers`}>My Followers</Link></li>
+          <Link to={`/users/${this.props.id}`}><li>My Library</li></Link>
+          <Link to={`/users/${this.props.id}/favorites`}><li>My Favorites</li></Link>
+          <Link to={`/users/${this.props.id}/posts`}><li>My Posts</li></Link>
+          <Link to={`/users/${this.props.id}/followers`}><li>My Followers</li></Link>
         </ul>
       </aside>
     )
