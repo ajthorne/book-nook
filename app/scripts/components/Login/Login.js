@@ -30,16 +30,16 @@ const Login = React.createClass({
       <div className="login-holder">
         <form onSubmit={this.loginHandler}>
           <h2>Login</h2>
-          <input type="text" placeholder="Enter your username" ref="loginuser"/>
-          <input type="password" placeholder="Enter your password" ref="loginpw"/>
-          <input type="submit" value="Submit"/>
+          <input type="text" className="login-name" placeholder="Enter your username" ref="loginuser"/>
+          <input type="password" className="login-password" placeholder="Enter your password" ref="loginpw"/>
+          <button className="login-btn">Submit</button>
         </form>
         <form onSubmit={this.signUpHandler}>
           <h2>Sign Up</h2>
-          <input type="text" placeholder="Enter a name" ref="name"/>
-          <input type="text" placeholder="Enter a username" ref="username"/>
-          <input type="password" placeholder="Enter a password" ref="password"/>
-          <input type="submit" value="Submit"/>
+          <input type="text" className="login-user-name" placeholder="Enter a name" ref="name"/>
+          <input type="text" className="login-name" placeholder="Enter a username" ref="username"/>
+          <input type="password" className="login-password" placeholder="Enter a password" ref="password"/>
+          <button className="login-btn">Submit</button>
         </form>
       </div>
     )

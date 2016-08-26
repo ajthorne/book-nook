@@ -399,12 +399,35 @@ footer {
   width: 50%;
   margin: 0 auto;
   margin-top: 13vh;
-  border: 2px solid #F56F6C;
+  border: 4px solid #F56F6C;
   text-align: center;
   padding: 2%; }
   .login-holder h2 {
     font-family: 'Quicksand', sans-serif;
-    font-size: 1.7rem; }
+    font-size: 1.9rem;
+    color: #0C4C58; }
+  .login-holder .login-name {
+    font-size: 1rem;
+    padding: 3%;
+    box-sizing: border-box;
+    width: 50%; }
+  .login-holder .login-password {
+    font-size: 1rem;
+    padding: 3%;
+    box-sizing: border-box;
+    width: 50%; }
+  .login-holder .login-btn {
+    font-size: 1.3rem;
+    padding: 3%;
+    box-sizing: border-box;
+    width: 100%;
+    background: #F6F7F9;
+    border: 1px solid darkgray; }
+  .login-holder .login-user-name {
+    width: 100%;
+    font-size: 1rem;
+    padding: 3%;
+    box-sizing: border-box; }
 
 .post-btn-holder {
   text-align: right;
