@@ -8,8 +8,12 @@ const UserSingleFollowers = React.createClass({
   render: function () {
     return (
       <li className="single-follower">
-        <i className="fa fa-user"></i>
-        <Link to={`/users/${this.props.followerId}`}>{this.props.followerName}</Link>
+        <div className="user-icon">
+          <i className="fa fa-user"></i>
+        </div>
+        <div className="user-name">
+          <Link to={`/users/${this.props.followerId}`}>{this.props.followerName}</Link>
+        </div>
       </li>
     )
   }

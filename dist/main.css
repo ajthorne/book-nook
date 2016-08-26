@@ -542,6 +542,26 @@ footer {
       margin: 0;
       font-style: italic; }
 
+.follower-holder {
+  list-style-type: none;
+  padding-left: 0; }
+  .follower-holder .single-follower {
+    display: inline-block;
+    padding: 3%; }
+  .follower-holder .user-icon {
+    font-size: 2.3rem;
+    text-align: center;
+    color: #0C4C58; }
+  .follower-holder .user-name {
+    text-transform: capitalize;
+    text-align: center;
+    font-size: 1.2rem; }
+    .follower-holder .user-name a {
+      text-decoration: none;
+      color: black; }
+      .follower-holder .user-name a:hover {
+        text-decoration: underline; }
+
 html {
   height: 100%;
   margin: 0;

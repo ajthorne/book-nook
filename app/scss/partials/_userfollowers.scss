@@ -1,0 +1,31 @@
+.follower-holder {
+  list-style-type: none;
+  padding-left: 0;
+
+  .single-follower {
+    display: inline-block;
+    padding: 3%;
+  }
+
+  .user-icon {
+    font-size: 2.3rem;
+    text-align: center;
+    color: #0C4C58;
+  }
+
+  .user-name {
+    text-transform: capitalize;
+    text-align: center;
+    font-size: 1.2rem;
+    // font-weight: bold;
+
+    a {
+      text-decoration: none;
+      color: black;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
