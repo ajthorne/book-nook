@@ -1,99 +1,206 @@
-.posts-container {
-  display: inline-block;
-  width: 65%;
+// .posts-container {
+//     display: inline-block;
+//     width: 65%;
+// }
+
+.post-btn-holder {
+  text-align: right;
+  margin-right: 1rem;
+
+  .new-post-btn {
+    padding: 1.3%;
+    font-size: 1rem;
+    background: #0C4C58;
+    // border: 2px solid #0C4C58;
+    color: white;
+    border: 0;
+    border-radius: 8px;
+
+    i {
+      font-size: 1.2rem;
+    }
+  }
 }
 
 .posts-holder {
-  list-style-type: none;
-  padding: 0;
-  margin-right: 1rem;
+    list-style-type: none;
+    padding: 0;
+    margin-right: 1rem;
+    .single-post-holder {
+        // background: linear-gradient( rgba(245, 111, 108, 0.30), rgba(245, 111, 108, 0.75)),;
+        // url('https://s-media-cache-ak0.pinimg.com/736x/41/83/b9/4183b998758372ee14efaa4b2a430b4c.jpg');
+        background: url('http://image.naldzgraphics.net/2012/08/6-Crumpled.jpg');
+        margin-bottom: 2rem;
+        width: 100%;
+        // border: 2px solid #0C4C58;
+        // float: left;
+        border-radius: 8px;
+        .single-post-title {
+            // text-transform: uppercase;
+            font-weight: bold;
+            border-bottom: 3px solid #E08671;
+            font-size: 1.5rem;
+            // color: white;
+            letter-spacing: -1px;
+            padding: 1%;
+            // background: #0C4C58;
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+        .single-post-body {
+            margin-top: 0;
+            padding-left: 0.5rem;
+            padding-top: 0.5rem;
+            padding-bottom: 5%;
+            font-size: 1.3rem;
+            margin-bottom: 0;
+        }
+        .single-post-timestamp {
+            // font-weight: bold;
+            text-align: right;
+            margin-top: 0;
+            margin-bottom: 0;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            color: #0C4C58;
+            font-weight: bold;
+        }
+        .option-btn {
+            margin: 0;
+            text-align: right;
+            text-transform: uppercase;
+            font-size: 1rem;
+            color: #0C4C58;
+            font-weight: bold;
+        }
+        .fa-comment-o {
+            font-size: 1.2rem;
+        }
+        .comment-area {
+            list-style-type: none;
+            padding-left: 0;
+            .comment-body {
+                width: 95%;
+                padding: 1%;
+                font-size: 1rem;
+                box-sizing: border-box;
+            }
+            .comment-btn {
+                width: 5%;
+                font-size: 1rem;
+                padding: 1%;
+                border: 0;
+                // background: #F56F6C;
+            }
+            .single-comment-holder {
+                padding: 1%;
+                background: #F6F7F9;
+                position: relative;
+                border-top: 0.1rem solid darkgray;
+                .commenter-name {
+                    margin-top: 0;
+                    font-size: 1rem;
+                    // padding-top: 0.5rem;
 
-  .single-post-holder {
-    // background: linear-gradient( rgba(245, 111, 108, 0.30), rgba(245, 111, 108, 0.75)),;
-    // url('https://s-media-cache-ak0.pinimg.com/736x/41/83/b9/4183b998758372ee14efaa4b2a430b4c.jpg');
-    background: url('http://image.naldzgraphics.net/2012/08/6-Crumpled.jpg');
-    margin-bottom: 2rem;
+                    // text-transform: uppercase;
+                    a {
+                        text-decoration: none;
+                        color: #368683;
+                        font-weight: bold;
+
+                        &:hover {
+                          text-decoration: underline;
+                        }
+                    }
+                }
+
+                .commenter-time {
+                  float: right;
+                  margin: 0;
+                  position: absolute;
+                  right: 0;
+                  top: 0.5rem;
+                  font-size: 0.8rem;
+                  font-weight: bold;
+                  color: #129793;
+                  text-transform: uppercase;
+                }
+                .commenter-body {
+                    margin-bottom: 0;
+                    padding-bottom: 1rem;
+                    font-size: 1.2rem;
+                }
+            }
+        }
+    }
+}
+
+.modal-container {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(black, .5);
     width: 100%;
-    // border: 2px solid #0C4C58;
-    // float: left;
-    // border-radius: 8px;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
 
-    .single-post-title {
-      // text-transform: uppercase;
-      font-weight: bold;
-      border-bottom: 3px solid #E08671;
-      font-size: 1.5rem;
-      // color: white;
-      letter-spacing: -1px;
-      padding: 1%;
-      // background: #0C4C58;
-      margin-top: 0;
-      margin-bottom: 0;
-    }
+    .modal {
+      padding: 2%;
+      height: 40vh;
+      width: 50%;
+      border: 4px solid #F56F6C;
+      border-radius: 8px;
+      background: white;
 
-    .single-post-body {
-      margin-top: 0;
-      padding-left: 0.5rem;
-      padding-top: 0.5rem;
-      padding-bottom: 5%;
-      font-size: 1.3rem;
-      margin-bottom: 0
-    }
-
-    .single-post-timestamp {
-      // font-weight: bold;
-      text-align: right;
-      margin-top: 0;
-      margin-bottom: 0;
-      text-transform: uppercase;
-      font-size: 0.8rem;
-      color: #0C4C58;
-      font-weight: bold;
-    }
-
-    .option-btn {
-      margin: 0;
-      text-align: right;
-      text-transform: uppercase;
-      font-size: 1rem;
-      color: #0C4C58;
-      font-weight: bold;
-    }
-
-    .fa-comment-o {
-      font-size: 1.2rem;
-    }
-
-    .comment-area {
-      list-style-type: none;
-      padding-left: 0;
-
-      .comment-body {
-        width: 95%;
-        padding: 1%;
-        font-size: 1rem;
-        box-sizing: border-box;
-      }
-
-      .comment-btn {
-        width: 5%;
-        font-size: 1rem;
-        padding: 1%;
+      .cancel-btn {
+        float: right;
+        background: transparent;
         border: 0;
+
+        .fa-remove {
+          font-size: 1.3rem;
+        }
+
       }
 
-      .single-comment-holder {
-        background: #A7A9AC;
+      .post-title {
+        box-sizing: border-box;
+        width: 100%;
+        font-size: 1rem;
+        padding: 3%;
+        padding-left: 0.2rem;
+        margin-top: 0.5rem;
+        border: 2px solid #F56F6C;
+        margin-bottom: 0.5rem;
+      }
 
-        .commenter-name {
-          text-transform: uppercase;
+      .post-body {
+        box-sizing: border-box;
+        width: 100%;
+        height: 20vh;
+        font-size: 1rem;
+        padding: 2%;
+        padding-left: 0.2rem;
+        margin: 0 auto;
+        border: 2px solid #F56F6C;
 
-          a {
-            // text-decoration: none;
-            color: black;
-          }
+      }
+
+      .post-btn {
+        font-size: 1.3rem;
+        padding: 2%;
+        text-align: center;
+        color: black;
+        width: 100%;
+        border: 0;
+
+        &:hover {
+          opacity: 0.75;
         }
       }
+
     }
-  }
 }

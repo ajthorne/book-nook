@@ -7,7 +7,7 @@ const BookView = React.createClass({
   return {
     books: store.books.toJSON(),
     libraryBooks: store.libraryBooks.toJSON(),
-    pageNumber: 1}
+    pageNumber: 0}
   },
   updateState: function() {
       this.setState({books: store.books.toJSON(),
@@ -41,7 +41,7 @@ const BookView = React.createClass({
     let book = decodeURI(searchValue.substring(6));
     if (this.props.location.search !== nextProps.location.search) {
       // console.log('fetching new collection', store.books);
-      this.setState({pageNumber: 1})
+      this.setState({pageNumber: 0})
       store.books.fetch(
         {
           data: {
@@ -116,7 +116,7 @@ const BookView = React.createClass({
     }
 
     let prevBtn;
-    if(this.state.pageNumber > 1) {
+    if(this.state.pageNumber > 0) {
       prevBtn = <button onClick={this.prevPageHandler}><i className="fa fa-arrow-circle-left"></i> Previous Page</button>
     } else {
       prevBtn = ''

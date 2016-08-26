@@ -39,8 +39,9 @@ const UserPosts = React.createClass({
     store.comments.off('update change', this.updateState)
   },
 
-  toggleModal: function () {
-  this.setState({showModal: !this.state.showModal})
+  toggleModal: function (e) {
+    e.preventDefault();
+    this.setState({showModal: !this.state.showModal})
 },
 
   submitPost: function (e) {
@@ -63,10 +64,17 @@ const UserPosts = React.createClass({
         <form className="modal" onSubmit={this.submitPost}>
           <button className="cancel-btn" onClick={this.toggleModal}><i className="fa fa-remove"></i></button>
           <input className="post-title" type="text" placeholder="Enter a title" ref="title"/>
-          <input className="post-body" type="text" placeholder="Enter text" ref="bodyText"/>
-          <input className="post-btn" type="submit" value="Create Post"/>
+          <textarea className="post-body" placeholder="Enter text" ref="bodyText"></textarea>
+          <button className="post-btn" onClick={this.submitPost}>Create Post</button>
        </form>
       </div>)
+     }
+
+     let newPostBtn;
+     if (this.props.params.id === store.session.get('_id')) {
+       newPostBtn = <button className="new-post-btn" onClick={this.toggleModal}><i className="fa fa-edit"></i> New Post</button>
+     } else {
+       newPostBtn = ''
      }
 
     let posts = store.wallPosts.map((post, i, arr) =>  {
@@ -86,7 +94,9 @@ const UserPosts = React.createClass({
     return (
       <div className="profile-content">
         <h2>My Posts</h2>
-        <button onClick={this.toggleModal}><i className="fa fa-edit"></i> New Post</button>
+        <div className="post-btn-holder">
+          {newPostBtn}
+        </div>
         <ul className="posts-holder">
           {postList}
         </ul>

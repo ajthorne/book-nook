@@ -60,7 +60,9 @@ const UserSinglePost = React.createClass({
         let id = comment.creatorId;
         let name = comment.creatorName;
         let commentBody = comment.body;
-        let timestamp = moment(comment._kmd.lmt).format('MMMM Do YYYY, h:mm a')
+        // let timestamp = moment(comment._kmd.lmt).format('MMMM Do YYYY, h:mm a')
+        let timestamp = moment(comment._kmd.lmt).calendar()
+        // let timestamp = moment(comment._kmd.lmt).fromNow()
         commentArea.push(<UserComments key={i} name={name} commentBody={commentBody} timestamp={timestamp} id={id}/>);
       })
     } else if (this.state.showComments) {
