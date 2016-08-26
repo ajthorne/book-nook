@@ -125,12 +125,14 @@
   }
 
     .book-modal {
-      padding: 0.3rem;
-      background: white;
+      padding: 0.5rem;
+      background: #F6F7F9;
       z-index: 0;
       height: 55%;
       width: 55%;
       overflow: auto;
+      border-radius: 8px;
+      border: 2px solid #0C4C58;
 
       button {
         float: right;
@@ -143,19 +145,57 @@
       }
 
       .modal-title {
-
+        font-size: 1.3rem;
+        margin-top: 0.5rem;
+        margin-bottom: 0;
+        font-style: italic;
+        color: #0C4C58;
       }
+
       .modal-date {
+        margin-top: 0;
+        margin-bottom: 0.5rem;
 
       }
       .modal-count {
+        // margin: 0;
+        margin-bottom: 0.5rem;
+
+        span {
+          font-weight: bold;
+        }
+
+      }
+      .modal-category {
+        margin: 0;
+        margin-bottom: 0.5rem;
+
+        span {
+          font-weight: bold;
+        }
 
       }
       .modal-book-description {
+        margin-top: 0;
+        margin-bottom: 1rem;
+        text-align: justify;
 
+        span {
+          font-weight: bold;
+        }
       }
       .modal-book-link {
+        text-align: center;
 
+        a {
+          font-size: 1.4rem;
+          color: #0C4C58;
+          text-decoration: none;
+        }
+
+        a:hover {
+          text-decoration: underline;
+        }
       }
     }
 }
