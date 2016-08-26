@@ -109,23 +109,6 @@ const User = Backbone.Model.extend({
     }
 },
 
-// getFollowers: function (data) {
-  // console.log('trying to get your followers...');
-  // $.ajax({
-  //   url: `https://baas.kinvey.com/appdata/${settings.appId}/followers`,
-  //       data: {
-  //           query: JSON.stringify({username: data.username})
-  //           },
-  //   success: function(followers) {
-  //   // console.log(followers);
-  //   followers.map((follower, i, arr) => {
-  //       console.log(follower);
-  //       let id = follower._id;
-  //   })
-  //   }
-  //   })
-    // },
-
 login: function(data, url) {
     this.save(data, {
         url: `https://baas.kinvey.com/user/${settings.appId}/login`,

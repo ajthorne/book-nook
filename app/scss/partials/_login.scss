@@ -1,3 +1,9 @@
+@mixin loginform {
+  font-size: 1rem;
+  padding: 3%;
+  box-sizing: border-box;
+}
+
 .login-holder {
   width: 50%;
   margin: 0 auto;
@@ -14,36 +20,25 @@
   }
 
   .login-name {
-    font-size: 1rem;
-    padding: 3%;
-    box-sizing: border-box;
+    @include loginform;
     width: 50%;
-    // border: 1px solid #F56F6C;
   }
 
   .login-password {
-    font-size: 1rem;
-    padding: 3%;
-    box-sizing: border-box;
+    @include loginform;
     width: 50%;
-    // border: 1px solid #F56F6C;
   }
 
   .login-btn {
+    @include loginform;
     font-size: 1.3rem;
-    padding: 3%;
-    box-sizing: border-box;
     width: 100%;
     background: #F6F7F9;
     border: 1px solid darkgray;
   }
 
   .login-user-name {
+    @include loginform;
     width: 100%;
-    font-size: 1rem;
-    padding: 3%;
-    box-sizing: border-box;
-    // border: 1px solid #F56F6C;
-
   }
 }

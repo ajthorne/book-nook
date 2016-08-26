@@ -10,13 +10,20 @@
     padding: 2%;
 
     i {
-      font-size: 2rem;
+      font-size: 2.2rem;
       color: #0C4C58;
     }
   }
 
   span {
+    text-align: center;
     display: block;
     font-weight: bold;
+    font-size: 1.1rem;
+  }
+
+  .solo-feature-copy {
+    font-size: 1rem;
+    text-align: justify;
   }
 }

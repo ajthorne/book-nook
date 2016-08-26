@@ -16,7 +16,7 @@ nav {
   text-decoration: none;
   color: #0C4C58;
   font-family: 'Fredericka the Great', cursive;
-  font-size: 1.6rem; }
+  font-size: 2rem; }
 
 .book-search {
   display: inline-block;
@@ -25,7 +25,7 @@ nav {
   left: 40%;
   top: 1.5%;
   border-radius: 5px;
-  border: 1px solid white; }
+  border: 2px solid white; }
   .book-search input[type=text] {
     padding: 5%;
     background: transparent;
@@ -49,7 +49,7 @@ nav {
   color: white;
   padding: 0 8px;
   line-height: 33px;
-  font-size: 1.1rem; }
+  font-size: 1.2rem; }
   .login-link:hover {
     color: #0C4C58; }
 
@@ -103,11 +103,16 @@ nav {
     flex-basis: 33%;
     padding: 2%; }
     .features-flex .solo-feature i {
-      font-size: 2rem;
+      font-size: 2.2rem;
       color: #0C4C58; }
   .features-flex span {
+    text-align: center;
     display: block;
-    font-weight: bold; }
+    font-weight: bold;
+    font-size: 1.1rem; }
+  .features-flex .solo-feature-copy {
+    font-size: 1rem;
+    text-align: justify; }
 
 footer {
   background: #F56F6C;
@@ -417,17 +422,18 @@ footer {
     box-sizing: border-box;
     width: 50%; }
   .login-holder .login-btn {
-    font-size: 1.3rem;
+    font-size: 1rem;
     padding: 3%;
     box-sizing: border-box;
+    font-size: 1.3rem;
     width: 100%;
     background: #F6F7F9;
     border: 1px solid darkgray; }
   .login-holder .login-user-name {
-    width: 100%;
     font-size: 1rem;
     padding: 3%;
-    box-sizing: border-box; }
+    box-sizing: border-box;
+    width: 100%; }
 
 .post-btn-holder {
   text-align: right;

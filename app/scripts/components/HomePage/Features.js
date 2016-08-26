@@ -46,7 +46,7 @@ const Features = React.createClass({
             <i className="fa fa-user"></i>
             <p className="solo-feature-copy">
             <span>User Profiles</span>
-            Keep a digital library of books you've read.
+            Keep a digital library of books you've read, pick your favorites, and even rant or rave about them!
             </p>
           </div>
           <div className="solo-feature">
@@ -60,7 +60,7 @@ const Features = React.createClass({
             <i className="fa fa-users"></i>
             <p className="solo-feature-copy">
             <span>Building a Community</span>
-            Connect with other teens who love the same books you do.  View our extensive user list and user profiles!
+            Connect with and follow other teens who love the same books you do.  View our extensive user list and user profiles!
             </p>
           </div>
         </div>

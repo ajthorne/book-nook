@@ -21,6 +21,8 @@ const Login = React.createClass({
       name: this.refs.name.value,
       username: this.refs.username.value,
       password: this.refs.password.value,
+      followers: [],
+      imgUrl: 'http://www.bradleysbookoutlet.com/wp-content/uploads/2013/06/bradleys-book-outlet-books-only-logo.png'
     }
     // console.log(data);
     store.session.signup(data)
