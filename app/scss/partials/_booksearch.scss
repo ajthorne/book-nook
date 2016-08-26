@@ -38,6 +38,9 @@
         object-fit: cover;
         margin-top: 1rem;
         // position: relative;
+        &:hover {
+          cursor: pointer;
+        }
       }
 
       .fa-search-plus {
@@ -46,6 +49,7 @@
         right: 0.3rem;
         font-size: 1.3rem;
         color: white;
+        // background: #0C4C58;
       }
     }
 
@@ -60,6 +64,10 @@
         font-weight: bold;
         margin: 0;
         color: #0C4C58;
+
+        &:hover {
+          cursor: pointer;
+        }
       }
 
       .single-book-author {
@@ -150,4 +158,36 @@
 
       }
     }
+}
+
+.button-holder {
+  width: 35%;
+  height: 10vh;
+  margin: 0 auto;
+  position: relative;
+
+  .nextBtn {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 3%;
+    background: transparent;
+    border: 0;
+    font-size: 1.2rem;
+    color: #0C4C58;
+  }
+
+  .prevBtn {
+    padding: 3%;
+    background: transparent;
+    border: 0;
+    font-size: 1.2rem;
+    color: #0C4C58;
+    // border-right: 1px solid #0C4C58;
+  }
+
+  .fa {
+    font-size: 1.5rem;
+  }
+
 }

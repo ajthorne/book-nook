@@ -33,8 +33,6 @@ const SingleBook = React.createClass({
             <a target="_blank" href={this.props.infoLink} className="modal-book-link">More Info</a>
           </div>
       </div>)
-
-      // published={published} pageCount={pageCount} categories={categories} infoLink={infoLink} publisher={publisher}
      }
     // console.log(this.props);
     // console.log(this.props.state);
@@ -63,7 +61,7 @@ const SingleBook = React.createClass({
         <img src={`${this.props.bookImg}`} onClick={this.toggleModal}/>
       </div>
       <div className="single-book-copy">
-        <p className="single-book-title">{this.props.title}</p>
+        <p className="single-book-title" onClick={this.toggleModal}>{this.props.title}</p>
         <p className="single-book-author">{this.props.authors}</p>
         <p className="single-book-description"><span>About: </span>{this.props.description}</p>
         {addBtn}

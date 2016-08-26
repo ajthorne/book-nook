@@ -110,14 +110,14 @@ const BookView = React.createClass({
 
     let nextBtn;
     if (getPageTotal() > this.state.pageNumber) {
-      nextBtn = <button onClick={this.nextPageHandler}><i className="fa fa-arrow-circle-right"></i> Next Page</button>
+      nextBtn = <button className="nextBtn" onClick={this.nextPageHandler}>Next Page <i className="fa fa-arrow-circle-right"></i></button>
     } else {
       nextBtn = ''
     }
 
     let prevBtn;
     if(this.state.pageNumber > 0) {
-      prevBtn = <button onClick={this.prevPageHandler}><i className="fa fa-arrow-circle-left"></i> Previous Page</button>
+      prevBtn = <button className="prevBtn" onClick={this.prevPageHandler}><i className="fa fa-arrow-circle-left"></i> Previous Page</button>
     } else {
       prevBtn = ''
     }
@@ -162,7 +162,14 @@ const BookView = React.createClass({
           }
           let infoLink = book.get('volumeInfo').infoLink;
           let publisher = book.get('volumeInfo').publisher;
-          let description = book.get('volumeInfo').description;
+          let description;
+
+          if (!book.get('volumeInfo').description) {
+            description = 'No description available'
+          } else  {
+            description = book.get('volumeInfo').description;
+          }
+
 
       return <SingleBook key={i} state={state} title={title} description={description} authors={authors} bookImg={bookImg} id={id} published={published} pageCount={pageCount} categories={categories} infoLink={infoLink} publisher={publisher}/>
     })
@@ -176,9 +183,9 @@ const BookView = React.createClass({
         <ul className="book-results">
           {books}
         </ul>
-        <div>
-        {prevBtn}
-        {nextBtn}
+        <div className="button-holder">
+          {prevBtn}
+          {nextBtn}
         </div>
       </div>
     )
