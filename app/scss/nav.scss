@@ -18,7 +18,12 @@ nav {
     color: $primary-color;
     font-family: $title-font;
     font-size: 2rem;
+
+    i {
+      display: none;
+    }
 }
+
 .book-search {
     display: inline-block;
     position: fixed;
@@ -58,6 +63,9 @@ nav {
     &:hover {
         color: $primary-color;
     }
+    i {
+        display: none;
+    }
 }
 .login-link:after {
     content: '';
@@ -71,3 +79,44 @@ nav {
     width: 100%;
     background: $primary-color;
 }
+@media only screen and (max-width: 480px) {
+    nav {
+        padding: 10px;
+        .home-link {
+          font-size: 1.5rem;
+
+            span {
+              display: none;
+            }
+
+            i {
+              display: inline-block;
+            }
+        }
+        .book-search {
+            left: 17%;
+            width: 10rem;
+            input[type=text] {
+                width: 70%;
+                margin: 0;
+                font-size: 0.8rem;
+            }
+            button {
+                i {
+                    font-size: 1rem;
+                }
+            }
+        }
+        .login-link {
+            padding: 0;
+            margin-left: 0.8rem;
+            span {
+                display: none;
+            }
+            i {
+                display: block;
+            }
+        }
+    }
+}
+@media screen and (min-width: 840px) {}

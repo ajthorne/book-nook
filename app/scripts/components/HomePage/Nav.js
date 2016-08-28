@@ -32,20 +32,20 @@ const Nav = React.createClass({
       let id = store.session.get('_id');
       navView = (
         <nav>
-          <Link to="/" className="home-link">Book Nook</Link>
+          <Link to="/" className="home-link"><i className="fa fa-book"></i><span>Book Nook</span></Link>
           <Search />
-          <Link to="/" className="login-link" onClick={this.logOutHandler}>Log Out</Link>
-          <Link to="/users" className="login-link">Users</Link>
-          <Link to={`/users/${id}`} className="login-link">My Profile</Link>
+          <Link to="/" className="login-link" onClick={this.logOutHandler}><i className="fa fa-sign-out"></i><span>Log Out</span></Link>
+          <Link to="/users" className="login-link"><i className="fa fa-users"></i><span>Users</span></Link>
+          <Link to={`/users/${id}`} className="login-link"><i className="fa fa-user"></i><span>My Profile</span></Link>
         </nav>
       )
     } else {
       navView = (
         <nav>
-          <Link to="/" className="home-link">Book Nook</Link>
+          <Link to="/" className="home-link"><i className="fa fa-book"></i><span>Book Nook</span></Link>
           <Search />
-          <Link to="/login" className="login-link">Sign Up</Link>
-          <Link to="/login" className="login-link">Sign In</Link>
+          <Link to="/login" className="login-link"><i className="fa fa-sign-in"></i><span>Sign Up</span></Link>
+          <Link to="/login" className="login-link"><span>Sign In</span></Link>
         </nav>
       )
     }

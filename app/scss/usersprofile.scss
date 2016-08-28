@@ -96,6 +96,11 @@
         color: #A7A9AC;
         &:hover {
             color: #282828;
+            animation-name: pulse;
+            animation-duration: 2000ms;
+            transform-origin:70% 70%;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
         }
     }
     .favorited {
@@ -106,3 +111,15 @@
         margin-left: 1rem;
     }
 }
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+	30% { transform: scale(1.15); }
+	40% { transform: scale(1.25); }
+	50% { transform: scale(1); }
+	60% { transform: scale(1); }
+	70% { transform: scale(1.2); }
+	80% { transform: scale(1); }
+	100% { transform: scale(1); }
+}
+//code credit help --https://paulund.co.uk/create-pulse-effect-with-css3-animation

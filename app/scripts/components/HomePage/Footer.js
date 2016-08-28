@@ -5,7 +5,7 @@ const Footer = React.createClass({
   render: function () {
     return (
       <footer>
-        <p className="footer-copy">© Amanda</p>
+        <p className="footer-copy">Copyright © 2016 Book Nook Inc.</p>
       </footer>
     )
   }

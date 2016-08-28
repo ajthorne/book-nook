@@ -27,3 +27,27 @@
     text-align: justify;
   }
 }
+
+@media only screen and (max-width: 480px) {
+
+  .features-flex {
+    display: block;
+    padding: 5%;
+    margin-top: 0;
+  }
+
+  .solo-feature {
+    i {
+      font-size: 2rem;
+    }
+  }
+
+  span {
+    font-size: 1rem
+  }
+
+  .solo-feature-copy {
+    font-size: 0.9rem;
+
+  }
+}

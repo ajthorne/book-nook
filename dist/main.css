@@ -17,6 +17,8 @@ nav {
   color: #0C4C58;
   font-family: "Fredericka the Great", cursive;
   font-size: 2rem; }
+  .home-link i {
+    display: none; }
 
 .book-search {
   display: inline-block;
@@ -67,26 +69,34 @@ nav {
   width: 100%;
   background: #0C4C58; }
 
-@media (max-width: 480px) {
-  nav .home-link {
-    font-size: 1.1rem; }
-  nav .book-search {
-    left: 30%;
-    width: 10rem; }
-    nav .book-search input[type=text] {
-      width: 70%;
-      margin: 0;
-      font-size: 0.8rem; }
-    nav .book-search button i {
-      font-size: 1rem; }
-  nav .login-link {
-    padding: 0; }
-    nav .login-link span {
-      display: none; }
-    nav .login-link i {
-      display: block; } }
+@media only screen and (max-width: 480px) {
+  nav {
+    padding: 10px; }
+    nav .home-link {
+      font-size: 1.5rem; }
+      nav .home-link span {
+        display: none; }
+      nav .home-link i {
+        display: inline-block; }
+    nav .book-search {
+      left: 17%;
+      width: 10rem; }
+      nav .book-search input[type=text] {
+        width: 70%;
+        margin: 0;
+        font-size: 0.8rem; }
+      nav .book-search button i {
+        font-size: 1rem; }
+    nav .login-link {
+      padding: 0;
+      margin-left: 0.8rem; }
+      nav .login-link span {
+        display: none; }
+      nav .login-link i {
+        display: block; } }
 .header {
   background: linear-gradient(rgba(245, 111, 108, 0.3), rgba(245, 111, 108, 0.75)), url("../../assets/bookheader1.jpeg");
+  background-repeat: no-repeat;
   height: 60vh;
   width: 100%;
   box-sizing: border-box;
@@ -113,6 +123,18 @@ nav {
     color: #FFF;
     border-radius: 5px; }
 
+@media only screen and (max-width: 480px) {
+  .header {
+    background-size: cover;
+    height: 50vh;
+    padding: 2%; }
+    .header h1 {
+      padding-top: 10vh;
+      font-size: 3rem; }
+    .header h2 {
+      font-size: 1.6rem; }
+    .header .users-btn {
+      padding: 2.3%; } }
 .features-flex {
   display: flex;
   flex-flow: row;
@@ -134,6 +156,20 @@ nav {
     font-size: 1rem;
     text-align: justify; }
 
+@media only screen and (max-width: 480px) {
+  .features-flex {
+    display: block;
+    padding: 5%;
+    margin-top: 0; }
+
+  .solo-feature i {
+    font-size: 2rem; }
+
+  span {
+    font-size: 1rem; }
+
+  .solo-feature-copy {
+    font-size: 0.9rem; } }
 footer {
   background: #F56F6C;
   position: absolute;
@@ -147,6 +183,10 @@ footer {
     color: #FFF;
     font-size: 1.3rem; }
 
+@media only screen and (max-width: 480px) {
+  footer .footer-copy {
+    font-size: 1rem;
+    height: 8vh; } }
 .users-holder {
   margin-top: 12vh; }
   .users-holder h2 {
