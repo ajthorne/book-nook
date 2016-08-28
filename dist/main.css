@@ -52,6 +52,8 @@ nav {
   font-size: 1.2rem; }
   .login-link:hover {
     color: #0C4C58; }
+  .login-link i {
+    display: none; }
 
 .login-link:after {
   content: '';
@@ -65,6 +67,24 @@ nav {
   width: 100%;
   background: #0C4C58; }
 
+@media (max-width: 480px) {
+  nav .home-link {
+    font-size: 1.1rem; }
+  nav .book-search {
+    left: 30%;
+    width: 10rem; }
+    nav .book-search input[type=text] {
+      width: 70%;
+      margin: 0;
+      font-size: 0.8rem; }
+    nav .book-search button i {
+      font-size: 1rem; }
+  nav .login-link {
+    padding: 0; }
+    nav .login-link span {
+      display: none; }
+    nav .login-link i {
+      display: block; } }
 .header {
   background: linear-gradient(rgba(245, 111, 108, 0.3), rgba(245, 111, 108, 0.75)), url("../../assets/bookheader1.jpeg");
   height: 60vh;
@@ -394,12 +414,34 @@ footer {
     color: #A7A9AC; }
     .user-profile-container .fa-heart:hover,
     .user-profile-container .fa-trash:hover {
-      color: #282828; }
+      color: #282828;
+      animation-name: pulse;
+      animation-duration: 2000ms;
+      transform-origin: 70% 70%;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear; }
   .user-profile-container .favorited {
     color: red; }
   .user-profile-container .fa-trash {
     margin-left: 1rem; }
 
+@keyframes pulse {
+  0% {
+    transform: scale(1); }
+  30% {
+    transform: scale(1.15); }
+  40% {
+    transform: scale(1.25); }
+  50% {
+    transform: scale(1); }
+  60% {
+    transform: scale(1); }
+  70% {
+    transform: scale(1.2); }
+  80% {
+    transform: scale(1); }
+  100% {
+    transform: scale(1); } }
 .login-holder {
   width: 50%;
   margin: 0 auto;
