@@ -5,13 +5,13 @@
     padding-bottom: 2%;
     margin-left: 10%;
     margin-right: 7%;
-    font-family: 'Quicksand', sans-serif;
+    font-family: $header-font;
     font-weight: bold;
     font-size: 2rem;
-    border-bottom: 2px solid #A7A9AC;
+    border-bottom: 2px solid $dark-gray;
 
     span {
-      color: #0C4C58
+      color: $primary-color
     }
   }
 
@@ -37,7 +37,6 @@
         width: 130px;
         object-fit: cover;
         margin-top: 1rem;
-        // position: relative;
         &:hover {
           cursor: pointer;
         }
@@ -48,8 +47,7 @@
         top: 1.1rem;
         right: 0.3rem;
         font-size: 1.3rem;
-        color: white;
-        // background: #0C4C58;
+        color: $white;
       }
     }
 
@@ -63,7 +61,7 @@
       .single-book-title {
         font-weight: bold;
         margin: 0;
-        color: #0C4C58;
+        color: $primary-color;
 
         &:hover {
           cursor: pointer;
@@ -83,19 +81,18 @@
 
         height: 16vh;
         overflow: scroll;
-        border: 2px solid #0C4C58;
+        border: 2px solid $primary-color;
         padding: 2%;
         line-height: 21px;
-        // margin-bottom: 0;
       }
 
       .single-book-add {
         width: 50%;
         padding: 3%;
         font-size: 1rem;
-        background: #0C4C58;
+        background: $primary-color;
         border: 0;
-        color: white;
+        color: $white;
         float: right;
       }
 
@@ -105,7 +102,7 @@
         padding: 3%;
         font-size: 1rem;
         border: 0;
-        color: white;
+        color: $white;
         float: right;
       }
     }
@@ -132,7 +129,7 @@
       width: 55%;
       overflow: auto;
       border-radius: 8px;
-      border: 2px solid #0C4C58;
+      border: 2px solid $primary-color;
 
       button {
         float: right;
@@ -145,11 +142,11 @@
       }
 
       .modal-title {
-        font-size: 1.3rem;
+        font-size: 1.4rem;
         margin-top: 0.5rem;
         margin-bottom: 0;
         font-style: italic;
-        color: #0C4C58;
+        color: $primary-color;
       }
 
       .modal-date {
@@ -189,7 +186,7 @@
 
         a {
           font-size: 1.4rem;
-          color: #0C4C58;
+          color: $primary-color;
           text-decoration: none;
         }
 
@@ -214,7 +211,7 @@
     background: transparent;
     border: 0;
     font-size: 1.2rem;
-    color: #0C4C58;
+    color: $primary-color;
   }
 
   .prevBtn {
@@ -222,7 +219,7 @@
     background: transparent;
     border: 0;
     font-size: 1.2rem;
-    color: #0C4C58;
+    color: $primary-color;
     // border-right: 1px solid #0C4C58;
   }
 

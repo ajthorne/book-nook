@@ -1,0 +1,24 @@
+//primary fonts
+$title-font: 'Fredericka the Great', cursive;
+$header-font: 'Quicksand', sans-serif;
+
+//colors
+$primary-color: #0C4C58;
+//teal blue
+
+$main-color: #F56F6C;
+//bittersweet peach
+
+$secondary-color: #9BD7D5;
+//sinbad minty green
+
+$gray: #F6F7F9;
+$dark-gray: #A7A9AC;
+$white: #FFF;
+
+//login mixin
+@mixin loginform {
+  font-size: 1rem;
+  padding: 2%;
+  box-sizing: border-box;
+}

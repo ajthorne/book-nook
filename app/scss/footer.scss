@@ -1,10 +1,8 @@
 footer {
-  background: #F56F6C;
+  background: $main-color;
   position: absolute;
   // padding: 0.5%;
   bottom: -75px;
-  // left: 0;
-  // right: 0;
   opacity: 0.9;
   width: 100%;
   height: 10vh;
@@ -12,7 +10,7 @@ footer {
   text-align: center;
 
   .footer-copy {
-    color: white;
+    color: $white;
     font-size: 1.3rem;
   }
 }

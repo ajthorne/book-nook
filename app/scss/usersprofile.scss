@@ -11,7 +11,7 @@
         h2 {
             text-align: center;
             font-size: 1.5rem;
-            font-family: 'Quicksand', sans-serif;
+            font-family: $header-font;
             color: #252932;
         }
         img {
@@ -27,11 +27,11 @@
             display: block;
             padding: 4%;
             font-size: 1rem;
-            color: white;
-            width: 50%;
+            color: $white;
+            width: 9vw;
             margin: 1rem auto 0;
             border: 0;
-            background-color: #0C4C58;
+            background-color: $primary-color;
             margin-bottom: 0.5rem;
         }
         ul {
@@ -39,14 +39,14 @@
             padding-left: 0;
             a {
                 text-decoration: none;
-                color: #0C4C58;
+                color: $primary-color;
                 li {
                     box-sizing: border-box;
                     padding: 4%;
                     width: 80%;
                     margin: 0 auto;
-                    background-color: #9BD7D5;
-                    border-bottom: 2px solid darkgray;
+                    background-color: $secondary-color;
+                    border-bottom: 2px solid $dark-gray;
                     margin-bottom: 0.5rem;
                     border-radius: 5px;
                     &:hover {
@@ -61,8 +61,8 @@
     }
     h2 {
         text-align: center;
-        font-family: 'Quicksand', sans-serif;
-        color: #0C4C58;
+        font-family: $header-font;
+        color: $primary-color;
     }
     .library-book-ul {
         display: flex;

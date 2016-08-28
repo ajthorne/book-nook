@@ -1,6 +1,20 @@
-@import 'partials/variables';
+@import 'variables';
+
 // font-family: 'Frederick the Great', cursive;
 // font-family: 'Quicksand', sans-serif;
+
+@import 'nav';
+@import 'header';
+@import 'features';
+@import 'footer';
+@import 'userslist';
+@import 'booksearch';
+@import 'usersprofile';
+@import 'login';
+@import 'userposts';
+@import 'userfavorites';
+@import 'userfollowers';
+
 
 html {
   height: 100%;

@@ -1,5 +1,5 @@
 nav {
-    background: #F56F6C;
+    background: $main-color;
     // background: transparent;
     box-sizing: border-box;
     position: fixed;
@@ -15,8 +15,8 @@ nav {
 }
 .home-link {
     text-decoration: none;
-    color: #0C4C58;
-    font-family: 'Fredericka the Great', cursive;
+    color: $primary-color;
+    font-family: $title-font;
     font-size: 2rem;
 }
 .book-search {
@@ -26,23 +26,23 @@ nav {
     left: 40%;
     top: 1.5%;
     border-radius: 5px;
-    border: 2px solid white;
+    border: 2px solid $white;
     input[type=text] {
         padding: 5%;
         background: transparent;
-        color: white;
+        color: $white;
         border: 0;
         font-size: 1rem;
     }
     input::-webkit-input-placeholder {
-        color: white;
+        color: $white;
     }
     button {
         padding: 1%;
         background: transparent;
         border: 0;
         i {
-            color: white;
+            color: $white;
             font-size: 1.3rem;
         }
     }
@@ -51,12 +51,12 @@ nav {
     float: right;
     margin-left: 1rem;
     text-decoration: none;
-    color: white;
+    color: $white;
     padding: 0 8px;
     line-height: 33px;
     font-size: 1.2rem;
     &:hover {
-        color: #0C4C58;
+        color: $primary-color;
     }
 }
 .login-link:after {
@@ -69,5 +69,5 @@ nav {
 }
 .login-link:hover:after {
     width: 100%;
-    background: #0C4C58;
+    background: $primary-color;
 }

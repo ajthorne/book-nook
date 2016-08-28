@@ -15,7 +15,7 @@ nav {
 .home-link {
   text-decoration: none;
   color: #0C4C58;
-  font-family: 'Fredericka the Great', cursive;
+  font-family: "Fredericka the Great", cursive;
   font-size: 2rem; }
 
 .book-search {
@@ -25,28 +25,28 @@ nav {
   left: 40%;
   top: 1.5%;
   border-radius: 5px;
-  border: 2px solid white; }
+  border: 2px solid #FFF; }
   .book-search input[type=text] {
     padding: 5%;
     background: transparent;
-    color: white;
+    color: #FFF;
     border: 0;
     font-size: 1rem; }
   .book-search input::-webkit-input-placeholder {
-    color: white; }
+    color: #FFF; }
   .book-search button {
     padding: 1%;
     background: transparent;
     border: 0; }
     .book-search button i {
-      color: white;
+      color: #FFF;
       font-size: 1.3rem; }
 
 .login-link {
   float: right;
   margin-left: 1rem;
   text-decoration: none;
-  color: white;
+  color: #FFF;
   padding: 0 8px;
   line-height: 33px;
   font-size: 1.2rem; }
@@ -74,23 +74,23 @@ nav {
   text-align: center;
   border-bottom: 2px solid #252932; }
   .header h1 {
-    font-family: 'Fredericka the Great', cursive;
+    font-family: "Fredericka the Great", cursive;
     padding-top: 15vh;
-    color: white;
+    color: #FFF;
     font-size: 4.5rem;
     margin-bottom: 0;
     margin-top: 0; }
   .header h2 {
-    color: white;
+    color: #FFF;
     font-size: 2.3rem;
     margin-top: 0.5rem;
-    font-family: 'Quicksand', sans-serif; }
+    font-family: "Quicksand", sans-serif; }
   .header .users-btn {
     padding: 1.3%;
     font-size: 1.2rem;
     background-color: #0C4C58;
     border: 0;
-    color: white;
+    color: #FFF;
     border-radius: 5px; }
 
 .features-flex {
@@ -124,14 +124,14 @@ footer {
   border-top: 1px solid #252932;
   text-align: center; }
   footer .footer-copy {
-    color: white;
+    color: #FFF;
     font-size: 1.3rem; }
 
 .users-holder {
   margin-top: 12vh; }
   .users-holder h2 {
     text-align: center;
-    font-family: 'Quicksand', sans-serif;
+    font-family: "Quicksand", sans-serif;
     font-weight: bold;
     font-size: 2rem; }
   .users-holder ul {
@@ -162,7 +162,7 @@ footer {
     padding-bottom: 2%;
     margin-left: 10%;
     margin-right: 7%;
-    font-family: 'Quicksand', sans-serif;
+    font-family: "Quicksand", sans-serif;
     font-weight: bold;
     font-size: 2rem;
     border-bottom: 2px solid #A7A9AC; }
@@ -192,7 +192,7 @@ footer {
         top: 1.1rem;
         right: 0.3rem;
         font-size: 1.3rem;
-        color: white; }
+        color: #FFF; }
     .books-container .book-results .single-book-copy {
       display: inline-block;
       padding: 2%;
@@ -223,7 +223,7 @@ footer {
         font-size: 1rem;
         background: #0C4C58;
         border: 0;
-        color: white;
+        color: #FFF;
         float: right; }
       .books-container .book-results .single-book-copy .single-book-added {
         background: #4f7177;
@@ -231,7 +231,7 @@ footer {
         padding: 3%;
         font-size: 1rem;
         border: 0;
-        color: white;
+        color: #FFF;
         float: right; }
   .books-container .book-modal-container {
     position: fixed;
@@ -260,7 +260,7 @@ footer {
       .books-container .book-modal button .fa-remove {
         font-size: 1.3rem; }
     .books-container .book-modal .modal-title {
-      font-size: 1.3rem;
+      font-size: 1.4rem;
       margin-top: 0.5rem;
       margin-bottom: 0;
       font-style: italic;
@@ -325,7 +325,7 @@ footer {
     .user-profile-container aside h2 {
       text-align: center;
       font-size: 1.5rem;
-      font-family: 'Quicksand', sans-serif;
+      font-family: "Quicksand", sans-serif;
       color: #252932; }
     .user-profile-container aside img {
       height: 8rem;
@@ -339,8 +339,8 @@ footer {
       display: block;
       padding: 4%;
       font-size: 1rem;
-      color: white;
-      width: 50%;
+      color: #FFF;
+      width: 9vw;
       margin: 1rem auto 0;
       border: 0;
       background-color: #0C4C58;
@@ -357,7 +357,7 @@ footer {
           width: 80%;
           margin: 0 auto;
           background-color: #9BD7D5;
-          border-bottom: 2px solid darkgray;
+          border-bottom: 2px solid #A7A9AC;
           margin-bottom: 0.5rem;
           border-radius: 5px; }
           .user-profile-container aside ul a li:hover {
@@ -366,7 +366,7 @@ footer {
     flex: 3 0 0; }
   .user-profile-container h2 {
     text-align: center;
-    font-family: 'Quicksand', sans-serif;
+    font-family: "Quicksand", sans-serif;
     color: #0C4C58; }
   .user-profile-container .library-book-ul {
     display: flex;
@@ -408,22 +408,22 @@ footer {
   text-align: center;
   padding: 2%; }
   .login-holder h2 {
-    font-family: 'Quicksand', sans-serif;
+    font-family: "Quicksand", sans-serif;
     font-size: 1.9rem;
     color: #0C4C58; }
   .login-holder .login-name {
     font-size: 1rem;
-    padding: 3%;
+    padding: 2%;
     box-sizing: border-box;
     width: 50%; }
   .login-holder .login-password {
     font-size: 1rem;
-    padding: 3%;
+    padding: 2%;
     box-sizing: border-box;
     width: 50%; }
   .login-holder .login-btn {
     font-size: 1rem;
-    padding: 3%;
+    padding: 2%;
     box-sizing: border-box;
     font-size: 1.3rem;
     width: 100%;
@@ -431,7 +431,7 @@ footer {
     border: 1px solid darkgray; }
   .login-holder .login-user-name {
     font-size: 1rem;
-    padding: 3%;
+    padding: 2%;
     box-sizing: border-box;
     width: 100%; }
 
@@ -442,7 +442,7 @@ footer {
     padding: 1.3%;
     font-size: 1rem;
     background: #0C4C58;
-    color: white;
+    color: #FFF;
     border: 0;
     border-radius: 8px; }
     .post-btn-holder .new-post-btn i {

@@ -2,7 +2,7 @@
     margin-top: 12vh;
     h2 {
         text-align: center;
-        font-family: 'Quicksand', sans-serif;
+        font-family: $header-font;
         font-weight: bold;
         font-size: 2rem;
     }
@@ -18,7 +18,7 @@
         padding: 2%;
 
         a {
-          color: #0C4C58;
+          color: $primary-color;
           // text-decoration: none;
           font-size: 1.3rem;
         }
@@ -34,7 +34,7 @@
           margin-left: 1%;
           object-fit: contain;
           border-radius: 50%;
-          border: 2px solid #0C4C58;
+          border: 2px solid $primary-color;
         }
 
       }

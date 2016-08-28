@@ -62,3 +62,10 @@ ReactDOM.render(router, document.querySelector('.container'));
 
 //if I delete a book from librarybooks collection, it must also be removed in the favorites collection if it's in there
 //edit and delete post from posts collection
+//users can delete or edit their own comment?
+
+//404 not found
+//display errors for wrong info
+
+//flash of content
+//check if content is correct content, if not should not display
