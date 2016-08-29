@@ -18,13 +18,13 @@ const UserLibrary = React.createClass({
     if ((store.session.get('_id') === this.props.userId) && (this.props.favorited.length)) {
       optionBtns = (
             <div>
-              <i onClick={this.favHandler} className="fa fa-heart favorited"></i>
+              <i onClick={this.favHandler} className="fa fa-heart book-fav favorited"></i>
               <i onClick={this.deleteBook} className="fa fa-trash"></i>
             </div>)
     } else if (store.session.get('_id') === this.props.userId) {
       optionBtns = (
             <div>
-              <i onClick={this.favHandler} className="fa fa-heart"></i>
+              <i onClick={this.favHandler} className="fa book-fav fa-heart"></i>
               <i onClick={this.deleteBook} className="fa fa-trash"></i>
             </div>)
     } else {
@@ -34,9 +34,11 @@ const UserLibrary = React.createClass({
     return (
       <li className="library-book-holder">
       <img className="library-book-img" src={`${this.props.bookImg}`}/>
-      <p className="library-book-title">{this.props.title}</p>
-      <p className="library-book-author">{this.props.authors}</p>
-      {optionBtns}
+      <div>
+        <p className="library-book-title">{this.props.title}</p>
+        <p className="library-book-author">{this.props.authors}</p>
+        {optionBtns}
+      </div>
       </li>
     )
   }

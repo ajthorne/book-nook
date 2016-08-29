@@ -52,6 +52,10 @@
                     &:hover {
                         opacity: 0.75;
                     }
+
+                    .mobile-nav-icon {
+                      display: none;
+                    }
                 }
             }
         }
@@ -91,8 +95,7 @@
             }
         }
     }
-    .fa-heart,
-    .fa-trash {
+    .book-fav {
         color: #A7A9AC;
         &:hover {
             color: #282828;
@@ -108,7 +111,12 @@
     }
     .fa-trash {
         // float: right;
+        color: #A7A9AC;
         margin-left: 1rem;
+
+        &:hover {
+          color: #282828;
+        }
     }
 }
 
@@ -123,3 +131,121 @@
 	100% { transform: scale(1); }
 }
 //code credit help --https://paulund.co.uk/create-pulse-effect-with-css3-animation
+
+@media only screen and (max-width: 480px) {
+
+  .user-profile-container {
+    // margin-top: 7vh;
+    display: block;
+
+    aside {
+      margin: 0 auto;
+      width: 60%;
+      h2 {
+        display: inline-block;
+        line-height: 58%;
+        margin-left: 5%;
+        font-size: 1.4rem;
+      }
+
+      .user-profile-img {
+        height: 3rem;
+        width: 3rem;
+        position: absolute;
+        left: 5%;
+        display: inline-block;
+
+      }
+
+      ul {
+        position: absolute;
+        // top: 0;
+        right: 0;
+        width: 100%;
+        display: flex;
+        background: #9BD7D5;
+        border-top: 1px solid black;
+
+        &:hover {
+          background-color: #F6F7F9;
+        }
+
+        a {
+          flex-basis: 25%;
+
+          li {
+
+            width: 100%;
+            padding: 0;
+            border-radius: 0;
+            border-bottom: 0;
+            margin-bottom: 0;
+            border-left: 1px solid black;
+            border-bottom: 1px solid black;
+
+
+            &:hover {
+              background-color: #F6F7F9;
+              border-bottom: 1px solid #F6F7F9;
+
+            }
+
+            &:active {
+              background-color: #F6F7F9;
+
+            }
+
+            .mobile-nav-icon {
+              display: block;
+              box-sizing: border-box;
+
+            }
+
+            .fa {
+              font-size: 1.5rem;
+              padding: 15%;
+              text-align: center;
+              color: #0C4C58;
+            }
+
+            img {
+              height: 3rem;
+              width: 2.5rem;
+              padding: 10%;
+              border: 0;
+              border-radius: 0;
+            }
+
+            span {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+
+    .library-book-ul {
+      margin: 0 auto;
+      width: 90%;
+
+      li {
+        display: inline-flex;
+        flex-basis: 100%;
+
+        img {
+          width: 80px;
+          height: 120px;
+          margin-right: 1rem;
+        }
+      }
+    }
+
+    .profile-content {
+      margin-top: 25%;
+
+      .profile-title {
+        display: none;
+      }
+    }
+  }
+}

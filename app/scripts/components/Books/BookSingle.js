@@ -30,7 +30,7 @@ const SingleBook = React.createClass({
             <p className="modal-count"><span>Page Count</span>: {this.props.pageCount}</p>
             <p className="modal-category"><span>Category</span>: {this.props.categories}</p>
             <p className="modal-book-description"><span>Full Description</span>: {this.props.description}</p>
-            <p className="modal-book-link"><a target="_blank" href={this.props.infoLink}>More Info</a></p>
+            <p className="modal-book-link"><a target="_blank" rel="noopener" href={this.props.infoLink}>More Info</a></p>
           </div>
       </div>)
      }
