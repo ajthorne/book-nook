@@ -115,6 +115,9 @@ login: function(data, url) {
         success: (response) => {
             hashHistory.push('/')
             localStorage.setItem("authtoken", response.attributes.authtoken);
+        },
+        error: (err) => {
+          alert('You entered an incorrect password or username!')
         }
     })
 },
@@ -126,6 +129,9 @@ signup: function(data) {
             // console.log(response.attributes.authtoken);
             hashHistory.push('/')
             localStorage.setItem("authtoken", response.attributes.authtoken);
+        },
+        error: (err) => {
+          alert('Sorry, that username is already taken')
         }
     })
 
