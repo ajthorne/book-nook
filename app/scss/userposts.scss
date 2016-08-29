@@ -203,3 +203,35 @@
       }
     }
 }
+
+@media only screen and (max-width: 550px) {
+  .posts-holder {
+    margin-right: 0;
+
+    .single-post-holder {
+      border-radius: 0;
+
+      .comment-area {
+
+        .comment-body {
+          width: 90%;
+        }
+        .comment-btn {
+          width: 10%;
+        }
+    }
+
+    .single-post-title {
+      font-size: 1.3rem;
+    }
+
+    .single-post-body {
+      font-size: 1.2rem;
+    }
+    }
+  }
+
+  .post-btn-holder {
+    margin-right: 0;
+  }
+}
