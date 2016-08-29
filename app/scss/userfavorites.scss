@@ -26,3 +26,25 @@
       }
   }
 }
+
+.favorites-holder {
+  padding-left: 5%;
+
+  li {
+    flex-basis: 100%;
+    text-align: center;
+
+    img {
+      width: 100px;
+      height: 150px;
+    }
+
+    .favorite-book-title {
+      font-size: 1rem;
+    }
+
+    .favorite-book-author {
+      display: none;
+    }
+  }
+}

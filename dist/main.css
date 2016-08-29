@@ -586,11 +586,11 @@ footer {
     display: block; }
     .user-profile-container aside {
       margin: 0 auto;
-      width: 60%; }
+      width: 70%; }
       .user-profile-container aside h2 {
         display: inline-block;
         line-height: 58%;
-        margin-left: 5%;
+        margin-left: 12%;
         font-size: 1.4rem; }
       .user-profile-container aside .user-profile-img {
         height: 3rem;
@@ -866,6 +866,19 @@ footer {
     .favorites-holder li .favorite-book-author {
       margin: 0;
       font-style: italic; }
+
+.favorites-holder {
+  padding-left: 5%; }
+  .favorites-holder li {
+    flex-basis: 100%;
+    text-align: center; }
+    .favorites-holder li img {
+      width: 100px;
+      height: 150px; }
+    .favorites-holder li .favorite-book-title {
+      font-size: 1rem; }
+    .favorites-holder li .favorite-book-author {
+      display: none; }
 
 .follower-holder {
   list-style-type: none;

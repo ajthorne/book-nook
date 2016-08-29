@@ -38,7 +38,7 @@ const UserFavorites = React.createClass({
 
     return (
       <div className="profile-content">
-        <h2>My Favorites</h2>
+        <h2 className="profile-title">My Favorites</h2>
         <ul className="favorites-holder">
           {favorites}
         </ul>

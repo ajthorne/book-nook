@@ -93,7 +93,7 @@ const UserPosts = React.createClass({
 
     return (
       <div className="profile-content">
-        <h2>My Posts</h2>
+        <h2 className="profile-title">My Posts</h2>
         <div className="post-btn-holder">
           {newPostBtn}
         </div>

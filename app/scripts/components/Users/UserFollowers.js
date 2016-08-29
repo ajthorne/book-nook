@@ -51,7 +51,7 @@ const UserFollowers = React.createClass({
       // console.log(followersArr);
     return (
       <div className="profile-content">
-      <h2>My Followers</h2>
+      <h2 className="profile-title">My Followers</h2>
       <ul className="follower-holder">
         {followersArr}
       </ul>
