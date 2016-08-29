@@ -13,7 +13,8 @@ const BookView = React.createClass({
       this.setState({books: store.books.toJSON(),
       libraryBooks: store.libraryBooks.toJSON()});
   },
-  componentDidMount: function () {
+  componentWillMount: function () {
+    store.books.reset();
     let searchValue = this.props.location.search;
     let index = searchValue.lastIndexOf('&');
     // let book = decodeURI(searchValue.substring(6));
@@ -79,7 +80,6 @@ const BookView = React.createClass({
       //       console.log('Here are the next results for', `${book}`);
       //     }
       //   })
-
     // }
     return true;
 },
@@ -112,7 +112,6 @@ const BookView = React.createClass({
   },
 
   prevPageHandler: function () {
-    // let pageNumber = this.state.pageNumber - 1
     let pageNumber = Number(this.props.location.query.page) - 1
       console.log('PrevPage pageNumber:', pageNumber);
     // console.log(this.props.location.search);

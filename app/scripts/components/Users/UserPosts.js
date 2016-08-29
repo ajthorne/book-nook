@@ -16,7 +16,9 @@ const UserPosts = React.createClass({
       comments: store.comments.toJSON()});
   },
 
-  componentDidMount: function () {
+  componentWillMount: function () {
+    store.wallPosts.reset();
+    store.comments.reset();
     let userId = this.props.params.id;
     store.wallPosts.fetch({
     data: {query: JSON.stringify({

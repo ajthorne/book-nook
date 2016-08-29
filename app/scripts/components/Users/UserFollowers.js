@@ -17,7 +17,9 @@ const UserFollowers = React.createClass({
         followers: store.followers.toJSON()});
   },
 
-  componentDidMount: function () {
+  componentWillMount: function () {
+    store.users.reset();
+    store.followers.reset();
     let userId = this.props.params.id;
     store.users.fetch({
       data: {query: JSON.stringify({

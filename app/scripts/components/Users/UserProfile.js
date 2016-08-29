@@ -16,7 +16,9 @@ const UserProfile = React.createClass({
       // console.log('update state', this.state);
   },
 
-  componentDidMount: function () {
+  componentWillMount: function () {
+    store.users.reset();
+    store.favorites.reset();
     let userId = this.props.params.id;
     store.users.fetch({
       data: {query: JSON.stringify({

@@ -14,7 +14,9 @@ const UserLibraryView = React.createClass({
       favorites: store.favorites.toJSON()});
   },
 
-  componentDidMount: function () {
+  componentWillMount: function () {
+    store.libraryBooks.reset();
+    store.favorites.reset();
     let userId = this.props.params.id;
     store.libraryBooks.fetch({
     data: {query: JSON.stringify({

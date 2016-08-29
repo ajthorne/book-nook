@@ -53,7 +53,6 @@ const router = (
 ReactDOM.render(router, document.querySelector('.container'));
 
 //QUESTIONS
-//how do I get rid of flash of content when looking at a users profile??
 
 //TO DO --
 //Since I added a followers collection, it would be helpful to clean up my code and replace manual ajax requests with fetching and get requests instead
@@ -66,10 +65,6 @@ ReactDOM.render(router, document.querySelector('.container'));
 //404 not found
 //display errors for wrong info
 //done for login/signup --anywhere else??
-
-//flash of content
-//check if content is correct content, if not should not display
-//reset collection in componentwillmount
 
 //check all input fields and clear them after submitting!
 
