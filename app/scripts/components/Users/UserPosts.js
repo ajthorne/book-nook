@@ -55,6 +55,7 @@ const UserPosts = React.createClass({
     }
     // console.log(data);
     store.wallPosts.createPost(data);
+    this.setState({showModal: !this.state.showModal})
   },
 
   render: function () {

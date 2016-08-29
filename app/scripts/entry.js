@@ -63,9 +63,5 @@ ReactDOM.render(router, document.querySelector('.container'));
 //users can delete or edit their own comment?
 
 //404 not found
-//display errors for wrong info
-//done for login/signup --anywhere else??
 
-//check all input fields and clear them after submitting!
-
-//media query for new post modal!!
+//update readme

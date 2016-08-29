@@ -11,7 +11,8 @@ const UserView = React.createClass({
       this.setState({users: store.users.toJSON()});
   },
 
-  componentDidMount: function () {
+  componentWillMount: function () {
+    store.users.reset();
     store.users.fetch({
       success: function (response) {
         // console.log('success with fetching:', response);

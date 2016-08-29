@@ -21,6 +21,7 @@ const UserSinglePost = React.createClass({
       wallPostId: this.props.id
     }
     store.comments.addComment(data);
+    this.refs.commentBody.value = '';
   },
 
   toggleComments: function () {

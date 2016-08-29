@@ -650,7 +650,6 @@ footer {
         flex-basis: 100%; }
         .user-profile-container .library-book-ul li img {
           margin-right: 1rem;
-          width: 110px;
           height: 165px;
           object-fit: contain; }
     .user-profile-container .profile-content {
@@ -874,6 +873,9 @@ footer {
 
   .post-btn-holder {
     margin-right: 0; } }
+.modal-container .modal {
+  width: 80%; }
+
 .favorites-holder {
   display: flex;
   flex-flow: row;
