@@ -69,7 +69,7 @@ nav {
   width: 100%;
   background: #0C4C58; }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 540px) {
   nav {
     padding: 10px; }
     nav .home-link {
@@ -79,7 +79,6 @@ nav {
       nav .home-link i {
         display: inline-block; }
     nav .book-search {
-      left: 17%;
       width: 10rem; }
       nav .book-search input[type=text] {
         width: 70%;
@@ -93,14 +92,42 @@ nav {
       nav .login-link span {
         display: none; }
       nav .login-link i {
-        display: block; } }
+        display: block; }
+      nav .login-link:hover {
+        color: #0C4C58; }
+    nav .login-link:after {
+      display: none; } }
+@media screen and (max-width: 865px) {
+  .book-search {
+    left: 28%; }
+
+  .login-link {
+    margin-left: 0; } }
+@media screen and (max-width: 680px) {
+  .book-search {
+    left: 28%;
+    width: 10rem; }
+    .book-search input[type=text] {
+      width: 70%;
+      margin: 0;
+      font-size: 0.8rem; }
+
+  .login-link {
+    margin-left: 0;
+    font-size: 1rem; }
+
+  .home-link {
+    font-size: 1.5rem; } }
+@media screen and (max-width: 340px) {
+  .book-search {
+    left: 17%; } }
 .header {
   background: linear-gradient(rgba(245, 111, 108, 0.3), rgba(245, 111, 108, 0.75)), url("../../assets/bookheader1.jpeg");
   background-repeat: no-repeat;
   height: 60vh;
   width: 100%;
   box-sizing: border-box;
-  background-size: contain;
+  background-size: cover;
   text-align: center;
   border-bottom: 2px solid #252932; }
   .header h1 {
@@ -125,16 +152,17 @@ nav {
 
 @media only screen and (max-width: 480px) {
   .header {
-    background-size: cover;
     height: 50vh;
     padding: 2%; }
     .header h1 {
-      padding-top: 10vh;
-      font-size: 3rem; }
-    .header h2 {
-      font-size: 1.6rem; }
+      padding-top: 10vh; }
     .header .users-btn {
       padding: 2.3%; } }
+@media only screen and (max-width: 640px) {
+  .header h1 {
+    font-size: 3rem; }
+  .header h2 {
+    font-size: 1.6rem; } }
 .features-flex {
   display: flex;
   flex-flow: row;
@@ -157,19 +185,19 @@ nav {
     text-align: justify; }
 
 @media only screen and (max-width: 480px) {
-  .features-flex {
-    display: block;
-    padding: 5%;
-    margin-top: 0; }
+  .features-flex span {
+    font-size: 1rem; }
 
   .solo-feature i {
     font-size: 2rem; }
 
-  span {
-    font-size: 1rem; }
-
   .solo-feature-copy {
     font-size: 0.9rem; } }
+@media only screen and (max-width: 640px) {
+  .features-flex {
+    display: block;
+    padding: 5%;
+    margin-top: 0; } }
 footer {
   background: #F56F6C;
   position: absolute;
@@ -216,6 +244,17 @@ footer {
         border-radius: 50%;
         border: 2px solid #0C4C58; }
 
+@media only screen and (max-width: 480px) {
+  .users-holder ul {
+    padding: 0.5rem;
+    width: 95%;
+    margin: 0 auto; }
+    .users-holder ul li {
+      flex-basis: 5rem;
+      padding: 3%; }
+      .users-holder ul li img {
+        height: 90px;
+        width: 90px; } }
 .books-container {
   margin-top: 13vh; }
   .books-container h2 {
@@ -333,8 +372,7 @@ footer {
       .books-container .book-modal .modal-count span {
         font-weight: bold; }
     .books-container .book-modal .modal-category {
-      margin: 0;
-      margin-bottom: 0.5rem; }
+      margin: 0 0 0.5rem; }
       .books-container .book-modal .modal-category span {
         font-weight: bold; }
     .books-container .book-modal .modal-book-description {
@@ -375,6 +413,42 @@ footer {
   .button-holder .fa {
     font-size: 1.5rem; }
 
+@media only screen and (max-width: 480px) {
+  .books-container h2 {
+    font-size: 1.3rem; }
+  .books-container .book-results {
+    margin-bottom: 10%; }
+    .books-container .book-results .single-book-img img {
+      height: 150px;
+      width: 100px; }
+    .books-container .book-results .single-book-holder {
+      max-height: 60vh; }
+    .books-container .book-results .single-book-description {
+      display: none; }
+    .books-container .book-results .single-book-copy .single-book-title {
+      font-size: 0.9rem; }
+    .books-container .book-results .single-book-copy .single-book-author {
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
+      max-height: 8vh;
+      overflow: hidden; }
+    .books-container .book-results .single-book-copy .single-book-add {
+      width: 100%;
+      font-size: 0.8rem;
+      padding: 3%; }
+    .books-container .book-results .single-book-copy .single-book-added {
+      width: 100%;
+      font-size: 0.8rem;
+      padding: 3%; }
+
+  .button-holder {
+    width: 80%; }
+    .button-holder .nextBtn {
+      font-size: 1rem; }
+    .button-holder .prevBtn {
+      font-size: 1rem; }
+    .button-holder .fa {
+      font-size: 1.1rem; } }
 .user-profile-container {
   margin-top: 13vh;
   display: flex; }
@@ -510,13 +584,23 @@ footer {
     font-size: 1.3rem;
     width: 100%;
     background: #F6F7F9;
-    border: 1px solid darkgray; }
+    border: 1px solid #A7A9AC; }
   .login-holder .login-user-name {
     font-size: 1rem;
     padding: 2%;
     box-sizing: border-box;
     width: 100%; }
 
+@media only screen and (max-width: 480px) {
+  .login-holder {
+    width: 75%; }
+    .login-holder h2 {
+      font-size: 1.5rem; }
+    .login-holder .login-user-name, .login-holder .login-password, .login-holder .login-name {
+      font-size: 0.7rem;
+      padding: 0; }
+    .login-holder .login-btn {
+      font-size: 0.9rem; } }
 .post-btn-holder {
   text-align: right;
   margin-right: 1rem; }
