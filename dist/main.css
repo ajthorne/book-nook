@@ -413,14 +413,38 @@ footer {
   .button-holder .fa {
     font-size: 1.5rem; }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 840px) {
+  .books-container h2 {
+    font-size: 1.7rem; }
+  .books-container .book-results .single-book-copy {
+    width: 50%; }
+    .books-container .book-results .single-book-copy .single-book-add {
+      width: 100%;
+      font-size: 1rem;
+      padding: 4%; }
+    .books-container .book-results .single-book-copy .single-book-added {
+      width: 100%;
+      font-size: 1rem;
+      padding: 4%; }
+  .books-container .book-results .single-book-title {
+    max-height: 10vh;
+    overflow: hidden; }
+  .books-container .book-results .single-book-img img {
+    height: 150px;
+    width: 100px; }
+
+  .button-holder {
+    width: 60%; } }
+@media only screen and (max-width: 492px) {
+  .books-container .book-modal {
+    height: 60%;
+    width: 85%; }
+    .books-container .book-modal .modal-title {
+      font-size: 1.1rem; }
   .books-container h2 {
     font-size: 1.3rem; }
   .books-container .book-results {
     margin-bottom: 10%; }
-    .books-container .book-results .single-book-img img {
-      height: 150px;
-      width: 100px; }
     .books-container .book-results .single-book-holder {
       max-height: 60vh; }
     .books-container .book-results .single-book-description {
@@ -433,11 +457,9 @@ footer {
       max-height: 8vh;
       overflow: hidden; }
     .books-container .book-results .single-book-copy .single-book-add {
-      width: 100%;
       font-size: 0.8rem;
       padding: 3%; }
     .books-container .book-results .single-book-copy .single-book-added {
-      width: 100%;
       font-size: 0.8rem;
       padding: 3%; }
 

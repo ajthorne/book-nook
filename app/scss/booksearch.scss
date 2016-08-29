@@ -1,230 +1,290 @@
 .books-container {
-  margin-top: 13vh;
-
-  h2 {
-    padding-bottom: 2%;
-    margin-left: 10%;
-    margin-right: 7%;
-    font-family: $header-font;
-    font-weight: bold;
-    font-size: 2rem;
-    border-bottom: 2px solid $dark-gray;
-
-    span {
-      color: $primary-color
-    }
-  }
-
-  .book-results {
-    list-style-type: none;
-    padding-left: 10%;
-    padding-top: 2%;
-
-    .single-book-holder {
-      display: inline-block;
-      width: 50%;
-      max-height: 50vh;
-      margin-bottom: 2rem;
-    }
-
-    .single-book-img {
-      display: inline-block;
-      position: relative;
-
-
-      img {
-        height: 200px;
-        width: 130px;
-        object-fit: cover;
-        margin-top: 1rem;
-        &:hover {
-          cursor: pointer;
-        }
-      }
-
-      .fa-search-plus {
-        position: absolute;
-        top: 1.1rem;
-        right: 0.3rem;
-        font-size: 1.3rem;
-        color: $white;
-      }
-    }
-
-    .single-book-copy {
-      display: inline-block;
-      padding: 2%;
-      margin-left: 1%;
-      width: 60%;
-      vertical-align: top;
-
-      .single-book-title {
+    margin-top: 13vh;
+    h2 {
+        padding-bottom: 2%;
+        margin-left: 10%;
+        margin-right: 7%;
+        font-family: $header-font;
         font-weight: bold;
-        margin: 0;
-        color: $primary-color;
-
-        &:hover {
-          cursor: pointer;
-        }
-      }
-
-      .single-book-author {
-        margin-top: 0;
-        font-style: italic;
-      }
-
-      .single-book-description {
+        font-size: 2rem;
+        border-bottom: 2px solid $dark-gray;
         span {
-          font-weight: bold;
-          color: #252932;
+            color: $primary-color;
         }
-
-        height: 16vh;
-        overflow: scroll;
-        border: 2px solid $primary-color;
-        padding: 2%;
-        line-height: 21px;
-      }
-
-      .single-book-add {
-        width: 50%;
-        padding: 3%;
-        font-size: 1rem;
-        background: $primary-color;
-        border: 0;
-        color: $white;
-        float: right;
-      }
-
-      .single-book-added {
-        background: #4f7177;
-        width: 50%;
-        padding: 3%;
-        font-size: 1rem;
-        border: 0;
-        color: $white;
-        float: right;
-      }
     }
-  }
-
-  .book-modal-container {
-    position: fixed;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(black, .5);
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    z-index: 1;
-  }
-
+    .book-results {
+        list-style-type: none;
+        padding-left: 10%;
+        padding-top: 2%;
+        .single-book-holder {
+            display: inline-block;
+            width: 50%;
+            max-height: 50vh;
+            margin-bottom: 2rem;
+        }
+        .single-book-img {
+            display: inline-block;
+            position: relative;
+            img {
+                height: 200px;
+                width: 130px;
+                object-fit: cover;
+                margin-top: 1rem;
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+            .fa-search-plus {
+                position: absolute;
+                top: 1.1rem;
+                right: 0.3rem;
+                font-size: 1.3rem;
+                color: $white;
+            }
+        }
+        .single-book-copy {
+            display: inline-block;
+            padding: 2%;
+            margin-left: 1%;
+            width: 60%;
+            vertical-align: top;
+            .single-book-title {
+                font-weight: bold;
+                margin: 0;
+                color: $primary-color;
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+            .single-book-author {
+                margin-top: 0;
+                font-style: italic;
+            }
+            .single-book-description {
+                span {
+                    font-weight: bold;
+                    color: #252932;
+                }
+                height: 16vh;
+                overflow: scroll;
+                border: 2px solid $primary-color;
+                padding: 2%;
+                line-height: 21px;
+            }
+            .single-book-add {
+                width: 50%;
+                padding: 3%;
+                font-size: 1rem;
+                background: $primary-color;
+                border: 0;
+                color: $white;
+                float: right;
+            }
+            .single-book-added {
+                background: #4f7177;
+                width: 50%;
+                padding: 3%;
+                font-size: 1rem;
+                border: 0;
+                color: $white;
+                float: right;
+            }
+        }
+    }
+    .book-modal-container {
+        position: fixed;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(black, .5);
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: 1;
+    }
     .book-modal {
-      padding: 0.5rem;
-      background: #F6F7F9;
-      z-index: 0;
-      height: 55%;
-      width: 55%;
-      overflow: auto;
-      border-radius: 8px;
-      border: 2px solid $primary-color;
-
-      button {
-        float: right;
-        border: 0;
-        background: transparent;
-
-        .fa-remove {
-          font-size: 1.3rem;
+        padding: 0.5rem;
+        background: #F6F7F9;
+        z-index: 0;
+        height: 55%;
+        width: 55%;
+        overflow: auto;
+        border-radius: 8px;
+        border: 2px solid $primary-color;
+        button {
+            float: right;
+            border: 0;
+            background: transparent;
+            .fa-remove {
+                font-size: 1.3rem;
+            }
         }
-      }
-
-      .modal-title {
-        font-size: 1.4rem;
-        margin-top: 0.5rem;
-        margin-bottom: 0;
-        font-style: italic;
-        color: $primary-color;
-      }
-
-      .modal-date {
-        margin-top: 0;
-        margin-bottom: 0.5rem;
-
-      }
-      .modal-count {
-        // margin: 0;
-        margin-bottom: 0.5rem;
-
-        span {
-          font-weight: bold;
+        .modal-title {
+            font-size: 1.4rem;
+            margin-top: 0.5rem;
+            margin-bottom: 0;
+            font-style: italic;
+            color: $primary-color;
         }
-
-      }
-      .modal-category {
-        margin: 0;
-        margin-bottom: 0.5rem;
-
-        span {
-          font-weight: bold;
+        .modal-date {
+            margin-top: 0;
+            margin-bottom: 0.5rem;
         }
-
-      }
-      .modal-book-description {
-        margin-top: 0;
-        margin-bottom: 1rem;
-        text-align: justify;
-
-        span {
-          font-weight: bold;
+        .modal-count {
+            // margin: 0;
+            margin-bottom: 0.5rem;
+            span {
+                font-weight: bold;
+            }
         }
-      }
-      .modal-book-link {
-        text-align: center;
-
-        a {
-          font-size: 1.4rem;
-          color: $primary-color;
-          text-decoration: none;
+        .modal-category {
+            margin: 0 0 0.5rem;
+            span {
+                font-weight: bold;
+            }
         }
-
-        a:hover {
-          text-decoration: underline;
+        .modal-book-description {
+            margin-top: 0;
+            margin-bottom: 1rem;
+            text-align: justify;
+            span {
+                font-weight: bold;
+            }
         }
-      }
+        .modal-book-link {
+            text-align: center;
+            a {
+                font-size: 1.4rem;
+                color: $primary-color;
+                text-decoration: none;
+            }
+            a:hover {
+                text-decoration: underline;
+            }
+        }
     }
 }
-
 .button-holder {
-  width: 35%;
-  height: 10vh;
-  margin: 0 auto;
-  position: relative;
+    width: 35%;
+    height: 10vh;
+    margin: 0 auto;
+    position: relative;
+    .nextBtn {
+        position: absolute;
+        right: 0;
+        top: 0;
+        padding: 3%;
+        background: transparent;
+        border: 0;
+        font-size: 1.2rem;
+        color: $primary-color;
+    }
+    .prevBtn {
+        padding: 3%;
+        background: transparent;
+        border: 0;
+        font-size: 1.2rem;
+        color: $primary-color;
+        // border-right: 1px solid #0C4C58;
+    }
+    .fa {
+        font-size: 1.5rem;
+    }
+}
+@media only screen and (max-width: 840px) {
+    .books-container {
+      h2 {
+        font-size: 1.7rem;
+      }
+        .book-results {
+            .single-book-copy {
+                width: 50%;
 
-  .nextBtn {
-    position: absolute;
-    right: 0;
-    top: 0;
-    padding: 3%;
-    background: transparent;
-    border: 0;
-    font-size: 1.2rem;
-    color: $primary-color;
-  }
+                .single-book-add {
+                    width: 100%;
+                    font-size: 1rem;
+                    padding: 4%;
+                }
+                .single-book-added {
+                    width: 100%;
+                    font-size: 1rem;
+                    padding: 4%;
+                }
+            }
+            .single-book-title {
+              max-height: 10vh;
+              overflow: hidden;
+            }
+            .single-book-img {
+                img {
+                    height: 150px;
+                    width: 100px;
+                }
+            }
+        }
+    }
 
-  .prevBtn {
-    padding: 3%;
-    background: transparent;
-    border: 0;
-    font-size: 1.2rem;
-    color: $primary-color;
-    // border-right: 1px solid #0C4C58;
-  }
+    .button-holder {
+        width: 60%; }
 
-  .fa {
-    font-size: 1.5rem;
-  }
+}
 
+
+@media only screen and (max-width: 492px) {
+    .books-container {
+
+      .book-modal {
+        height: 60%;
+        width: 85%;
+
+        .modal-title {
+            font-size: 1.1rem;
+          }
+      }
+
+        h2 {
+            font-size: 1.3rem;
+        }
+        .book-results {
+            margin-bottom: 10%;
+            .single-book-holder {
+                max-height: 60vh;
+            }
+            .single-book-description {
+                display: none;
+            }
+            .single-book-copy {
+                .single-book-title {
+                    font-size: 0.9rem;
+                }
+                .single-book-author {
+                    font-size: 0.9rem;
+                    margin-bottom: 0.5rem;
+                    max-height: 8vh;
+                    overflow: hidden;
+                }
+                .single-book-add {
+                    font-size: 0.8rem;
+                    padding: 3%;
+                }
+                .single-book-added {
+                    font-size: 0.8rem;
+                    padding: 3%;
+                }
+            }
+        }
+    }
+    .button-holder {
+        width: 80%;
+        .nextBtn {
+            font-size: 1rem;
+        }
+        .prevBtn {
+            font-size: 1rem;
+        }
+        .fa {
+            font-size: 1.1rem;
+        }
+    }
 }

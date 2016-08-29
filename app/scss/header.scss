@@ -4,7 +4,7 @@
   height: 60vh;
   width: 100%;
   box-sizing: border-box;
-  background-size: contain;
+  background-size: cover;
   text-align: center;
   border-bottom: 2px solid #252932;
 
@@ -37,21 +37,30 @@
 
 @media only screen and (max-width: 480px) {
   .header {
-    background-size: cover;
+    // background-size: cover;
     height: 50vh;
     padding: 2%;
 
     h1 {
       padding-top: 10vh;
-      font-size: 3rem;
-    }
-
-    h2 {
-      font-size: 1.6rem;
     }
 
     .users-btn {
       padding: 2.3%;
+    }
+  }
+}
+
+@media only screen and (max-width: 640px) {
+
+  .header {
+    h1 {
+      font-size: 3rem;
+
+    }
+
+    h2 {
+      font-size: 1.6rem;
     }
   }
 }

@@ -28,11 +28,31 @@
     font-size: 1.3rem;
     width: 100%;
     background: #F6F7F9;
-    border: 1px solid darkgray;
+    border: 1px solid $dark-gray;
   }
 
   .login-user-name {
     @include loginform;
     width: 100%;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+
+  .login-holder {
+    width: 75%;
+
+    h2 {
+      font-size: 1.5rem;
+    }
+
+    .login-user-name, .login-password, .login-name {
+      font-size: 0.7rem;
+      padding: 0;
+    }
+
+    .login-btn {
+      font-size: 0.9rem;
+    }
   }
 }

@@ -79,7 +79,7 @@ nav {
     width: 100%;
     background: $primary-color;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 540px) {
     nav {
         padding: 10px;
         .home-link {
@@ -94,7 +94,6 @@ nav {
             }
         }
         .book-search {
-            left: 17%;
             width: 10rem;
             input[type=text] {
                 width: 70%;
@@ -116,7 +115,53 @@ nav {
             i {
                 display: block;
             }
+            &:hover {
+              color: $primary-color;
+            }
+        }
+        .login-link:after {
+          display: none;
         }
     }
 }
-@media screen and (min-width: 840px) {}
+
+@media screen and (max-width: 865px) {
+
+  .book-search {
+    left: 28%;
+  }
+
+    .login-link {
+      margin-left: 0;
+    }
+
+}
+
+@media screen and (max-width: 680px) {
+
+  .book-search {
+    left: 28%;
+    width: 10rem;
+
+    input[type=text] {
+        width: 70%;
+        margin: 0;
+        font-size: 0.8rem;
+    }
+  }
+
+    .login-link {
+      margin-left: 0;
+      font-size: 1rem;
+    }
+
+.home-link {
+  font-size: 1.5rem;
+}
+}
+
+@media screen and (max-width: 340px) {
+  .book-search {
+      left: 17%;
+    }
+}
