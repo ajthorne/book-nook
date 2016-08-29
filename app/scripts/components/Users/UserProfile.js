@@ -13,6 +13,7 @@ const UserProfile = React.createClass({
   updateState: function() {
       this.setState({libraryBooks: store.libraryBooks.toJSON(),
       users: store.users.toJSON()});
+      // console.log('update state', this.state);
   },
 
   componentDidMount: function () {
@@ -29,11 +30,15 @@ const UserProfile = React.createClass({
   })
     store.libraryBooks.on('update change', this.updateState)
     store.users.on('update change', this.updateState)
+    // console.log('component mounted', this.state);
   },
+
+  // componentWIllMount
 
   componentWillUnmount: function () {
     store.libraryBooks.off('update change', this.updateState)
     store.users.off('update change', this.updateState)
+    // console.log('component unmounted', this.state);
   },
 
   shouldComponentUpdate: function (nextProps, nextState) {
@@ -58,10 +63,11 @@ const UserProfile = React.createClass({
             }
         })
     }
+    // console.log('should component update', this.state);
     return true;
 },
   render: function () {
-    // console.log(this.state);
+    // console.log('render function', this.state);
     let userProfile = store.users.map(function(user, i, arr) {
       let id = user.get('_id');
       let name = user.get('name');

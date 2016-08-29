@@ -65,6 +65,12 @@ ReactDOM.render(router, document.querySelector('.container'));
 
 //404 not found
 //display errors for wrong info
+//done for login/signup --anywhere else??
 
 //flash of content
 //check if content is correct content, if not should not display
+//reset collection in componentwillmount
+
+//check all input fields and clear them after submitting!
+
+//media query for new post modal!!

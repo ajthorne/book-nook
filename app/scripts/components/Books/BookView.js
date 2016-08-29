@@ -1,13 +1,13 @@
 import React from 'react';
 import store from '../../store';
 import SingleBook from './BookSingle';
+import {hashHistory} from 'react-router';
 
 const BookView = React.createClass({
   getInitialState: function () {
   return {
     books: store.books.toJSON(),
-    libraryBooks: store.libraryBooks.toJSON(),
-    pageNumber: 0}
+    libraryBooks: store.libraryBooks.toJSON()}
   },
   updateState: function() {
       this.setState({books: store.books.toJSON(),
@@ -15,11 +15,16 @@ const BookView = React.createClass({
   },
   componentDidMount: function () {
     let searchValue = this.props.location.search;
-    let book = decodeURI(searchValue.substring(6));
+    let index = searchValue.lastIndexOf('&');
+    // let book = decodeURI(searchValue.substring(6));
+    let book = decodeURI(searchValue.substring(6, index));
+    let pageNumber = searchValue.substring(index + 6);
+    console.log(book);
     store.books.fetch(
       {
         data: {
-          q: book
+          q: book,
+          startIndex: pageNumber * 10
         },
         success: function (response) {
           console.log('Here are your results for', `${book}`);
@@ -37,21 +42,45 @@ const BookView = React.createClass({
   },
 
   shouldComponentUpdate: function (nextProps, nextState) {
+    // console.log(this.props.location.query.book);
+    // console.log(nextProps.location.query.book);
     let searchValue = nextProps.location.search;
-    let book = decodeURI(searchValue.substring(6));
-    if (this.props.location.search !== nextProps.location.search) {
+    let index = searchValue.lastIndexOf('&');
+    let book = decodeURI(searchValue.substring(6, index));
+    let pageNumber = Number(searchValue.substring(index + 6)) + 1;
+    if (this.props.location.query.book !== nextProps.location.query.book) {
       // console.log('fetching new collection', store.books);
-      this.setState({pageNumber: 0})
+      // this.setState({pageNumber: 0})
       store.books.fetch(
         {
           data: {
-            q: book
+            q: book,
+            startIndex: pageNumber * 10
           },
           success: function (response) {
             // console.log(arguments);
           }
       })
     }
+    //  else if (this.props.location.query.book === nextProps.location.query.book && this.props.location.query.page !== nextProps.location.query.page) {
+    //   let searchValue = this.props.location.search;
+    //   let index = searchValue.lastIndexOf('&');
+    //   let book = decodeURI(searchValue.substring(6, index));
+    //   let pageNumber = Number(searchValue.substring(index + 6));
+    //   console.log(pageNumber);
+
+      // store.books.fetch(
+      //   {
+      //     data: {
+      //       q: book,
+      //       startIndex: pageNumber * 10
+      //     },
+      //     success: function (response) {
+      //       console.log('Here are the next results for', `${book}`);
+      //     }
+      //   })
+
+    // }
     return true;
 },
 
@@ -61,13 +90,13 @@ const BookView = React.createClass({
 
   },
   nextPageHandler: function () {
-    let pageNumber = this.state.pageNumber + 1
-    this.setState({pageNumber: pageNumber})
+    let pageNumber = Number(this.props.location.query.page) + 1
     console.log('NextPage pageNumber:', pageNumber);
     // console.log(this.props.location.search);
     let searchValue = this.props.location.search;
-    let book = decodeURI(searchValue.substring(6));
-    // console.log(book);
+    let index = searchValue.lastIndexOf('&');
+    let book = decodeURI(searchValue.substring(6, index));
+
     store.books.fetch(
       {
         data: {
@@ -78,16 +107,20 @@ const BookView = React.createClass({
           console.log('Here are the next results for', `${book}`);
         }
       })
+    // console.log(book);
+    hashHistory.push(`/books?book=${encodeURI(book)}&page=${pageNumber}`);
   },
 
   prevPageHandler: function () {
-    let pageNumber = this.state.pageNumber - 1
-    this.setState({pageNumber: pageNumber})
+    // let pageNumber = this.state.pageNumber - 1
+    let pageNumber = Number(this.props.location.query.page) - 1
       console.log('PrevPage pageNumber:', pageNumber);
     // console.log(this.props.location.search);
     let searchValue = this.props.location.search;
-    let book = decodeURI(searchValue.substring(6));
-    // console.log(book);
+    let index = searchValue.lastIndexOf('&');
+    let book = decodeURI(searchValue.substring(6, index));
+    hashHistory.push(`/books?book=${encodeURI(book)}&page=${pageNumber}`);
+
     store.books.fetch(
       {
         data: {
@@ -109,14 +142,14 @@ const BookView = React.createClass({
     getPageTotal();
 
     let nextBtn;
-    if (getPageTotal() > this.state.pageNumber) {
+    if (getPageTotal() > Number(this.props.location.query.page)) {
       nextBtn = <button className="nextBtn" onClick={this.nextPageHandler}>Next Page <i className="fa fa-arrow-circle-right"></i></button>
     } else {
       nextBtn = ''
     }
 
     let prevBtn;
-    if(this.state.pageNumber > 0) {
+    if(Number(this.props.location.query.page) > 0) {
       prevBtn = <button className="prevBtn" onClick={this.prevPageHandler}><i className="fa fa-arrow-circle-left"></i> Previous Page</button>
     } else {
       prevBtn = ''
@@ -175,7 +208,8 @@ const BookView = React.createClass({
     })
 
     let searchValue = this.props.location.search;
-    let book = decodeURI(searchValue.substring(6));
+    let index = searchValue.lastIndexOf('&');
+    let book = decodeURI(searchValue.substring(6, index));
 
     return (
       <div className="books-container">
