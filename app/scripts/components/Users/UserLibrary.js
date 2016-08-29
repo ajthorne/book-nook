@@ -6,10 +6,13 @@ import $ from 'jquery';
 const UserLibrary = React.createClass({
   deleteBook: function () {
     store.libraryBooks.deleteBook(this.props)
+    if ((store.session.get('_id') === this.props.userId) && (this.props.favorited.length)) {
+    store.favorites.toggleFav(this.props, store.session.get('_id'));
+  }
   },
 
   favHandler: function (e) {
-    store.favorites.addFav(this.props, store.session.get('_id'));
+    store.favorites.toggleFav(this.props, store.session.get('_id'));
   },
 
   render: function () {

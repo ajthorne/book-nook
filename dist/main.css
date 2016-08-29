@@ -594,7 +594,8 @@ footer {
       .user-profile-container aside h2 {
         display: inline-block;
         line-height: 58%;
-        font-size: 1.4rem; }
+        font-size: 1.4rem;
+        margin-left: 2rem; }
       .user-profile-container aside .user-profile-img {
         height: 3rem;
         width: 3rem;

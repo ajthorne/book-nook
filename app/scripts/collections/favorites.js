@@ -6,7 +6,7 @@ const Favorites = Backbone.Collection.extend({
     model: Favorite,
     url: `https://baas.kinvey.com/appdata/${settings.appId}/favorites`,
 
-    addFav: function(props, id) {
+    toggleFav: function(props, id) {
         let bookTitle = props.title
         let bookImg = props.bookImg
         let bookAuthors = props.authors
