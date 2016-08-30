@@ -3,10 +3,10 @@ import Transition from 'react-addons-css-transition-group';
 
 
 const images = [
+  '../../../assets/bookheader1.jpeg',
   '../../../assets/boyreading.jpeg',
   '../../../assets/girlreading.jpg',
   '../../../assets/reading.jpeg',
-  '../../../assets/bookheader1.jpeg'
 ]
 
 const Slider = React.createClass({

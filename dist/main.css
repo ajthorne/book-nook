@@ -180,10 +180,18 @@ nav {
     left: -100%; }
 
 @media only screen and (max-width: 640px) {
-  .header h1 {
-    font-size: 3rem; }
-  .header h2 {
-    font-size: 1.6rem; } }
+  .header {
+    background: linear-gradient(rgba(245, 111, 108, 0.3), rgba(245, 111, 108, 0.75)), url("../../assets/bookheader1.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative; }
+    .header h1 {
+      font-size: 3rem; }
+    .header h2 {
+      font-size: 1.6rem; }
+
+  .slider {
+    display: none; } }
 .features-flex {
   display: flex;
   flex-flow: row;
@@ -220,7 +228,8 @@ nav {
   .features-flex {
     display: block;
     padding: 5%;
-    margin-top: 0; } }
+    margin-top: 0;
+    position: relative; } }
 footer {
   background: #F56F6C;
   position: absolute;
