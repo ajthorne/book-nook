@@ -1,0 +1,34 @@
+
+.container404 {
+  width: 50%;
+  padding: 3%;
+  margin: 0 auto;
+  margin-top: 5%;
+  background: $secondary-color;
+  border: 4px solid #252932;
+  text-align: center;
+
+  .fa {
+    font-size: 7rem;
+    color: $primary-color;
+  }
+
+  h3 {
+    margin-bottom: 0;
+  }
+
+  p {
+    margin-top: 0.3rem;
+    font-size: 1.3rem;
+
+    a {
+      color: #252932;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+}

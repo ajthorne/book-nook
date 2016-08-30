@@ -14,6 +14,7 @@ import UserFavorites from './components/Users/UserFavorites';
 import UserLibraryView from './components/Users/UserLibraryView';
 import UserPosts from './components/Users/UserPosts';
 import UserFollowers from './components/Users/UserFollowers';
+import Page404 from './components/page404';
 
 $(document).ajaxSend(function(evt, xhrAjax, jqueryAjax) {
   // console.log('intercepted');
@@ -47,6 +48,7 @@ const router = (
         <Route path="/users/:id/followers" component={UserFollowers}/>
       </Route>
     </Route>
+  <Route path="/*" component={Page404}/>
   </Router>
 )
 
