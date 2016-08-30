@@ -167,7 +167,7 @@ nav {
     position: absolute;
     width: 100%;
     object-fit: cover;
-    height: 100%;
+    max-height: 60vh;
     transition: left 5s;
     top: 0; }
   .slider .slide-left-enter {
@@ -587,7 +587,7 @@ footer {
       margin-right: 1rem;
       margin-bottom: 1rem; }
       .user-profile-container .library-book-ul li img {
-        width: 130px;
+        min-width: 130px;
         height: 200px;
         object-fit: cover; }
       .user-profile-container .library-book-ul li .library-book-title {

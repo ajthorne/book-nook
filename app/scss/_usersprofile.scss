@@ -77,7 +77,7 @@
             margin-right: 1rem;
             margin-bottom: 1rem;
             img {
-                width: 130px;
+                min-width: 130px;
                 height: 200px;
                 object-fit: cover;
                 // margin-left: 5%;
@@ -267,4 +267,9 @@
             margin-top: 30%;
         }
     }
+    //
+    // .library-book-img {
+    //   height: 3rem;
+    //   width: 2.5rem;
+    // }
 }

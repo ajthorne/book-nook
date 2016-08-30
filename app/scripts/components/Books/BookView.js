@@ -48,7 +48,7 @@ const BookView = React.createClass({
     let searchValue = nextProps.location.search;
     let index = searchValue.lastIndexOf('&');
     let book = decodeURI(searchValue.substring(6, index));
-    let pageNumber = Number(searchValue.substring(index + 6)) + 1;
+    let pageNumber = Number(searchValue.substring(index + 6));
     if (this.props.location.query.book !== nextProps.location.query.book) {
       // console.log('fetching new collection', store.books);
       // this.setState({pageNumber: 0})

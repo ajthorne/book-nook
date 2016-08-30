@@ -12,15 +12,15 @@ const WallPosts = Backbone.Collection.extend({
          this.create(data)
   },
 
-  deletePost: function (data) {
-    // console.log(data);
-    let id = data.id
-    let model = this.get(id);
-    // console.log(model);
-    model.destroy({
-      url:`https://baas.kinvey.com/appdata/${settings.appId}/wallposts/` + id
-    })
-  }
+  // deletePost: function (data) {
+  //   // console.log(data);
+  //   let id = data.id
+  //   let model = this.get(id);
+  //   // console.log(model);
+  //   model.destroy({
+  //     url:`https://baas.kinvey.com/appdata/${settings.appId}/wallposts/` + id
+  //   })
+  // }
 
 })
 

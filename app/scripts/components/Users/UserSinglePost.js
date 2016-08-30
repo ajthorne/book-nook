@@ -39,25 +39,25 @@ const UserSinglePost = React.createClass({
     let commentBtn;
     let commentNumber = Number(this.props.comments.length);
     if (commentNumber > 1){
-      commentBtn = <p className="option-btn"><i className="fa fa-comment-o" onClick={this.toggleComments}></i> {commentNumber} Comments</p>
+      optionBtns = <p className="option-btn"><i className="fa fa-comment-o" onClick={this.toggleComments}></i> {commentNumber} Comments</p>
     } else if (commentNumber === 1) {
-      commentBtn = <p className="option-btn"><i className="fa fa-comment-o" onClick={this.toggleComments}></i> {commentNumber} Comment</p>
+      optionBtns = <p className="option-btn"><i className="fa fa-comment-o" onClick={this.toggleComments}></i> {commentNumber} Comment</p>
     }
     else {
-      commentBtn = <p className="option-btn"><i className="fa fa-comment-o" onClick={this.toggleComments}></i> Add a Comment</p>
+      optionBtns = <p className="option-btn"><i className="fa fa-comment-o" onClick={this.toggleComments}></i> Add a Comment</p>
     }
 
-    if (store.session.get('_id') === this.props.userId) {
-      optionBtns = <div className="buttons-holder">
-                      <i className="fa fa-pencil" onClick={this.editPostHandler}></i>
-                      <i className="fa fa-trash" onClick={this.deletePostHandler}></i>
-                      {commentBtn}
-                    </div>
-    } else {
-      optionBtns = <div className="buttons-holder">
-                    {commentBtn}
-                  </div>
-    }
+    // if (store.session.get('_id') === this.props.userId) {
+    //   optionBtns = <div className="buttons-holder">
+    //                   <i className="fa fa-pencil" onClick={this.editPostHandler}></i>
+    //                   <i className="fa fa-trash" onClick={this.deletePostHandler}></i>
+    //                   {commentBtn}
+    //                 </div>
+    // } else {
+    //   optionBtns = <div className="buttons-holder">
+    //                 {commentBtn}
+    //               </div>
+    // }
 
     let commentArea = []
 
