@@ -267,7 +267,8 @@ footer {
         font-size: 1.3rem; }
       .users-holder ul li p {
         text-align: center;
-        margin-top: 0; }
+        margin-top: 0;
+        text-transform: lowercase; }
       .users-holder ul li img {
         height: 150px;
         width: 150px;
@@ -364,6 +365,12 @@ footer {
         border: 0;
         color: #FFF;
         float: right; }
+    .books-container .book-results .spinner-holder {
+      padding-top: 20%;
+      width: 20%;
+      margin: 0 auto; }
+      .books-container .book-results .spinner-holder .fa {
+        font-size: 8rem; }
   .books-container .book-modal-container {
     position: fixed;
     display: flex;
@@ -468,6 +475,10 @@ footer {
   .books-container .book-results .single-book-img img {
     height: 150px;
     width: 100px; }
+  .books-container .book-results .spinner-holder {
+    width: 50%; }
+    .books-container .book-results .spinner-holder .fa {
+      font-size: 5rem; }
 
   .button-holder {
     width: 60%; } }
@@ -532,7 +543,8 @@ footer {
       text-align: center;
       font-size: 1.5rem;
       font-family: "Quicksand", sans-serif;
-      color: #252932; }
+      color: #252932;
+      text-transform: capitalize; }
     .user-profile-container aside img {
       height: 8rem;
       width: 8rem;

@@ -25,7 +25,7 @@ const UserAside = React.createClass({
 
     return (
       <aside>
-        <h2>{this.props.name}'s Profile</h2>
+        <h2>{this.props.username}'s Profile</h2>
         <img className="user-profile-img" src={`${this.props.userImg}`}/>
         {followBtn}
         <ul>

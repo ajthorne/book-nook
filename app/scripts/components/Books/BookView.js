@@ -205,6 +205,13 @@ const BookView = React.createClass({
 
       return <SingleBook key={i} state={state} title={title} description={description} authors={authors} bookImg={bookImg} id={id} published={published} pageCount={pageCount} categories={categories} infoLink={infoLink} publisher={publisher}/>
     })
+    if (!books.length) {
+      books = (
+        <div className="spinner-holder">
+          <i className="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+        </div>),
+      nextBtn = ''
+  }
 
     let searchValue = this.props.location.search;
     let index = searchValue.lastIndexOf('&');

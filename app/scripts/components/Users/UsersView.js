@@ -31,8 +31,9 @@ const UserView = React.createClass({
       let userImg = user.attributes.imgUrl;
       let name = user.attributes.name;
       let id = user.attributes._id;
+      let username = user.attributes.username
 
-      return <SingleUser key={i} userImg={userImg} name={name} id={id}/>
+      return <SingleUser key={i} userImg={userImg} username={username} name={name} id={id}/>
     })
     return (
       <div className="users-holder">

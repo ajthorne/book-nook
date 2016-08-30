@@ -90,6 +90,16 @@
                 float: right;
             }
         }
+
+        .spinner-holder {
+          padding-top: 20%;
+          width: 20%;
+          margin: 0 auto;
+
+          .fa {
+            font-size: 8rem;
+          }
+        }
     }
     .book-modal-container {
         position: fixed;
@@ -226,6 +236,14 @@
                     height: 150px;
                     width: 100px;
                 }
+            }
+
+            .spinner-holder {
+              width: 50%;
+
+              .fa {
+                font-size: 5rem;
+              }
             }
         }
     }
