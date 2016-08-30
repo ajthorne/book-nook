@@ -50,6 +50,7 @@
 .slider {
     height: 60vh;
     position: relative;
+    overflow: hidden;
     .current {
         position: absolute;
         width: 100%;
@@ -89,4 +90,24 @@
     .slider {
       display: none;
     }
+}
+
+@media only screen and (max-width: 640px) and (orientation: landscape) {
+  .header {
+      height: 70vh;
+}
+}
+
+
+@media only screen
+  and (min-device-width: 768px)
+  and (max-device-width: 1024px)
+  and (-webkit-min-device-pixel-ratio: 1) {
+
+    .slider {
+        .current {
+            min-height: 60vh;
+          }
+        }
+
 }

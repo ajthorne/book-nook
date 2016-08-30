@@ -151,3 +151,13 @@ nav {
         left: 17%;
     }
 }
+
+@media only screen and (max-width: 732px) and (orientation: landscape) {
+
+  .book-search {
+    left: 28%;
+  }
+  nav {
+    height: 13vh;
+}
+}

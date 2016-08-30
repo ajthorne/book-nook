@@ -121,6 +121,12 @@ nav {
 @media screen and (max-width: 340px) {
   .book-search {
     left: 17%; } }
+@media only screen and (max-width: 732px) and (orientation: landscape) {
+  .book-search {
+    left: 28%; }
+
+  nav {
+    height: 13vh; } }
 .header {
   background: linear-gradient(rgba(245, 111, 108, 0.3), rgba(245, 111, 108, 0.75));
   background-repeat: no-repeat;
@@ -162,7 +168,8 @@ nav {
       padding: 2.3%; } }
 .slider {
   height: 60vh;
-  position: relative; }
+  position: relative;
+  overflow: hidden; }
   .slider .current {
     position: absolute;
     width: 100%;
@@ -192,14 +199,18 @@ nav {
 
   .slider {
     display: none; } }
+@media only screen and (max-width: 640px) and (orientation: landscape) {
+  .header {
+    height: 70vh; } }
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+  .slider .current {
+    min-height: 60vh; } }
 .features-flex {
   display: flex;
   flex-flow: row;
   flex-wrap: nowrap;
   text-align: center;
-  margin-top: 2rem;
-  position: absolute;
-  bottom: 5%; }
+  margin-top: 2rem; }
   .features-flex .solo-feature {
     flex-basis: 33%;
     padding: 2%; }
@@ -247,6 +258,9 @@ footer {
   footer .footer-copy {
     font-size: 1rem;
     height: 8vh; } }
+@media only screen and (max-width: 732px) and (orientation: landscape) {
+  footer {
+    height: 15vh; } }
 .users-holder {
   margin-top: 12vh; }
   .users-holder h2 {
