@@ -34,7 +34,7 @@ const Nav = React.createClass({
       )
     }
     return (
-      <div>
+      <div className="nav-holder">
         {navView}
       </div>
     )

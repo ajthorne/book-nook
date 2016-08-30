@@ -1,59 +1,49 @@
-.features-flex{
-  display: flex;
-  flex-flow: row;
-  flex-wrap: nowrap;
-  text-align: center;
-  margin-top: 2rem;
-
-  .solo-feature {
-    flex-basis: 33%;
-    padding: 2%;
-
-    i {
-      font-size: 2.2rem;
-      color: $primary-color;
-    }
-  }
-
-  span {
+.features-flex {
+    display: flex;
+    flex-flow: row;
+    flex-wrap: nowrap;
     text-align: center;
-    display: block;
-    font-weight: bold;
-    font-size: 1.1rem;
-  }
-
-  .solo-feature-copy {
-    font-size: 1rem;
-    text-align: justify;
-  }
-}
-
-@media only screen and (max-width: 480px) {
-
-  .features-flex {
+    margin-top: 2rem;
+    position: absolute;
+    bottom: 5%;
+    .solo-feature {
+        flex-basis: 33%;
+        padding: 2%;
+        i {
+            font-size: 2.2rem;
+            color: $primary-color;
+        }
+    }
     span {
-      font-size: 1rem
+        text-align: center;
+        display: block;
+        font-weight: bold;
+        font-size: 1.1rem;
     }
-  }
-
-  .solo-feature {
-    i {
-      font-size: 2rem;
+    .solo-feature-copy {
+        font-size: 1rem;
+        text-align: justify;
     }
-  }
-
-  .solo-feature-copy {
-    font-size: 0.9rem;
-
-  }
 }
-
+@media only screen and (max-width: 480px) {
+    .features-flex {
+        span {
+            font-size: 1rem;
+        }
+    }
+    .solo-feature {
+        i {
+            font-size: 2rem;
+        }
+    }
+    .solo-feature-copy {
+        font-size: 0.9rem;
+    }
+}
 @media only screen and (max-width: 640px) {
-
-  .features-flex {
-    display: block;
-    padding: 5%;
-    margin-top: 0;
-  }
-
+    .features-flex {
+        display: block;
+        padding: 5%;
+        margin-top: 0;
+    }
 }

@@ -2,9 +2,6 @@ import React from 'react';
 import Nav from './Nav';
 import Footer from './Footer';
 import store from '../../store';
-import Slider from './HeaderSlider'
-
-// import Slider from './HeaderSlider';
 
 const App = React.createClass({
   getInitialState: function () {
@@ -15,7 +12,7 @@ const App = React.createClass({
   this.setState({session: store.session.toJSON()});
   },
 
-  componentDidMount: function() {
+  componentWillMount: function() {
   store.session.on('update change', this.updateState);
   },
 

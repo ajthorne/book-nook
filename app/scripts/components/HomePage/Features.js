@@ -1,6 +1,7 @@
 import React from 'react';
 import {hashHistory} from 'react-router';
 import store from '../../store';
+import Slider from './HeaderSlider'
 //shown on home page
 
 const Features = React.createClass({
@@ -36,6 +37,7 @@ const Features = React.createClass({
     }
     return (
       <div className="features-container">
+        <Slider/>
         <div className="header">
           <h1>Book Nook</h1>
           <h2>Find your next best read or friend!</h2>

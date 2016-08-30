@@ -303,3 +303,15 @@
     from {top: -300px; opacity: 0}
     to {left: 0; opacity: 1}
 }
+// 
+// animation modal 5s ease-in-out forwards
+//
+// @keyframes modal
+//   0%{
+//   transform: translateX(-200%), rotate(-90deg),
+//   opacity 0}
+//   15%, 85%
+//   transform translateX(0%) rotate(0deg)
+//   opacity 1
+//   100%
+//   transform translateX(200%) rotate(90deg)
