@@ -18,12 +18,10 @@ nav {
     color: $primary-color;
     font-family: $title-font;
     font-size: 2rem;
-
     i {
-      display: none;
+        display: none;
     }
 }
-
 .book-search {
     display: inline-block;
     position: fixed;
@@ -79,18 +77,42 @@ nav {
     width: 100%;
     background: $primary-color;
 }
+@media screen and (max-width: 865px) {
+    .book-search {
+        left: 28%;
+    }
+    .login-link {
+        margin-left: 0;
+    }
+}
+@media screen and (max-width: 680px) {
+    .book-search {
+        left: 28%;
+        width: 10rem;
+        input[type=text] {
+            width: 70%;
+            margin: 0;
+            font-size: 0.8rem;
+        }
+    }
+    .login-link {
+        margin-left: 0;
+        font-size: 1rem;
+    }
+    .home-link {
+        font-size: 1.5rem;
+    }
+}
 @media only screen and (max-width: 540px) {
     nav {
         padding: 10px;
         .home-link {
-          font-size: 1.5rem;
-
+            font-size: 1.5rem;
             span {
-              display: none;
+                display: none;
             }
-
             i {
-              display: inline-block;
+                display: inline-block;
             }
         }
         .book-search {
@@ -116,52 +138,16 @@ nav {
                 display: block;
             }
             &:hover {
-              color: $primary-color;
+                color: $primary-color;
             }
         }
         .login-link:after {
-          display: none;
+            display: none;
         }
     }
 }
-
-@media screen and (max-width: 865px) {
-
-  .book-search {
-    left: 28%;
-  }
-
-    .login-link {
-      margin-left: 0;
-    }
-
-}
-
-@media screen and (max-width: 680px) {
-
-  .book-search {
-    left: 28%;
-    width: 10rem;
-
-    input[type=text] {
-        width: 70%;
-        margin: 0;
-        font-size: 0.8rem;
-    }
-  }
-
-    .login-link {
-      margin-left: 0;
-      font-size: 1rem;
-    }
-
-.home-link {
-  font-size: 1.5rem;
-}
-}
-
 @media screen and (max-width: 340px) {
-  .book-search {
-      left: 17%;
+    .book-search {
+        left: 17%;
     }
 }

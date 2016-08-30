@@ -69,6 +69,27 @@ nav {
   width: 100%;
   background: #0C4C58; }
 
+@media screen and (max-width: 865px) {
+  .book-search {
+    left: 28%; }
+
+  .login-link {
+    margin-left: 0; } }
+@media screen and (max-width: 680px) {
+  .book-search {
+    left: 28%;
+    width: 10rem; }
+    .book-search input[type=text] {
+      width: 70%;
+      margin: 0;
+      font-size: 0.8rem; }
+
+  .login-link {
+    margin-left: 0;
+    font-size: 1rem; }
+
+  .home-link {
+    font-size: 1.5rem; } }
 @media only screen and (max-width: 540px) {
   nav {
     padding: 10px; }
@@ -97,27 +118,6 @@ nav {
         color: #0C4C58; }
     nav .login-link:after {
       display: none; } }
-@media screen and (max-width: 865px) {
-  .book-search {
-    left: 28%; }
-
-  .login-link {
-    margin-left: 0; } }
-@media screen and (max-width: 680px) {
-  .book-search {
-    left: 28%;
-    width: 10rem; }
-    .book-search input[type=text] {
-      width: 70%;
-      margin: 0;
-      font-size: 0.8rem; }
-
-  .login-link {
-    margin-left: 0;
-    font-size: 1rem; }
-
-  .home-link {
-    font-size: 1.5rem; } }
 @media screen and (max-width: 340px) {
   .book-search {
     left: 17%; } }
@@ -215,6 +215,12 @@ nav {
     font-size: 1rem;
     text-align: justify; }
 
+@media only screen and (max-width: 640px) {
+  .features-flex {
+    display: block;
+    padding: 5%;
+    margin-top: 0;
+    position: relative; } }
 @media only screen and (max-width: 480px) {
   .features-flex span {
     font-size: 1rem; }
@@ -224,12 +230,6 @@ nav {
 
   .solo-feature-copy {
     font-size: 0.9rem; } }
-@media only screen and (max-width: 640px) {
-  .features-flex {
-    display: block;
-    padding: 5%;
-    margin-top: 0;
-    position: relative; } }
 footer {
   background: #F56F6C;
   position: absolute;

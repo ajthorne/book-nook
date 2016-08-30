@@ -25,6 +25,14 @@
         text-align: justify;
     }
 }
+@media only screen and (max-width: 640px) {
+    .features-flex {
+        display: block;
+        padding: 5%;
+        margin-top: 0;
+        position: relative;
+    }
+}
 @media only screen and (max-width: 480px) {
     .features-flex {
         span {
@@ -38,13 +46,5 @@
     }
     .solo-feature-copy {
         font-size: 0.9rem;
-    }
-}
-@media only screen and (max-width: 640px) {
-    .features-flex {
-        display: block;
-        padding: 5%;
-        margin-top: 0;
-        position: relative;
     }
 }
