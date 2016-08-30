@@ -58,12 +58,9 @@ ReactDOM.render(router, document.querySelector('.container'));
 
 //TO DO --
 //Since I added a followers collection, it would be helpful to clean up my code and replace manual ajax requests with fetching and get requests instead
-
-//CLEAN UP CODE! lots of fetching of collections on components. Is there a way to reduce this?
-
 //edit and delete post from posts collection
 //users can delete or edit their own comment?
 
-//404 not found
-
 //update readme
+
+//add loading image

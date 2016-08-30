@@ -103,7 +103,12 @@
         left: 0;
         z-index: 1;
     }
+
     .book-modal {
+      -webkit-animation-name: animatetop;
+-webkit-animation-duration: 0.4s;
+      animation-name: animatetop;
+      animation-duration: 0.4s;
         padding: 0.5rem;
         background: #F6F7F9;
         z-index: 0;
@@ -287,4 +292,14 @@
             font-size: 1.1rem;
         }
     }
+}
+@-webkit-keyframes animatetop {
+    from {top: -300px; opacity: 0}
+    to {top: 0; opacity: 1}
+}
+
+
+@keyframes animatetop {
+    from {top: -300px; opacity: 0}
+    to {left: 0; opacity: 1}
 }

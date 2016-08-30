@@ -5,22 +5,6 @@ import store from '../../store';
 //shown consistently throughout app
 
 const Nav = React.createClass({
-  getInitialState: function () {
-  return {session: store.session.toJSON()}
-  },
-
-  updateState: function() {
-  this.setState({session: store.session.toJSON()});
-  },
-
-  componentDidMount: function() {
-  store.session.on('update change', this.updateState);
-  },
-
-  componentWillUnmount: function () {
-  store.session.off('update change', this.updateState);
-  },
-
   logOutHandler: function () {
     store.session.logout();
   },

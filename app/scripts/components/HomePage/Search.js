@@ -10,10 +10,7 @@ const Search = React.createClass({
     this.refs.book.value = '';
     console.log('Your search:', this.refs.book.value);
     hashHistory.push(`/books?book=${encodeURI(book)}&page=0`);
-    // hashHistory.push(`/books?book=${encodeURI(book)}`);
     //updating url to show query params so the user can bookmark
-    //need to incorporate page number
-    //make sure you know how to explain this
   },
 
   render: function () {
