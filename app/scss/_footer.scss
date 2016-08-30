@@ -21,7 +21,7 @@ footer {
         }
     }
 }
-@media only screen and (max-width: 732px) and (orientation: landscape) {
+@media only screen and (max-width: 736px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
     footer {
       height: 15vh;
     }

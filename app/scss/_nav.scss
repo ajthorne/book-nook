@@ -152,12 +152,14 @@ nav {
     }
 }
 
-@media only screen and (max-width: 732px) and (orientation: landscape) {
+@media only screen and (max-width: 736px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
 
   .book-search {
     left: 28%;
+    top: 1%;
   }
   nav {
-    height: 13vh;
+    padding: 4px;
+    height: 15vh;
 }
 }
