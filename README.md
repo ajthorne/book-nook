@@ -4,16 +4,17 @@
 ##[Book Nook Live Site](http://booknook.surge.sh/)
 
 ###Basic Features
-1. User Profiles -
+1. User Authentication
+2. User Profiles -
   - Keep a digital library of books you've read.
   - Create posts/updates to let your friends know what you're reading or ask for recommendations
   - 'I Heart You!': Special emojis to denote your favorites
 
-2. Book Searches -
+3. Book Searches -
   - Explore the extensive library of books to find new exciting things to read
   - Add books to your digital library to show other users what you've read
 
-3. Building a Community -
+4. Building a Community -
   - Connect with other teens who love the same book you do. Follow them, view or comment on their profile.
 
 ###MVP
@@ -30,6 +31,32 @@
 1. [Google Books](https://developers.google.com/books/)
 2. [Kinvey](https://www.kinvey.com/)
 
+###Routes
+1. '/': Basic introduction to the site with navigation links to login, sign up, search books
+2. /books: Displays results for specific books/categories searched by user
+3. /users: Displays list of users currently using the app
+4. /user/:id : User profile lives here which includes the digital library, posts, favorites, and friends list components.
+5. /user/:id/favorites: Displays user favorites
+6. /user/:id/posts: Displays user posts
+7. /user/:id/followers: Displays user followers
+
+###Libraries
+1. Backbone
+2. JQuery
+3. Underscore
+4. Moment
+5. React
+6. Sass
+
+###Future Goals
+1. Geolocation - Check in to local book hotspots!
+2. See a list of popular books among site users
+3. Find other users who have read a book
+4. Profile image uploading
+5. Emoji support for comments and posts
+
+###Credits
+1. Designs inspired by Twitter and OverDrive
 
 ###Data Modeling
   - User - Kinvey API
@@ -80,22 +107,3 @@
       bookId: '43244234',
       userId: '3431w4124' }
     ```
-
-
-###Routes
-1. '/': Basic introduction to the site with navigation links to login, sign up, search books
-2. /books: Displays results for specific books/categories searched by user
-3. /users: Displays list of users currently using the app
-4. /user/:id : User profile lives here which includes the digital library, posts, favorites, and friends list components.
-5. /user/:id/favorites: Displays user favorites
-6. /user/:id/posts: Displays user posts
-7. /user/:id/followers: Displays user followers
-
-###Libraries
-1. Backbone
-2. JQuery
-3. Underscore
-4. Moment
-
-###Credits
-1. Designs inspired by Twitter and OverDrive
