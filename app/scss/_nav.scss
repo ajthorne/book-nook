@@ -151,15 +151,16 @@ nav {
         left: 17%;
     }
 }
-
 @media only screen and (max-width: 736px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
-
-  .book-search {
-    left: 28%;
-    top: 1%;
-  }
-  nav {
-    padding: 4px;
-    height: 15vh;
-}
+    .book-search {
+        left: 28%;
+        top: 1%;
+    }
+    nav {
+        padding: 4px;
+        height: 15vh;
+    }
+    .login-link:after {
+        display: none;
+    }
 }

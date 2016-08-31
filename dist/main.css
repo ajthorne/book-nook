@@ -128,7 +128,10 @@ nav {
 
   nav {
     padding: 4px;
-    height: 15vh; } }
+    height: 15vh; }
+
+  .login-link:after {
+    display: none; } }
 .header {
   background: linear-gradient(rgba(245, 111, 108, 0.3), rgba(245, 111, 108, 0.75));
   background-repeat: no-repeat;
@@ -309,6 +312,9 @@ footer {
       .users-holder ul li img {
         height: 90px;
         width: 90px; } }
+@media only screen and (max-width: 736px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
+  .users-holder {
+    margin-top: 15vh; } }
 .books-container {
   margin-top: 13vh; }
   .books-container h2 {
@@ -491,8 +497,8 @@ footer {
       font-size: 1rem;
       padding: 4%; }
   .books-container .book-results .single-book-title {
-    max-height: 12vh;
-    overflow: hidden; }
+    max-height: 15vh;
+    overflow: scroll; }
   .books-container .book-results .single-book-img img {
     height: 150px;
     width: 100px; }
@@ -532,13 +538,25 @@ footer {
       padding: 3%; }
 
   .button-holder {
-    width: 80%; }
+    width: 80%;
+    margin-top: 2rem; }
     .button-holder .nextBtn {
       font-size: 1rem; }
     .button-holder .prevBtn {
       font-size: 1rem; }
     .button-holder .fa {
       font-size: 1.1rem; } }
+@media only screen and (max-width: 736px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
+  .books-container {
+    margin-top: 16vh; }
+    .books-container .book-results .single-book-holder {
+      margin-bottom: 4rem; }
+    .books-container .book-results .spinner-holder {
+      padding-top: 10%;
+      width: 30%;
+      margin: 0 auto; }
+      .books-container .book-results .spinner-holder .fa {
+        font-size: 6rem; } }
 @-webkit-keyframes animatetop {
   from {
     top: -300px;
@@ -747,10 +765,12 @@ footer {
     width: 2.5rem; }
   .user-profile-container .profile-content {
     margin-top: 30%; } }
+@media only screen and (max-width: 736px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
+  .user-profile-container .library-book-ul li {
+    flex-basis: 35%; } }
 .login-holder {
   width: 50%;
-  margin: 0 auto;
-  margin-top: 13vh;
+  margin: 13vh auto 0;
   border: 4px solid #F56F6C;
   text-align: center;
   padding: 2%; }
@@ -787,11 +807,17 @@ footer {
     width: 75%; }
     .login-holder h2 {
       font-size: 1.5rem; }
-    .login-holder .login-user-name, .login-holder .login-password, .login-holder .login-name {
+    .login-holder .login-name,
+    .login-holder .login-password,
+    .login-holder .login-user-name {
       font-size: 0.7rem;
       padding: 0; }
     .login-holder .login-btn {
       font-size: 0.9rem; } }
+@media only screen and (max-width: 736px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
+  .login-holder {
+    width: 68%;
+    margin-top: 17vh; } }
 .post-btn-holder {
   text-align: right;
   margin-right: 1rem; }
@@ -993,6 +1019,9 @@ footer {
         font-size: 1rem; }
       .favorites-holder li .favorite-book-author {
         display: none; } }
+@media only screen and (max-width: 736px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
+  .favorites-holder li {
+    flex-basis: 35%; } }
 .follower-holder {
   list-style-type: none;
   padding-left: 0; }

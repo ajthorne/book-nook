@@ -1,58 +1,54 @@
 .login-holder {
-  width: 50%;
-  margin: 0 auto;
-  margin-top: 13vh;
-  border: 4px solid $main-color;
-  text-align: center;
-  padding: 2%;
-
-
-  h2 {
-    font-family: $header-font;
-    font-size: 1.9rem;
-    color: $primary-color;
-  }
-
-  .login-name {
-    @include loginform;
     width: 50%;
-  }
-
-  .login-password {
-    @include loginform;
-    width: 50%;
-  }
-
-  .login-btn {
-    @include loginform;
-    font-size: 1.3rem;
-    width: 100%;
-    background: #F6F7F9;
-    border: 1px solid $dark-gray;
-  }
-
-  .login-user-name {
-    @include loginform;
-    width: 100%;
-  }
-}
-
-@media only screen and (max-width: 480px) {
-
-  .login-holder {
-    width: 75%;
-
+    margin: 13vh auto 0;
+    border: 4px solid $main-color;
+    text-align: center;
+    padding: 2%;
     h2 {
-      font-size: 1.5rem;
+        font-family: $header-font;
+        font-size: 1.9rem;
+        color: $primary-color;
     }
-
-    .login-user-name, .login-password, .login-name {
-      font-size: 0.7rem;
-      padding: 0;
+    .login-name {
+        @include loginform;
+        width: 50%;
     }
-
+    .login-password {
+        @include loginform;
+        width: 50%;
+    }
     .login-btn {
-      font-size: 0.9rem;
+        @include loginform;
+        font-size: 1.3rem;
+        width: 100%;
+        background: #F6F7F9;
+        border: 1px solid $dark-gray;
     }
-  }
+    .login-user-name {
+        @include loginform;
+        width: 100%;
+    }
+}
+@media only screen and (max-width: 480px) {
+    .login-holder {
+        width: 75%;
+        h2 {
+            font-size: 1.5rem;
+        }
+        .login-name,
+        .login-password,
+        .login-user-name {
+            font-size: 0.7rem;
+            padding: 0;
+        }
+        .login-btn {
+            font-size: 0.9rem;
+        }
+    }
+}
+@media only screen and (max-width: 736px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
+    .login-holder {
+        width: 68%;
+        margin-top: 17vh;
+    }
 }

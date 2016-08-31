@@ -1,4 +1,3 @@
-//bookmark for aside background?
 .user-profile-container {
     margin-top: 13vh;
     display: flex;
@@ -272,4 +271,16 @@
     //   height: 3rem;
     //   width: 2.5rem;
     // }
+}
+
+@media only screen and (max-width: 736px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
+
+  .user-profile-container {
+
+  .library-book-ul {
+      li {
+          flex-basis: 35%;
+        }
+      }
+    }
 }

@@ -90,15 +90,13 @@
                 float: right;
             }
         }
-
         .spinner-holder {
-          padding-top: 20%;
-          width: 20%;
-          margin: 0 auto;
-
-          .fa {
-            font-size: 8rem;
-          }
+            padding-top: 20%;
+            width: 20%;
+            margin: 0 auto;
+            .fa {
+                font-size: 8rem;
+            }
         }
     }
     .book-modal-container {
@@ -113,12 +111,11 @@
         left: 0;
         z-index: 1;
     }
-
     .book-modal {
-      -webkit-animation-name: animatetop;
--webkit-animation-duration: 0.4s;
-      animation-name: animatetop;
-      animation-duration: 0.4s;
+        -webkit-animation-name: animatetop;
+        -webkit-animation-duration: 0.4s;
+        animation-name: animatetop;
+        animation-duration: 0.4s;
         padding: 0.5rem;
         background: #F6F7F9;
         z-index: 0;
@@ -209,13 +206,12 @@
 }
 @media only screen and (max-width: 840px) {
     .books-container {
-      h2 {
-        font-size: 1.7rem;
-      }
+        h2 {
+            font-size: 1.7rem;
+        }
         .book-results {
             .single-book-copy {
                 width: 50%;
-
                 .single-book-add {
                     width: 100%;
                     font-size: 1rem;
@@ -228,8 +224,8 @@
                 }
             }
             .single-book-title {
-              max-height: 12vh;
-              overflow: hidden;
+                max-height: 15vh;
+                overflow: scroll;
             }
             .single-book-img {
                 img {
@@ -237,35 +233,27 @@
                     width: 100px;
                 }
             }
-
             .spinner-holder {
-              width: 50%;
-
-              .fa {
-                font-size: 5rem;
-              }
+                width: 50%;
+                .fa {
+                    font-size: 5rem;
+                }
             }
         }
     }
-
     .button-holder {
-        width: 60%; }
-
+        width: 60%;
+    }
 }
-
-
 @media only screen and (max-width: 492px) {
     .books-container {
-
-      .book-modal {
-        height: 60%;
-        width: 85%;
-
-        .modal-title {
-            font-size: 1.1rem;
-          }
-      }
-
+        .book-modal {
+            height: 60%;
+            width: 85%;
+            .modal-title {
+                font-size: 1.1rem;
+            }
+        }
         h2 {
             font-size: 1.3rem;
         }
@@ -300,6 +288,7 @@
     }
     .button-holder {
         width: 80%;
+        margin-top: 2rem;
         .nextBtn {
             font-size: 1rem;
         }
@@ -311,15 +300,44 @@
         }
     }
 }
-@-webkit-keyframes animatetop {
-    from {top: -300px; opacity: 0}
-    to {top: 0; opacity: 1}
+@media only screen and (max-width: 736px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
+    .books-container {
+        margin-top: 16vh;
+        .book-results {
+            .single-book-holder {
+                margin-bottom: 4rem;
+            }
+
+            .spinner-holder {
+                padding-top: 10%;
+                width: 30%;
+                margin: 0 auto;
+                .fa {
+                    font-size: 6rem;
+                }
+        }
+    }
 }
-
-
+}
+@-webkit-keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0;
+    }
+    to {
+        top: 0;
+        opacity: 1;
+    }
+}
 @keyframes animatetop {
-    from {top: -300px; opacity: 0}
-    to {left: 0; opacity: 1}
+    from {
+        top: -300px;
+        opacity: 0;
+    }
+    to {
+        left: 0;
+        opacity: 1;
+    }
 }
 //
 // animation modal 5s ease-in-out forwards

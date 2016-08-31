@@ -63,3 +63,8 @@
 }
 
 }
+@media only screen and (max-width: 736px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
+    .users-holder {
+        margin-top: 15vh;
+      }
+    }

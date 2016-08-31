@@ -210,7 +210,8 @@ const BookView = React.createClass({
         <div className="spinner-holder">
           <i className="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
         </div>),
-      nextBtn = ''
+      nextBtn = '',
+      prevBtn = ''
   }
 
     let searchValue = this.props.location.search;
