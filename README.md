@@ -47,6 +47,9 @@
 4. Moment
 5. React
 6. Sass
+7. [Google Fonts](https://fonts.google.com/)
+8. [Font Awesome](http://fontawesome.io/)
+9. [FreePik](http://www.freepik.com/)
 
 ###Future Goals
 1. Geolocation - Check in to local book hotspots!
