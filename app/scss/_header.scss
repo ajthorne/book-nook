@@ -78,7 +78,6 @@
         background-repeat: no-repeat;
         background-size: cover;
         position: relative;
-
         h1 {
             font-size: 3rem;
         }
@@ -86,35 +85,25 @@
             font-size: 1.6rem;
         }
     }
-
     .slider {
-      display: none;
+        display: none;
     }
 }
-
 @media only screen and (max-width: 736px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
-  .header {
-      height: 75vh;
-}
-
-.slider {
-  height: 75vh;
-  .current {
-      min-height: 75vh;
+    .header {
+        height: 75vh;
+    }
+    .slider {
+        height: 75vh;
+        .current {
+            min-height: 75vh;
+        }
     }
 }
-}
-
-
-@media only screen
-  and (min-device-width: 768px)
-  and (max-device-width: 1024px)
-  and (-webkit-min-device-pixel-ratio: 1) {
-
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
     .slider {
         .current {
             min-height: 60vh;
-          }
         }
-
+    }
 }

@@ -5,7 +5,6 @@
         margin-left: 1rem;
         margin-right: 3rem;
         flex: 1 0 0;
-        // background: linear-gradient( rgba(245, 111, 108, 0.30), rgba(245, 111, 108, 0.75)),;
         h2 {
             text-align: center;
             font-size: 1.5rem;
@@ -80,7 +79,6 @@
                 min-width: 130px;
                 height: 200px;
                 object-fit: cover;
-                // margin-left: 5%;
             }
             .library-book-title {
                 margin: 0;
@@ -108,7 +106,6 @@
         color: red;
     }
     .fa-trash {
-        // float: right;
         color: #A7A9AC;
         margin-left: 1rem;
         &:hover {
@@ -145,7 +142,6 @@
 //code credit help --https://paulund.co.uk/create-pulse-effect-with-css3-animation
 @media only screen and (max-width: 550px) {
     .user-profile-container {
-        // margin-top: 7vh;
         display: block;
         aside {
             margin: 0 auto;
@@ -153,13 +149,14 @@
             text-align: center;
             button {
                 width: 30vw;
-                padding: 2%
+                padding: 2%;
             }
             h2 {
                 display: inline-block;
                 line-height: 76%;
                 font-size: 1.4rem;
-                margin-left: 3.5rem;            }
+                margin-left: 3.5rem;
+            }
             .user-profile-img {
                 height: 3rem;
                 width: 3rem;
@@ -169,15 +166,12 @@
             }
             ul {
                 position: absolute;
-                // top: 0;
                 right: 0;
                 width: 100%;
                 display: flex;
                 background: #9BD7D5;
                 border-top: 1px solid black;
-                // &:hover {
-                //   background-color: #F6F7F9;
-                // }
+
                 a {
                     flex-basis: 25%;
                     li {
@@ -248,9 +242,9 @@
 @media only screen and (max-width: 480px) {
     .user-profile-container {
         aside {
-          button {
-            width: 35vw;
-          }
+            button {
+                width: 35vw;
+            }
             ul {
                 a {
                     li {
@@ -266,21 +260,13 @@
             margin-top: 30%;
         }
     }
-    //
-    // .library-book-img {
-    //   height: 3rem;
-    //   width: 2.5rem;
-    // }
 }
-
 @media only screen and (max-width: 736px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
-
-  .user-profile-container {
-
-  .library-book-ul {
-      li {
-          flex-basis: 35%;
+    .user-profile-container {
+        .library-book-ul {
+            li {
+                flex-basis: 35%;
+            }
         }
-      }
     }
 }

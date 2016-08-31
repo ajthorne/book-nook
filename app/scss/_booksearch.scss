@@ -112,10 +112,6 @@
         z-index: 1;
     }
     .book-modal {
-        -webkit-animation-name: animatetop;
-        -webkit-animation-duration: 0.4s;
-        animation-name: animatetop;
-        animation-duration: 0.4s;
         padding: 0.5rem;
         background: #F6F7F9;
         z-index: 0;
@@ -307,7 +303,6 @@
             .single-book-holder {
                 margin-bottom: 4rem;
             }
-
             .spinner-holder {
                 padding-top: 10%;
                 width: 30%;
@@ -315,39 +310,7 @@
                 .fa {
                     font-size: 6rem;
                 }
+            }
         }
     }
 }
-}
-@-webkit-keyframes animatetop {
-    from {
-        top: -300px;
-        opacity: 0;
-    }
-    to {
-        top: 0;
-        opacity: 1;
-    }
-}
-@keyframes animatetop {
-    from {
-        top: -300px;
-        opacity: 0;
-    }
-    to {
-        left: 0;
-        opacity: 1;
-    }
-}
-//
-// animation modal 5s ease-in-out forwards
-//
-// @keyframes modal
-//   0%{
-//   transform: translateX(-200%), rotate(-90deg),
-//   opacity 0}
-//   15%, 85%
-//   transform translateX(0%) rotate(0deg)
-//   opacity 1
-//   100%
-//   transform translateX(200%) rotate(90deg)

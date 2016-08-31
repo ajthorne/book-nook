@@ -17,7 +17,6 @@ const BookView = React.createClass({
     store.books.reset();
     let searchValue = this.props.location.search;
     let index = searchValue.lastIndexOf('&');
-    // let book = decodeURI(searchValue.substring(6));
     let book = decodeURI(searchValue.substring(6, index));
     let pageNumber = searchValue.substring(index + 6);
     // console.log(book);
@@ -63,24 +62,6 @@ const BookView = React.createClass({
           }
       })
     }
-    //  else if (this.props.location.query.book === nextProps.location.query.book && this.props.location.query.page !== nextProps.location.query.page) {
-    //   let searchValue = this.props.location.search;
-    //   let index = searchValue.lastIndexOf('&');
-    //   let book = decodeURI(searchValue.substring(6, index));
-    //   let pageNumber = Number(searchValue.substring(index + 6));
-    //   console.log(pageNumber);
-
-      // store.books.fetch(
-      //   {
-      //     data: {
-      //       q: book,
-      //       startIndex: pageNumber * 10
-      //     },
-      //     success: function (response) {
-      //       console.log('Here are the next results for', `${book}`);
-      //     }
-      //   })
-    // }
     return true;
 },
 

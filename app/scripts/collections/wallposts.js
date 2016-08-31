@@ -12,6 +12,7 @@ const WallPosts = Backbone.Collection.extend({
          this.create(data)
   },
 
+  //future feature...
   // deletePost: function (data) {
   //   // console.log(data);
   //   let id = data.id

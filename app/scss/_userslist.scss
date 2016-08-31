@@ -6,65 +6,53 @@
         font-weight: bold;
         font-size: 2rem;
     }
-
     ul {
-      display: flex;
-      flex-flow: row;
-      flex-wrap: wrap;
-      list-style-type: none;
-
-      li {
-        flex-basis: 10rem;
-        padding: 2%;
-
-        a {
-          color: $primary-color;
-          // text-decoration: none;
-          font-size: 1.3rem;
+        display: flex;
+        flex-flow: row;
+        flex-wrap: wrap;
+        list-style-type: none;
+        li {
+            flex-basis: 10rem;
+            padding: 2%;
+            a {
+                color: $primary-color;
+                font-size: 1.3rem;
+            }
+            p {
+                text-align: center;
+                margin-top: 0;
+                text-transform: lowercase;
+            }
+            img {
+                height: 150px;
+                width: 150px;
+                margin-left: 1%;
+                object-fit: contain;
+                border-radius: 50%;
+                border: 2px solid $primary-color;
+            }
         }
-
-        p {
-          text-align: center;
-          margin-top: 0;
-          text-transform: lowercase;
-        }
-
-        img {
-          height: 150px;
-          width: 150px;
-          margin-left: 1%;
-          object-fit: contain;
-          border-radius: 50%;
-          border: 2px solid $primary-color;
-        }
-
-      }
-
     }
 }
-
 @media only screen and (max-width: 480px) {
-.users-holder {
-  ul {
-    padding: 0.5rem;
-    width: 95%;
-    margin: 0 auto;
-
-    li {
-      flex-basis: 5rem;
-      padding: 3%;
-
-      img {
-        height: 90px;
-        width: 90px;
-      }
+    .users-holder {
+        ul {
+            padding: 0.5rem;
+            width: 95%;
+            margin: 0 auto;
+            li {
+                flex-basis: 5rem;
+                padding: 3%;
+                img {
+                    height: 90px;
+                    width: 90px;
+                }
+            }
+        }
     }
-  }
-}
-
 }
 @media only screen and (max-width: 736px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
     .users-holder {
         margin-top: 15vh;
-      }
     }
+}

@@ -5,7 +5,6 @@ $header-font: 'Quicksand', sans-serif;
 //colors
 $primary-color: #0C4C58;
 //teal blue
-
 $main-color: #F56F6C;
 //bittersweet peach
 
@@ -18,7 +17,7 @@ $white: #FFF;
 
 //login mixin
 @mixin loginform {
-  font-size: 1rem;
-  padding: 2%;
-  box-sizing: border-box;
+    font-size: 1rem;
+    padding: 2%;
+    box-sizing: border-box;
 }

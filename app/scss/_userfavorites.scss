@@ -1,63 +1,53 @@
 .favorites-holder {
-  display: flex;
-  flex-flow: row;
-  flex-wrap: wrap;
-  list-style-type: none;
-  padding-left: 0;
-
-  li {
-      flex-basis: 22%;
-      margin-right: 1rem;
-      margin-bottom: 1rem;
-      img {
-          width: 130px;
-          height: 200px;
-          object-fit: cover;
-          // margin-left: 5%;
-      }
-      .favorite-book-title {
-          margin: 0;
-          font-size: 1.1rem;
-          font-weight: bold;
-      }
-      .favorite-book-author {
-          margin: 0;
-          font-style: italic;
-      }
-  }
-}
-
-@media only screen and (max-width: 550px) {
-
-.favorites-holder {
-  padding-left: 5%;
-
-  li {
-    flex-basis: 43%;
-    text-align: center;
-
-    img {
-      width: 100px;
-      height: 150px;
-    }
-
-    .favorite-book-title {
-      font-size: 1rem;
-    }
-
-    .favorite-book-author {
-      display: none;
-    }
-  }
-}
-}
-
-@media only screen and (max-width: 736px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
-
-  .favorites-holder {
-
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+    list-style-type: none;
+    padding-left: 0;
     li {
-      flex-basis: 35%;
+        flex-basis: 22%;
+        margin-right: 1rem;
+        margin-bottom: 1rem;
+        img {
+            width: 130px;
+            height: 200px;
+            object-fit: cover;
+            // margin-left: 5%;
+        }
+        .favorite-book-title {
+            margin: 0;
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+        .favorite-book-author {
+            margin: 0;
+            font-style: italic;
+        }
+    }
 }
+@media only screen and (max-width: 550px) {
+    .favorites-holder {
+        padding-left: 5%;
+        li {
+            flex-basis: 43%;
+            text-align: center;
+            img {
+                width: 100px;
+                height: 150px;
+            }
+            .favorite-book-title {
+                font-size: 1rem;
+            }
+            .favorite-book-author {
+                display: none;
+            }
+        }
+    }
 }
+@media only screen and (max-width: 736px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
+    .favorites-holder {
+        li {
+            flex-basis: 35%;
+        }
+    }
 }

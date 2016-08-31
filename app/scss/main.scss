@@ -1,8 +1,4 @@
 @import 'variables';
-
-// font-family: 'Frederick the Great', cursive;
-// font-family: 'Quicksand', sans-serif;
-
 @import 'nav';
 @import 'header';
 @import 'features';
@@ -27,9 +23,6 @@ body {
   height: 100%;
   margin: 0;
   font-family: helvetica;
-
-//set this to lock scrolling when modal is open...
-// overflow-y: hidden;
 
   .container {
     min-height: 100%;
