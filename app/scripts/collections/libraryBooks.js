@@ -35,7 +35,7 @@ const LibraryBooks = Backbone.Collection.extend({
        {
        success: (response) => {
         //  console.log('You\'ve successfully added this book to your library!');
-         console.log(response);
+        //  console.log(response);
        }})
        }
        else {

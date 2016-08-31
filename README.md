@@ -1,6 +1,7 @@
 #Book Nook
 ##Book Nook is an app to support building a literacy community among adolescents. Find new friends, new books to read, and explore an awesome new social media!
 
+##[Book Nook Live Site](http://booknook.surge.sh/)
 
 ###Basic Features
 1. User Profiles -
@@ -14,8 +15,6 @@
 
 3. Building a Community -
   - Connect with other teens who love the same book you do. Follow them, view or comment on their profile.
-  - Find teens nearby in your 'nook' who love reading like you do.
-
 
 ###MVP
 1. Users can sign up, log in, and log out on their accounts.
@@ -23,13 +22,13 @@
 3. Users can search for a specific book which renders results for the user to view.
 4. Users can add a specific book their library collection, which is displayed on their profile page.
 
+###Planning Process
+1. [Book Nook Trello board](https://trello.com/b/T5miQIeO/book-nook)
+2. Wireframes: [1](https://trello-attachments.s3.amazonaws.com/57acaf1ed653c81d1def3643/1200x1600/e3d322d787e7b9a8009326f90b9da4b1/finalwireframe1.JPG.jpg),  [2](https://trello-attachments.s3.amazonaws.com/57acaf1ed653c81d1def3643/1200x1600/89dd12eae70980b2dc44f06dc1ca339c/finalwireframe2.JPG.jpg),  [3](https://trello-attachments.s3.amazonaws.com/57acaf1ed653c81d1def3643/1200x1600/b5a3340b521dd61a5eb2749bcf7262f4/finalwireframe3.JPG.jpg),  [4](https://trello-attachments.s3.amazonaws.com/57acaf1ed653c81d1def3643/1200x1600/ad582bf120e6022f2e5be823ee87a213/finalwireframe4.JPG.jpg),  [5](https://trello-attachments.s3.amazonaws.com/57acaf1ed653c81d1def3643/1200x1600/f50996d0c8355372d7273bc70daa766a/finalwireframe5.JPG.jpg)
 
 ###APIs
-1. Google Books
-  - https://developers.google.com/books/
-2. Kinvey
-3. Google Maps
-  - https://developers.google.com/maps/
+1. [Google Books](https://developers.google.com/books/)
+2. [Kinvey](https://www.kinvey.com/)
 
 
 ###Data Modeling
@@ -39,7 +38,7 @@
     username: "testuser",
     authtoken: "1234",
     name: 'sally',
-    friends: ['coop', 'shannon']
+    followers: ['coop', 'shannon']
     }
     ```
 
@@ -91,17 +90,12 @@
 5. /user/:id/favorites: Displays user favorites
 6. /user/:id/posts: Displays user posts
 7. /user/:id/followers: Displays user followers
-8. /thenook: Connect with teens nearby
-
 
 ###Libraries
 1. Backbone
 2. JQuery
 3. Underscore
+4. Moment
 
 ###Credits
 1. Designs inspired by Twitter and OverDrive
-
-###Special Features
-1. Geolocation
-2. Profile image uploading
