@@ -20,7 +20,7 @@ const BookView = React.createClass({
     // let book = decodeURI(searchValue.substring(6));
     let book = decodeURI(searchValue.substring(6, index));
     let pageNumber = searchValue.substring(index + 6);
-    console.log(book);
+    // console.log(book);
     store.books.fetch(
       {
         data: {
@@ -28,7 +28,7 @@ const BookView = React.createClass({
           startIndex: pageNumber * 10
         },
         success: function (response) {
-          console.log('Here are your results for', `${book}`);
+          // console.log('Here are your results for', `${book}`);
         }
       })
 
@@ -91,7 +91,7 @@ const BookView = React.createClass({
   },
   nextPageHandler: function () {
     let pageNumber = Number(this.props.location.query.page) + 1
-    console.log('NextPage pageNumber:', pageNumber);
+    // console.log('NextPage pageNumber:', pageNumber);
     // console.log(this.props.location.search);
     let searchValue = this.props.location.search;
     let index = searchValue.lastIndexOf('&');
@@ -104,7 +104,7 @@ const BookView = React.createClass({
           startIndex: pageNumber * 10
         },
         success: function (response) {
-          console.log('Here are the next results for', `${book}`);
+          // console.log('Here are the next results for', `${book}`);
         }
       })
     // console.log(book);
@@ -113,7 +113,7 @@ const BookView = React.createClass({
 
   prevPageHandler: function () {
     let pageNumber = Number(this.props.location.query.page) - 1
-      console.log('PrevPage pageNumber:', pageNumber);
+      // console.log('PrevPage pageNumber:', pageNumber);
     // console.log(this.props.location.search);
     let searchValue = this.props.location.search;
     let index = searchValue.lastIndexOf('&');
@@ -127,7 +127,7 @@ const BookView = React.createClass({
           startIndex: pageNumber * 10,
         },
         success: function (response) {
-          console.log('Here are the previous results for', `${book}`);
+          // console.log('Here are the previous results for', `${book}`);
         }
       })
   },

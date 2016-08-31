@@ -53,16 +53,3 @@ const router = (
 )
 
 ReactDOM.render(router, document.querySelector('.container'));
-
-//QUESTIONS
-
-//TO DO --
-//Since I added a followers collection, it would be helpful to clean up my code and replace manual ajax requests with fetching and get requests instead
-//edit and delete post from posts collection
-//users can delete or edit their own comment?
-
-//update readme
-
-//add loading image
-
-//change names to usernames

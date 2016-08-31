@@ -5,7 +5,7 @@ import { hashHistory } from 'react-router';
 const Login = React.createClass({
   loginHandler: function (e) {
     e.preventDefault();
-    console.log('You logged in!');
+    // console.log('You logged in!');
     let data = {
       username: this.refs.loginuser.value,
       password: this.refs.loginpw.value
@@ -16,7 +16,7 @@ const Login = React.createClass({
 
   signUpHandler: function (e) {
     e.preventDefault();
-    console.log('You signed up!');
+    // console.log('You signed up!');
     let data = {
       name: this.refs.name.value,
       username: this.refs.username.value,

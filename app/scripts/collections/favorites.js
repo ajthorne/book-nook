@@ -12,7 +12,7 @@ const Favorites = Backbone.Collection.extend({
         let bookAuthors = props.authors
         let bookId = props.bookId;
         let userId = id;
-        console.log(props, id);
+        // console.log(props, id);
         // console.log(this);
         this.fetch({
             data: {
@@ -23,7 +23,7 @@ const Favorites = Backbone.Collection.extend({
             },
             remove: false,
             success: (coll, response) => {
-                console.log('success, here it is: ', response);
+                // console.log('success, here it is: ', response);
                 if (response.length === 0) {
                     //if the book does not exist in the collection... then create it.
                     this.create({ 
@@ -34,7 +34,7 @@ const Favorites = Backbone.Collection.extend({
                         bookImg: bookImg,
                     }, {
                         success: (response) => {
-                            console.log('You\'ve successfully added this book to your favorites!');
+                            // console.log('You\'ve successfully added this book to your favorites!');
                             // console.log(response);
                         }
                     })
@@ -44,7 +44,7 @@ const Favorites = Backbone.Collection.extend({
                     // console.log(model);
                     model.destroy({
                         success: function(response) {
-                            console.log('I\'m no longer a favorite :(');
+                            // console.log('I\'m no longer a favorite :(');
                         }
                     });
                 }

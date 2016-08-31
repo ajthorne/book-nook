@@ -8,7 +8,7 @@ const Comments = Backbone.Collection.extend({
 
   addComment: function (data) {
     // console.log('I\'d like to express my thoughts');
-    console.log('comment sent to server:', data);
+    // console.log('comment sent to server:', data);
     this.create(data)
   },
 })

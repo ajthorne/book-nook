@@ -37,7 +37,7 @@ const UserLibraryView = React.createClass({
     let user = nextProps.params.id;
     // console.log('nextProps', user);
     if (this.props.params.id !== nextProps.params.id) {
-          console.log('grabbing favs..', store.favorites);
+          // console.log('grabbing favs..', store.favorites);
           store.favorites.fetch({
           data: {query: JSON.stringify({
             userId: user,

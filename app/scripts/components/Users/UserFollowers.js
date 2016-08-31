@@ -41,14 +41,15 @@ const UserFollowers = React.createClass({
   },
   render: function () {
     // console.log(store.session.get('followers'));
-    console.log(store.followers);
+    // console.log(store.followers);
     // console.log(store.session);
 
     let followersArr = store.followers.map((follower, i, arr) => {
       // console.log(follower.get('_acl').creator);
           let followerName = follower.get('followerName')
           let followerId = follower.get('_acl').creator;
-        return <UserSingleFollowers key={i} followerId={followerId} followerName={followerName}/>
+          let username = follower.get('username');
+        return <UserSingleFollowers key={i} followerId={followerId} username={username} followerName={followerName}/>
       })
       // console.log(followersArr);
     return (

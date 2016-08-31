@@ -21,7 +21,7 @@ const LibraryBooks = Backbone.Collection.extend({
      })},
      remove: false,
      success: (coll, response) => {
-       console.log('success, here it is: ', response);
+      //  console.log('success, here it is: ', response);
        if (response.length === 0) {
          //if the book does not exist in the collection... then create it.
          this.create({
@@ -34,12 +34,12 @@ const LibraryBooks = Backbone.Collection.extend({
        },
        {
        success: (response) => {
-         console.log('You\'ve successfully added this book to your library!');
+        //  console.log('You\'ve successfully added this book to your library!');
          console.log(response);
        }})
        }
        else {
-         console.log('Sorry, you have already added this book!');
+        //  console.log('Sorry, you have already added this book!');
        }
      },
      error: (err) => {
@@ -53,7 +53,7 @@ const LibraryBooks = Backbone.Collection.extend({
    let model = this.get(id);
   //  console.log(model);
    model.destroy({success: function (response) {
-     console.log('Deleting from your collection...');
+    //  console.log('Deleting from your collection...');
    }});
  }
 })

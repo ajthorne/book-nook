@@ -39,12 +39,12 @@ const UserSinglePost = React.createClass({
     let commentBtn;
     let commentNumber = Number(this.props.comments.length);
     if (commentNumber > 1){
-      optionBtns = <p className="option-btn"><i className="fa fa-comment-o" onClick={this.toggleComments}></i> {commentNumber} Comments</p>
+      optionBtns = <p className="option-btn" onClick={this.toggleComments}><i className="fa fa-comment-o"></i> {commentNumber} Comments</p>
     } else if (commentNumber === 1) {
-      optionBtns = <p className="option-btn"><i className="fa fa-comment-o" onClick={this.toggleComments}></i> {commentNumber} Comment</p>
+      optionBtns = <p className="option-btn" onClick={this.toggleComments}><i className="fa fa-comment-o"></i> {commentNumber} Comment</p>
     }
     else {
-      optionBtns = <p className="option-btn"><i className="fa fa-comment-o" onClick={this.toggleComments}></i> Add a Comment</p>
+      optionBtns = <p className="option-btn" onClick={this.toggleComments}><i className="fa fa-comment-o"></i> Add a Comment</p>
     }
 
     // if (store.session.get('_id') === this.props.userId) {

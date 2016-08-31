@@ -26,7 +26,7 @@ const User = Backbone.Model.extend({
             // let followerId;
             // console.log(followers);
         if (followers.length === 0) {
-            console.log('Thanks for following me!');
+            // console.log('Thanks for following me!');
             $.ajax({
                 type: 'POST',
                 url: `https://baas.kinvey.com/appdata/${settings.appId}/followers`,
@@ -37,20 +37,20 @@ const User = Backbone.Model.extend({
                 }),
                 contentType: 'application/json',
                 success: (response) => {
-                    console.log('followers', followers.concat(username));
+                    // console.log('followers', followers.concat(username));
                     // followerId = response._id;
                     // console.log(followerId);
                     user.save({
                         followers: followers.concat(username)
                     }, {
                         success: function(response) {
-                            console.log(response);
+                            // console.log(response);
                         }
                     });
                 }
             })
         } else if (followers.indexOf(this.get('username')) === -1) {
-            console.log('You haven\'t followed this person yet...');
+            // console.log('You haven\'t followed this person yet...');
             $.ajax({
                 type: 'POST',
                 url: `https://baas.kinvey.com/appdata/${settings.appId}/followers`,
@@ -68,7 +68,7 @@ const User = Backbone.Model.extend({
                         // console.log(user.toJSON())
                 },
                 error: (err) => {
-                    console.log(err);
+                    // console.log(err);
                 }
             })
         } else {
@@ -95,8 +95,8 @@ const User = Backbone.Model.extend({
                                 //return new array without the username of person who unfollowed
                             }, {
                                 success: (response) => {
-                                    console.log("DELETED!!");
-                                    console.log(followers);
+                                    // console.log("DELETED!!");
+                                    // console.log(followers);
                                 }
                             })
                     $.ajax({
@@ -155,7 +155,7 @@ retrieve: function() {
     this.fetch({
         url: `https://baas.kinvey.com/user/${settings.appId}/_me`,
         success: () => {
-            console.log('you got your authtoken:', localStorage.getItem('authtoken'));
+            // console.log('you got your authtoken:', localStorage.getItem('authtoken'));
             localStorage.getItem("authtoken")
         },
         error: function(e) {
@@ -172,7 +172,7 @@ logout: function() {
             this.clear();
             hashHistory.push('/')
             localStorage.clear();
-            console.log('You are logged out. Goodbye!');
+            // console.log('You are logged out. Goodbye!');
         })
         .fail((error) => {
             console.error('Failed to log out!')

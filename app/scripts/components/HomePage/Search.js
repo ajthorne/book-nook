@@ -7,7 +7,7 @@ const Search = React.createClass({
   submitHandler: function (e) {
     e.preventDefault();
     let book = this.refs.book.value;
-    console.log('Your search:', this.refs.book.value);
+    // console.log('Your search:', this.refs.book.value);
     hashHistory.push(`/books?book=${encodeURI(book)}&page=0`);
     this.refs.book.value = '';
     //updating url to show query params so the user can bookmark

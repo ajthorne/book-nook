@@ -14,7 +14,7 @@ const SingleBook = React.createClass({
     },
 
   clickHandler: function () {
-    console.log(this.props);
+    // console.log(this.props);
     store.libraryBooks.addBook(this.props, store.session.get('_id'));
   },
 

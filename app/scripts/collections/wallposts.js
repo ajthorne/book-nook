@@ -8,7 +8,7 @@ const WallPosts = Backbone.Collection.extend({
   model: WallPost,
 
   createPost: function (data) {
-    console.log('Submitting post....');
+    // console.log('Submitting post....');
          this.create(data)
   },
 

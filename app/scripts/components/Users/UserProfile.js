@@ -49,7 +49,7 @@ const UserProfile = React.createClass({
     let user = nextProps.params.id;
     // console.log('nextProps', user);
     if (this.props.params.id !== nextProps.params.id) {
-          console.log('moving to new user', store.users);
+          // console.log('moving to new user', store.users);
         store.users.fetch({
             data: {
                 query: JSON.stringify({
