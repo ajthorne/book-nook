@@ -20,8 +20,9 @@ const Slider = React.createClass({
       this.setState({showing: 0}) } else {
         this.setState({showing: this.state.showing + 1})
       }
-    }, 5000)
+    }, 12000)
     this.setState({interval: interval})
+    //use settimeout?
   },
 
   componentWillUnmount: function () {
@@ -32,7 +33,7 @@ const Slider = React.createClass({
     let image = <img key={this.state.showing} className="current" src={images[this.state.showing]}/>
     return (
       <div className="slider">
-        <Transition transitionName="slide-left" transitionEnterTimeout={5000} transitionLeaveTimeout={10000}>
+        <Transition transitionName="slide-left" transitionEnterTimeout={12000} transitionLeaveTimeout={24000}>
             {image}
         </Transition>
       </div>
