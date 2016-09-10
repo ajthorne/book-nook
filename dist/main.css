@@ -31,6 +31,7 @@ nav {
   .book-search input[type=text] {
     padding: 5%;
     background: transparent;
+    width: 10rem;
     color: #FFF;
     border: 0;
     font-size: 1rem; }
@@ -547,6 +548,11 @@ footer {
     margin-top: 16vh; }
     .books-container .book-results .single-book-holder {
       margin-bottom: 4rem; }
+      .books-container .book-results .single-book-holder .single-book-author {
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+        max-height: 8vh;
+        overflow: auto; }
     .books-container .book-results .spinner-holder {
       padding-top: 10%;
       width: 30%;
@@ -738,8 +744,12 @@ footer {
     .user-profile-container .profile-content {
       margin-top: 18%; }
       .user-profile-container .profile-content .profile-title {
-        display: none; } }
+        display: none; }
+    .user-profile-container .book-fav:hover {
+      animation-name: none; } }
 @media only screen and (max-width: 480px) {
+  .user-profile-container .book-fav:hover {
+    animation-name: none; }
   .user-profile-container aside button {
     width: 35vw; }
   .user-profile-container aside ul a li img {
@@ -749,7 +759,9 @@ footer {
     margin-top: 30%; } }
 @media only screen and (max-width: 736px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
   .user-profile-container .library-book-ul li {
-    flex-basis: 35%; } }
+    flex-basis: 35%; }
+  .user-profile-container .book-fav:hover {
+    animation-name: none; } }
 .login-holder {
   width: 50%;
   margin: 13vh auto 0;

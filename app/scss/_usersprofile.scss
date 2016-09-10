@@ -237,10 +237,21 @@
                 display: none;
             }
         }
+        .book-fav {
+            &:hover {
+              animation-name: none;
+            }
+          }
     }
 }
 @media only screen and (max-width: 480px) {
     .user-profile-container {
+      .book-fav {
+          &:hover {
+            animation-name: none;
+          }
+        }
+
         aside {
             button {
                 width: 35vw;
@@ -268,5 +279,11 @@
                 flex-basis: 35%;
             }
         }
+
+        .book-fav {
+            &:hover {
+              animation-name: none;
+            }
+          }
     }
 }

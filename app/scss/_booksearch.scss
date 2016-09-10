@@ -302,6 +302,14 @@
         .book-results {
             .single-book-holder {
                 margin-bottom: 4rem;
+
+                .single-book-author {
+                    font-size: 0.9rem;
+                    margin-bottom: 0.5rem;
+                    max-height: 8vh;
+                    overflow: auto;
+                }
+
             }
             .spinner-holder {
                 padding-top: 10%;
