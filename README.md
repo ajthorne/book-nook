@@ -1,7 +1,7 @@
 # Book Nook
 ## Book Nook is an app to support building a literacy community among adolescents. Find new friends, new books to read, and explore an awesome new social media!
 
-##[Book Nook Live Site](http://booknook.surge.sh/)
+## [Book Nook Live Site](http://booknook.surge.sh/)
 
 ### Basic Features
 1. User Authentication
